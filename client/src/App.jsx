@@ -9,7 +9,7 @@ import AdoptionForm from './assets/Views/AdoptionForm';
 import Voluntary from './assets/Views/Voluntary';
 import CreatePost from './assets/Views/CreatePost';
 import Navbar from './assets/Components/Navbar';
-
+import Footer from './assets/Components/Footer';
 
 function App() {
 
@@ -51,6 +51,7 @@ function App() {
           element={<CreatePost/>}
         />
       </Routes>
+      <Footer/>
 
     </>
   )
