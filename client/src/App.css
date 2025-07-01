@@ -137,7 +137,16 @@ article{
 
 footer{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 10rem;
+}
+.rrss{
+  display: flex;
+  gap: 1rem;
+
+  svg{
+    cursor: pointer;
+  }
 }

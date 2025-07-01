@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../App.css'
 import { BoneIcon } from '../Icons/BoneIcon'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBone } from '@fortawesome/free-solid-svg-icons'
 const Home = () => {
   return (
 
@@ -22,6 +23,7 @@ const Home = () => {
             <img src="imgs\Depth 7, Frame 0.png" alt="" />
             <div>
               <div className="text-cards">
+               
                 <BoneIcon/>
                 <h3>Titulo</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
