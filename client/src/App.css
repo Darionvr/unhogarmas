@@ -243,7 +243,7 @@ footer {
   font-family: "Lexend", sans-serif;
 }
 
-h1 {
+.container h1 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -322,13 +322,15 @@ select {
   margin-bottom: 5px;
 }
 
-textarea {
-  width: 100%;
-  resize: vertical;
+.textareaCp {
+  width: 450px;
+  resize: none;
+  height: 170px;
+
 }
 
 .btn-submit {
-  width: 40%;
+  width: 65%;
   padding: 14px;
   background-color: black;
   color: white;
@@ -336,4 +338,10 @@ textarea {
   border-radius: 999px;
   font-size: 16px;
   cursor: pointer;
+}
+.btn1{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  
 }
