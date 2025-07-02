@@ -2,13 +2,17 @@ import React from 'react'
 import '../../App.css'
 import { BoneIcon } from '../Icons/BoneIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBone } from '@fortawesome/free-solid-svg-icons'
+import { faInbox, faCalendarWeek, faMobileScreenButton, faMapLocationDot} from '@fortawesome/free-solid-svg-icons'
+
 const Home = () => {
   return (
 
     <>
       <header>
-       
+       <div>
+        <img src="imgs\Header, frame 1.png" alt="" />
+        <h1>Desde Santiago, rescatamos vidas y creamos hogares.</h1>
+       </div>
       </header>
 
       <main className='main-home'>
@@ -54,11 +58,14 @@ const Home = () => {
 
           <h4> ¿Dónde estamos?</h4>
 
-          <p>Ubicación pendiente #123, comuna, Ciudad</p>
-          <p>Contáctanos al 630-323-5630</p>
-          <p>Horario Lun - Vie 10:00 a 18:00</p>
-          <p>correo@correo.cl</p>
+          <p> <FontAwesomeIcon icon={faMapLocationDot} />Ubicación pendiente #123, comuna, Ciudad</p>
+          <p> <FontAwesomeIcon icon={faMobileScreenButton} />Contáctanos al 630-323-5630</p>
+          <p> <FontAwesomeIcon icon={faCalendarWeek} />Horario Lun - Vie 10:00 a 18:00</p>
+          <p> <FontAwesomeIcon icon={faInbox} /> correo@correo.cl</p>
 
+        </div>
+        <div className="map">
+        
         </div>
         
       </article>
