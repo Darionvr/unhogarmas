@@ -11,47 +11,49 @@ import CreatePost from './assets/Views/CreatePost';
 import Navbar from './assets/Components/Navbar';
 
 
+
 function App() {
 
 
   return (
     <>
-    <Navbar/>
+
+    
+     <Navbar/>
       <Routes>
         <Route
           path="/"
           element={<Home/>}
         />
         <Route
-          path="/"
+          path="/Staff"
           element={<Staff/>}
         />
         <Route
-          path="/"
+          path="/Register"
           element={<Register/>}
         />
         <Route
-          path="/"
+          path="/Myprofile"
           element={<Myprofile/>}
         />
         <Route
-          path="/"
+          path="/AdoptList"
           element={<AdoptList/>}
         />
         <Route
-          path="/"
+          path="/AdoptionForm"
           element={<AdoptionForm/>}
         />
         <Route
-          path="/"
+          path="/Voluntary"
           element={<Voluntary/>}
         />
         <Route
-          path="/"
+          path="/CreatePost"
           element={<CreatePost/>}
         />
-      </Routes>
-
+      </Routes> 
     </>
   )
 }

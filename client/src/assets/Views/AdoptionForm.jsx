@@ -1,9 +1,12 @@
-import React from 'react'
+
 
 const AdoptionForm = () => {
-  return (
-    <div>AdoptionForm</div>
-  )
+    return (
+        <>
+          
+
+        </>
+    )
 }
 
 export default AdoptionForm
