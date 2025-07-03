@@ -10,42 +10,42 @@ const Home = () => {
     <>
       <header>
        <div>
-        <img src="imgs\Header, frame 1.png" alt="" />
-        <h1>Desde Santiago, rescatamos vidas y creamos hogares.</h1>
+        <img src="imgs\header-1.png" alt="" />
        </div>
+       <h1>Desde Santiago, rescatamos vidas y creamos hogares.</h1>
       </header>
 
       <main className='main-home'>
 
         <section>
 
-          <h2>  Nuestro Proceso de Adopción </h2>
+          <h2>  Al adoptar con nosotros </h2>
 
 
-          <div className='section-cards'>
+          <div>
 
-            <img src="imgs\Depth 7, Frame 0.png" alt="" />
-            <div>
-              <div className="text-cards">
+            <img src="imgs\home-frame 1.png" alt="" />
+            <div className='section-cards'>
+              <div className="cards">
                
                 <BoneIcon/>
-                <h3>Titulo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <h3>Ayudas a una vida en espera</h3>
+                <p>Le das una segunda oportunidad a un ser que ha pasado por abandono o maltrato. </p>
               </div>
-              <div className="text-cards">
+              <div className="cards">
                  <BoneIcon/>
-                <h3>Titulo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <h3>Libera espacio para otro rescate</h3>
+                <p>Cada adopción permite que podamos acoger a otro animal necesitado. Es un acto que se multiplica. </p>
               </div>
-              <div className="text-cards">
+              <div className="cards">
                  <BoneIcon/>
-               <h3>Titulo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+               <h3>Cuidas tu salud emocional</h3>
+                <p>Está comprobado que compartir tu vida con una mascota reduce el estrés y mejora el bienestar emocional. </p>
               </div>
-              <div className="text-cards">
+              <div className="cards">
                  <BoneIcon/>
-                <h3>Titulo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <h3>Compañía incondicional</h3>
+                <p>Adoptar suma tu vida un amigo que te acompañará en todo momento, con amor y sin condiciones. </p>
               </div>
             </div>
           </div>
