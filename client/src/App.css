@@ -143,6 +143,7 @@ header div img {
   align-items: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  gap: 3rem;
 }
 
 section {
@@ -160,9 +161,14 @@ section > div{
 
 }
 
+section:nth-child(2) > div{
+  flex-direction: row-reverse;
+}
+
 section img{
   height: 100%;
   max-width: 400px;
+  border-radius: 10px;
 
 
 }
@@ -172,7 +178,7 @@ section button {
   background-color: var(--Melon);
   font-family: "Lexend", sans-serif;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
@@ -214,7 +220,7 @@ section button {
 
 .cards svg {
   position: absolute;
-  top: 10px;
+  top: 15px;
 }
 
 /************************* MAP *************************/

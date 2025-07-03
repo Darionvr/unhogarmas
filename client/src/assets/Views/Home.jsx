@@ -52,6 +52,42 @@ const Home = () => {
           <button> leer más...</button>
         </section>
 
+         <section>
+
+          <h2>  Historias con final feliz </h2>
+
+
+          <div>
+
+            <img src="imgs\home-frame 2.png" alt="" />
+            <div className='section-cards'>
+              <div className="cards">
+               
+                <BoneIcon/>
+                <h3>De la calle al sofá</h3>
+                <p>Simón pasó de dormir solo en el frío a compartir cada siesta con su nueva familia. Hoy, es el rey del sillón. </p>
+              </div>
+              <div className="cards">
+                 <BoneIcon/>
+                <h3>Una amistad inesperada</h3>
+                <p>Max llegó tímido, pero con paciencia y cariño, encontró en Camila a su compañera de aventuras. </p>
+              </div>
+              <div className="cards">
+                 <BoneIcon/>
+               <h3>Más que una adopción</h3>
+                <p>Cuando Tomás adoptó a Luna, no solo le dio un hogar… también encontró una amiga para toda la vida. </p>
+              </div>
+              <div className="cards">
+                 <BoneIcon/>
+                <h3>Nuevos comienzos</h3>
+                <p> Sus historias nos recuerdan que siempre es posible volver a confiar. </p>
+              </div>
+            </div>
+          </div>
+          <button> leer más...</button>
+        </section>
+
+
       </main>
       <article>
         <div className="info">
