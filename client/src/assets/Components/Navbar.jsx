@@ -3,9 +3,10 @@ import '../../App.css'
 import HomeLogo from "../Icons/HomeIcon"
 import PersonLogo from "../Icons/PersonIcon"
 import PawIcon from "../Icons/PawIcon"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 
 
@@ -14,6 +15,8 @@ const Navbar = () => {
   const dialogRef = useRef(null);
   const openModal = () => dialogRef.current.showModal();
   const closeModal = () => dialogRef.current.close();
+  
+
 
   return (
     <>
