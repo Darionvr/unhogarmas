@@ -259,3 +259,75 @@ select {
   padding-top: 50px;
   
 }
+
+
+/****************ADOPTIONFORM*********************/
+
+.FormAdopt {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.FormAdopt h3 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.informationAdoption h1 {
+  text-align: center;
+}
+
+.knowledge {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+.Infor {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.circle{
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+ 
+
+.infor3, .infor3-5, .infor4, .infor4-5, .infor5{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  gap: 60px;
+  padding: 10px;
+
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  height: 200px; 
+  justify-content: space-between;
+}
+.checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
