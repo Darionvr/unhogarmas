@@ -36,7 +36,11 @@ nav>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
-
+  a{
+      display: flex;
+  align-items: center;
+  gap: 1rem;
+  }
 }
 
 nav>a:first-of-type {
@@ -96,6 +100,15 @@ dialog>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8rem;
+  color: var(--Melon);
+
 }
 
 
@@ -160,7 +173,7 @@ header {
   color: black;
   margin: 0;
 
-  span{
+  span {
     display: inline-block;
     font-size: 2rem;
     line-height: 1.52;
@@ -169,7 +182,7 @@ header {
 
 
 .slides div img {
-  
+
   max-height: 80vh;
 
 }
