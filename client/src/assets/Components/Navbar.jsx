@@ -1,13 +1,30 @@
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 import '../../App.css'
 import HomeLogo from "../Icons/HomeIcon"
 import PersonLogo from "../Icons/PersonIcon"
 import PawIcon from "../Icons/PawIcon"
-
+import { useContext, useEffect, useRef, useState } from "react"
+import { faSquareXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import LoginForm from "./LoginForm"
+import { UserContext } from "../Context/UserContext"
 
 
 
 const Navbar = () => {
+
+  const dialogRef = useRef(null);
+  const openModal = () => dialogRef.current.showModal();
+  const closeModal = () => dialogRef.current.close();
+  const location = useLocation();
+  const { token, logout } = useContext(UserContext);
+
+  useEffect(() => {
+    if (dialogRef.current && dialogRef.current.open) {
+      dialogRef.current.close();
+    }
+  }, [location]);
+
   return (
     <>
       <nav>
@@ -16,11 +33,30 @@ const Navbar = () => {
         <Link to="/">Inicio</Link>
         <Link to="/Staff">Equipo</Link>
         <Link to="/Voluntary">Voluntarios</Link>
-        <button><PawIcon /><Link to="/AdoptList">Adopta  </Link> </button>
-        <PersonLogo />
+
+        <button> <Link to="/AdoptList"><PawIcon /> Adopta  </Link> </button>
+
+        <button className="login-button" onClick={openModal}> <PersonLogo /> </button>
+        <dialog ref={dialogRef}>
+          <button onClick={closeModal}><FontAwesomeIcon icon={faSquareXmark} size="2x" /></button>
+          {token ? (
+            <> 
+          <p> Sesión iniciada </p>
+          <button onClick={() => {logout(); closeModal()}}> Cerrar Sesión</button>
+          </>
+        ) : (
+          <> <p>Bienvenido de vuelta</p>
+            <h1> Inicia sesión</h1>
+            <LoginForm />
+
+            <p>¿No tienes una cuenta? <Link onClick={closeModal} to={'/register'}>Regístrate </Link></p>
+          </>
+        )}
+        
+
+        </dialog>
 
       </nav>
-
 
     </>
   )
