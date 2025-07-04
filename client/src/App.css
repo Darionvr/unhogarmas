@@ -5,7 +5,7 @@
   --ChampagnePink: #F9DCC4;
   --Peach: #FEC89A;
   font-family: "Lexend", sans-serif;
-
+  
 }
 
 main {
@@ -196,6 +196,10 @@ header {
   padding-top: 3rem;
   padding-bottom: 3rem;
   gap: 3rem;
+}
+
+.main-home h2{
+  font-size: 2.5rem;
 }
 
 section {

@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
 
     const logout = () => {
         setToken(false);
-        /* setUserName(null); */
+     
     }
 
     const login = async () => {
@@ -25,7 +25,7 @@ const UserProvider = ({ children }) => {
         );
         if (found) {
             setToken(true);
-            setUsername(found.email); // O puedes guardar solo el nombre si lo tienes
+            setUsername(found.email); 
             return true;
         } else {
             setToken(false);
