@@ -53,7 +53,7 @@ const Home = () => {
 
 
           <div>
-
+            
             <img src="imgs\home-frame 1.png" alt="" />
             <div className='section-cards'>
               <div className="cards">

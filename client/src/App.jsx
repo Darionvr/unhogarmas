@@ -10,6 +10,7 @@ import Voluntary from './assets/Views/Voluntary';
 import CreatePost from './assets/Views/CreatePost';
 import Navbar from './assets/Components/Navbar';
 import Footer from './assets/Components/Footer';
+import PetProfile from './assets/Views/PetProfile';
 
 function App() {
 
@@ -50,6 +51,10 @@ function App() {
         <Route
           path="/CreatePost"
           element={<CreatePost/>}
+        />
+        <Route
+          path="/PetProfile"
+          element={<PetProfile/>}
         />
       </Routes>
       <Footer/>
