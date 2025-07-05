@@ -20,7 +20,7 @@ const Home = () => {
   return (
 
     <>
-      <header>
+      <header className='header-home'>
         <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }}>
           <div>
             <img src="imgs\header-2.png" alt="" />
