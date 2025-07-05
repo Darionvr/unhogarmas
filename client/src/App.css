@@ -8,10 +8,6 @@
 
 }
 
-.main-home {
-  padding-inline: 10rem;
-
-}
 /************************* BOTON MELON *************************/
 
 .melon-button {
@@ -46,8 +42,8 @@ nav a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  
-  &:hover{
+
+  &:hover {
     color: #5f5f5f;
   }
 }
@@ -85,12 +81,13 @@ dialog {
     padding: 0;
     margin-top: 0;
   }
-  a{
+
+  a {
     display: block;
   }
 }
 
-.dialog-container > button {
+.dialog-container>button {
 
   background-color: transparent;
   border: none;
@@ -232,41 +229,37 @@ dialog {
 }
 
 .main-section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: center;
-  gap: 1rem;
-
-}
-
-.main-section>div {
-  display: flex;
+  align-items: stretch;
   gap: 2rem;
+  position: relative;
+ 
+}
+
+.main-pictures {
+  display: flex;
   height: min-content;
-
-
+  width: min-content;
 }
 
-.main-section img {
-  display: block;
-  height: 100%;
-  max-width: 400px;
+.main-pictures img {
+  max-height: 467px;
   border-radius: 10px;
-
 }
 
-.main-section:nth-child(2)>div {
-  flex-direction: row-reverse;
-}
-
-.main-section .melon-button{
+.main-section .melon-button {
   width: max-content;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
 }
 
 /************************* CARDS *************************/
 
 
-.section-cards {
+.cards-container {
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -274,7 +267,6 @@ dialog {
   gap: 1rem;
   text-align: left;
   height: min-content;
-  align-items: stretch;
 
 
 }
@@ -284,7 +276,6 @@ dialog {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   border: 2px solid var(--ChampagnePink);
   padding: 3rem 1rem 1rem 1rem;
   border-radius: 10px;
@@ -294,6 +285,7 @@ dialog {
 
   h3 {
     margin: 0;
+    min-height: 2.8rem;
   }
 
   p {
@@ -748,7 +740,7 @@ select {
 
 }
 
-.main-staff .melon-button{
+.main-staff .melon-button {
   align-self: center;
   width: max-content;
 }
