@@ -141,11 +141,11 @@ dialog>button {
   border-radius: 50%;
 }
 
-/************************* HEADER *************************/
+/************************* HEADER HOME *************************/
 
 .header-home {
   background-color: var(--Melon);
-  height: 80vh;
+  height: 80dvh;
   padding-inline: 2rem;
   position: relative;
   overflow: hidden;
@@ -230,7 +230,7 @@ dialog>button {
   font-size: 2.5rem;
 }
 
-section {
+.main-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -238,7 +238,7 @@ section {
 
 }
 
-section>div {
+.main-section>div {
   display: flex;
   gap: 2rem;
   height: min-content;
@@ -246,7 +246,7 @@ section>div {
 
 }
 
-section img {
+.main-section img {
   display: block;
   height: 100%;
   max-width: 400px;
@@ -254,12 +254,12 @@ section img {
 
 }
 
-section:nth-child(2)>div {
+.main-section:nth-child(2)>div {
   flex-direction: row-reverse;
 }
 
 
-section button {
+.main-section button {
   width: max-content;
   background-color: var(--Melon);
   font-family: "Lexend", sans-serif;
@@ -922,8 +922,98 @@ select {
 }
 
 
+/************************* VOLUNTARY *************************/
+
+.header-voluntary{
+  height: 80dvh;
+  background-color: var(--PaleDogwood);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.voluntary-img{
+  display: flex;
+  height: 100%;
+}
+
+.voluntary-title h1{
+  width: 15ch;
+  font-size: 4rem;
+}
+.voluntary-title p{
+  font-size: 1.5rem;
+}
+.main-voluntary{
+display: grid;
+  gap: 1rem;
+ text-align: center;
+ margin-top: 4rem;
+}
+.main-voluntary > h2{
+  font-size: 2.5rem;
+}
+
+.voluntary-cards{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.voluntary-form-section{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  width: 100%;
+  gap: 5rem;
+  text-align: left;
+  background-color: var(--Melon);
+}
+.voluntary-form-text h2{
+  font-size: 2.5rem;
+  width: 15ch;
+  margin: 0;
+}
+.voluntary-form-section form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input{
+    background-color: #f1f1f1;;
+
+  }
+
+  button{
+      text-align: center;
+  background-color: var(--Seashell);
+  font-family: "Lexend", sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
+  }
 
 
+}
+
+.voluntary-form-section textarea{
+  resize: none;
+  height: 150px;
+  width: 300px;
+  background-color: #f1f1f1;;
+
+}
+.voluntary-form-text{
+  display: flex;
+  flex-direction: column;
+}
 
 
 

@@ -47,7 +47,7 @@ const Home = () => {
 
       <main className='main-home'>
 
-        <section>
+        <section className='main-section'>
 
           <h2>  Al adoptar con nosotros </h2>
 
