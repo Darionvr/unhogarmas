@@ -40,19 +40,21 @@ const Navbar = () => {
         <dialog ref={dialogRef}>
           <button onClick={closeModal}><FontAwesomeIcon icon={faSquareXmark} size="2x" /></button>
           {token ? (
-            <> 
-          <p> Sesión iniciada </p>
-          <button onClick={() => {logout(); closeModal()}}> Cerrar Sesión</button>
-          </>
-        ) : (
-          <> <p>Bienvenido de vuelta</p>
-            <h1> Inicia sesión</h1>
-            <LoginForm />
+            <>
+              <p> Sesión iniciada </p>
+              <img src="imgs\home-frame 2.png" alt="" className="modal-pic"/>
+              <button onClick={() => { logout(); closeModal() }}> Cerrar Sesión</button>
+            </>
+          ) : (
+            <>
+              <p>Bienvenido de vuelta</p>
+              <h1> Inicia sesión</h1>
+              <LoginForm />
 
-            <p>¿No tienes una cuenta? <Link onClick={closeModal} to={'/register'}>Regístrate </Link></p>
-          </>
-        )}
-        
+              <p>¿No tienes una cuenta? <Link onClick={closeModal} to={'/register'}>Regístrate </Link></p>
+            </>
+          )}
+
 
         </dialog>
 

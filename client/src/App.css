@@ -5,7 +5,7 @@
   --ChampagnePink: #F9DCC4;
   --Peach: #FEC89A;
   font-family: "Lexend", sans-serif;
-  
+
 }
 
 main {
@@ -36,10 +36,17 @@ nav>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
-  a{
-      display: flex;
-  align-items: center;
-  gap: 1rem;
+ 
+
+  &:hover{
+    background-color: var(--ChampagnePink);
+
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -77,6 +84,10 @@ dialog>button {
   justify-self: flex-end;
   margin-left: auto;
   cursor: pointer;
+  &:hover{
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 
@@ -100,6 +111,10 @@ dialog>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+  &:hover{
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 .form-error {
@@ -111,6 +126,13 @@ dialog>button {
 
 }
 
+.modal-pic{
+   width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
 
 /************************* HEADER *************************/
 
@@ -121,7 +143,6 @@ header {
   position: relative;
   overflow: hidden;
   display: flex;
-  transition: transform 0.6s ease;
 
 }
 
@@ -198,7 +219,7 @@ header {
   gap: 3rem;
 }
 
-.main-home h2{
+.main-home h2 {
   font-size: 2.5rem;
 }
 
@@ -238,6 +259,10 @@ section button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+  &:hover{
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 /************************* CARDS *************************/
@@ -290,7 +315,15 @@ article {
   height: 70vh;
   background-color: var(--PaleDogwood);
 }
-
+.info h4{
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+}
+.info p{
+  display: flex;
+  gap: 1rem;
+}
 .map {
   height: 400px;
   width: 400px;
@@ -374,11 +407,11 @@ select {
   padding-bottom: 30px;
   align-items: center;
   margin-bottom: 15px;
-
 }
 
 .photo input {
   flex: .7;
+  border-radius: 10px 0 0 10px;
 }
 
 .file-upload {
@@ -391,11 +424,11 @@ select {
 }
 
 .photo button {
-  padding: 10px 15px;
+  padding: 12px;
   background-color: black;
   color: white;
   border: none;
-  border-radius: 999px;
+  border-radius: 0 10px 10px 0;
   font-size: 18px;
   cursor: pointer;
 }
@@ -487,6 +520,7 @@ select {
   flex-wrap: wrap;
   padding-top: 2rem;
 }
+
 .Infor {
   max-width: 200px;
   display: flex;
@@ -494,7 +528,8 @@ select {
   align-items: center;
   text-align: center;
 }
-.circle{
+
+.circle {
   width: 50px;
   height: 50px;
   background-color: #000;
@@ -508,9 +543,13 @@ select {
   margin-bottom: 1rem;
 }
 
- 
 
-.infor3, .infor3-5, .infor4, .infor4-5, .infor5{
+
+.infor3,
+.infor3-5,
+.infor4,
+.infor4-5,
+.infor5 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -523,9 +562,10 @@ select {
 .checkbox {
   display: flex;
   flex-direction: column;
-  height: 200px; 
+  height: 200px;
   justify-content: space-between;
 }
+
 .checkbox input[type="checkbox"] {
   width: 20px;
   height: 20px;

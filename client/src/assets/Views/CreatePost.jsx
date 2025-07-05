@@ -75,8 +75,6 @@ const CreatePost = () => {
                 ref={inputphoto}
                 onChange={handleChange} />
               <button type="button" onClick={photoSubmit}>+</button>
-             
-
             </label>
 
           </div>

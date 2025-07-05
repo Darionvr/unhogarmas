@@ -6,9 +6,9 @@ const Footer = () => {
     <footer>
       <p>2025 Un Hogar Más. Todos los derechos reservados</p>
       <div className="rrss">
-        <FontAwesomeIcon icon={faFacebookF} />
-        <FontAwesomeIcon icon={faInstagram} />
-        <FontAwesomeIcon icon={faBluesky} />
+        <FontAwesomeIcon icon={faFacebookF} size="lg"/>
+        <FontAwesomeIcon icon={faInstagram} size="lg"/>
+        <FontAwesomeIcon icon={faBluesky} size="lg"/>
       </div>
 
     </footer>
