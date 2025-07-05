@@ -30,11 +30,10 @@ const Navbar = () => {
       <nav>
 
         <Link to="/"><HomeLogo />Un Hogar Más</Link>
-        <Link to="/">Inicio</Link>
-        <Link to="/Staff">Equipo</Link>
-        <Link to="/Voluntary">Voluntarios</Link>
+        <Link to="/Staff">Nuestro equipo</Link>
+        <Link to="/Voluntary">Colabora con nosotros</Link>
 
-        <button> <Link to="/AdoptList"><PawIcon /> Adopta  </Link> </button>
+        <button> <Link to="/AdoptList"><PawIcon /> Ver mascotas </Link> </button>
 
         <button className="login-button" onClick={openModal}> <PersonLogo /> </button>
         <dialog ref={dialogRef}>

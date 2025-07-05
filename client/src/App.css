@@ -18,7 +18,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-bottom: 1px solid var(--ChampagnePink);
   padding: 1rem 3rem 1rem 3rem;
   gap: 1rem;
 
@@ -56,6 +55,8 @@ nav>a:first-of-type {
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 /************************* MODAL LOGIN *************************/
@@ -100,6 +101,10 @@ dialog>button {
   p {
     font-size: .8rem;
     margin: 0;
+  }
+
+  input {
+    background-color: #f1f1f1;
   }
 }
 
@@ -234,10 +239,10 @@ section {
 }
 
 section>div {
-  display: flex;   
+  display: flex;
   gap: 2rem;
   height: min-content;
-  
+
 
 }
 
@@ -282,7 +287,7 @@ section button {
   text-align: left;
   height: min-content;
   align-items: stretch;
-  
+
 
 }
 
@@ -297,7 +302,7 @@ section button {
   border-radius: 10px;
   min-width: 170px;
   max-width: 250px;
-  
+
 
   h3 {
     margin: 0;
@@ -305,7 +310,7 @@ section button {
 
   p {
     color: #5f5f5f;
-    
+
   }
 }
 
@@ -320,7 +325,7 @@ section button {
 article {
   display: grid;
   grid-auto-flow: column;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
   align-items: center;
   height: 70vh;
@@ -341,7 +346,13 @@ article {
 .map {
   height: 400px;
   width: 400px;
-  border: solid 1px var(--Melon);
+
+ 
+}
+.map img{
+  width: 100%;
+   border-radius: 5px;
+
 }
 
 /************************* FOOTER*************************/
@@ -349,17 +360,26 @@ article {
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 10rem;
+  padding: 3rem;
+  h1{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .rrss {
   display: flex;
+  align-items: center;
   gap: 1rem;
-
+  border-top: solid 1px var(--Melon);
+  justify-content: flex-end;
   svg {
     cursor: pointer;
+  }
+  p{
+    justify-self: flex-start;
+    margin-right: auto;
   }
 }
 
@@ -526,9 +546,10 @@ select {
   font-size: 20px;
   margin-bottom: 1rem;
 }
-.sub{
- padding-left: 700px;
- font-size: 40px;
+
+.sub {
+  padding-left: 700px;
+  font-size: 40px;
 }
 
 .slideAdoption h3 {
@@ -653,18 +674,18 @@ select {
 
 .card {
   width: 230px;
-  border: 1px solid var(--ChampagnePink) ;
-  border-radius: 15px ;
+  border: 1px solid var(--ChampagnePink);
+  border-radius: 15px;
   background-color: var(--Seashell);
   cursor: pointer;
   margin: 15px;
 }
 
 
-.img img {  
+.img img {
   width: 100%;
   height: 185px;
-  border-radius: 10px ;
+  border-radius: 10px;
   object-fit: cover;
   display: block;
 }
@@ -682,6 +703,7 @@ select {
   margin: 2px 0;
   font-size: 15px;
 }
+
 .submit-form {
   display: flex;
   flex-direction: column;
@@ -715,6 +737,8 @@ select {
   gap: 1rem;
   padding: 2rem 0 0 0;
   padding-bottom: 2rem;
+  border-top: solid 1px var(--PaleDogwood);
+  border-bottom: solid 1px var(--PaleDogwood);
 
   &>p {
     margin: 0;
@@ -768,7 +792,7 @@ select {
   display: flex;
   height: 80vh;
   border-bottom: solid 1px var(--Melon);
-
+  border-top: solid 1px var(--Melon);
 }
 
 .register-image {
@@ -806,10 +830,15 @@ select {
 
     }
   }
-  h1{
+
+  h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+
+  input {
+    background-color: #f1f1f1;
   }
 
 }
@@ -820,15 +849,18 @@ select {
   gap: 2rem;
 
 }
-.input-group{
+
+.input-group {
   display: flex;
   flex-direction: column;
-  p{
+
+  p {
     margin: .3rem;
   }
 
 }
-.input-group:last-of-type{
+
+.input-group:last-of-type {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -838,22 +870,55 @@ select {
   border-radius: 10px;
   cursor: pointer;
 
-  span{
+  span {
     margin-left: .8rem;
     font-size: 14px;
   }
 }
 
 
-/************************* REGISTER *************************/
+/************************* PET PROFILE *************************/
 
-.pet-main{
+.pet-main {
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   gap: 3rem;
   padding: 4rem;
   background-color: var(--Seashell);
-  
+
+}
+
+.pet-info p:last-of-type {
+  width: 50ch;
+}
+
+.pet-info span {
+  color: #5e5e5e;
+}
+
+.pet-info button {
+  text-align: center;
+  background-color: var(--Melon);
+  font-family: "Lexend", sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
+}
+
+.pet-photo {
+  display: flex;
+
+}
+
+.pet-photo img {
+  width: 100%;
 }
 
 

@@ -124,14 +124,14 @@ const Home = () => {
 
           <h4> ¿Dónde estamos?</h4>
 
-          <p> <FontAwesomeIcon icon={faMapLocationDot} size="lg"/>Ubicación pendiente #123, comuna, Ciudad</p>
-          <p> <FontAwesomeIcon icon={faMobileScreenButton} size="lg"/>Contáctanos al 630-323-5630</p>
-          <p> <FontAwesomeIcon icon={faCalendarWeek}size="lg" />Horario Lun - Vie 10:00 a 18:00</p>
-          <p> <FontAwesomeIcon icon={faInbox} size="lg"/> correo@correo.cl</p>
+          <p> <FontAwesomeIcon icon={faMapLocationDot} size="lg"/>Calle Jane Goodall #123, Stgo</p>
+          <p> <FontAwesomeIcon icon={faMobileScreenButton} size="lg"/>630-323-5630</p>
+          <p> <FontAwesomeIcon icon={faCalendarWeek}size="lg" />Horario Lunes a Viernes 09:00 a 18:00</p>
+          <p> <FontAwesomeIcon icon={faInbox} size="lg"/> contacto@unhogarmas.cl</p>
 
         </div>
         <div className="map">
-
+        <img src="imgs\map-frame.png" alt="" />
         </div>
 
       </article>
