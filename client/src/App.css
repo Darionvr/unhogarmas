@@ -8,7 +8,7 @@
 
 }
 
-main {
+.main-home {
   padding-inline: 10rem;
 
 }
@@ -598,7 +598,7 @@ select {
 
   h3 {
     font-size: 2rem;
-    
+
   }
 
   button {
@@ -629,6 +629,60 @@ select {
   margin-bottom: 2rem;
 }
 
-.staff-pictures{
+.staff-pictures {
   width: min-content;
+}
+
+/************************* REGISTER *************************/
+
+.main-register {
+  display: flex;
+  height: 80vh;
+  border-bottom: solid 1px var(--Melon);
+
+}
+
+.register-image {
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.register-image img {
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.form-container {
+  text-align: left;
+  width: 100%;
+  padding: 4rem;
+
+  button {
+    text-align: center;
+    background-color: var(--Melon);
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ChampagnePink);
+
+    }
+  }
+
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
 }
