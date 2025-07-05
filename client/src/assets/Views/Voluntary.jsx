@@ -18,7 +18,7 @@ const Voluntary = () => {
       </header>
 
       <main className='main-voluntary'>
-        <h2> Conoce lo que necesitás para empezar</h2>
+        <h2> Conoce lo que necesitas para empezar</h2>
         <div className='voluntary-cards'>
           <div className="cards">
 
@@ -46,9 +46,9 @@ const Voluntary = () => {
             </h2>
             
           </div>
-          <form >
-            <input type="text" placeholder='Ingresa tu correo'/>
-            <textarea name="" id=""></textarea>
+          <form action="mailto:contacto@unhogarmas.cl">
+            <input type="email" name="email" placeholder='Ingresa tu correo' required/>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje"></textarea>
             <button> <FontAwesomeIcon icon={faInbox} /> Enviar</button>
 
           </form>

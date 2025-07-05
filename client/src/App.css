@@ -12,6 +12,24 @@
   padding-inline: 10rem;
 
 }
+/************************* BOTON MELON *************************/
+
+.melon-button {
+  text-align: center;
+  background-color: var(--Melon);
+  font-family: "Lexend", sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
+
+}
 
 /************************* NAVBAR *************************/
 nav {
@@ -24,30 +42,16 @@ nav {
 
 }
 
-nav>button {
+nav a {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  background-color: var(--Melon);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 20px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
-
-
-  &:hover {
-    background-color: var(--ChampagnePink);
-
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  gap: 1rem;
+  
+  &:hover{
+    color: #5f5f5f;
   }
 }
+
 
 nav>a:first-of-type {
   margin-right: auto;
@@ -66,30 +70,37 @@ dialog::backdrop {
 }
 
 dialog {
-  text-align: left;
   border-color: var(--PaleDogwood);
   border-radius: 15px;
   padding: 2rem;
+
+}
+
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
   h1 {
     padding: 0;
     margin-top: 0;
   }
-
-
+  a{
+    display: block;
+  }
 }
 
-dialog>button {
+.dialog-container > button {
+
   background-color: transparent;
   border: none;
-  justify-self: flex-end;
+  justify-self: right;
   margin-left: auto;
+  margin-top: -15px;
+  margin-right: -15px;
   cursor: pointer;
 
-  &:hover {
-    background-color: var(--ChampagnePink);
 
-  }
 }
 
 
@@ -97,10 +108,13 @@ dialog>button {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: .5rem;
+
 
   p {
     font-size: .8rem;
     margin: 0;
+
   }
 
   input {
@@ -108,21 +122,8 @@ dialog>button {
   }
 }
 
-.login-form>button {
-  text-align: center;
-  background-color: var(--Melon);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 20px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
 
-  &:hover {
-    background-color: var(--ChampagnePink);
 
-  }
-}
 
 .form-error {
   display: flex;
@@ -258,21 +259,8 @@ dialog>button {
   flex-direction: row-reverse;
 }
 
-
-.main-section button {
+.main-section .melon-button{
   width: max-content;
-  background-color: var(--Melon);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 10px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--ChampagnePink);
-
-  }
 }
 
 /************************* CARDS *************************/
@@ -347,11 +335,12 @@ article {
   height: 400px;
   width: 400px;
 
- 
+
 }
-.map img{
+
+.map img {
   width: 100%;
-   border-radius: 5px;
+  border-radius: 5px;
 
 }
 
@@ -361,7 +350,8 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  h1{
+
+  h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -374,10 +364,12 @@ footer {
   gap: 1rem;
   border-top: solid 1px var(--Melon);
   justify-content: flex-end;
+
   svg {
     cursor: pointer;
   }
-  p{
+
+  p {
     justify-self: flex-start;
     margin-right: auto;
   }
@@ -754,24 +746,11 @@ select {
 
   }
 
-  button {
-    text-align: center;
-    background-color: var(--Melon);
-    font-family: "Lexend", sans-serif;
-    border: none;
-    border-radius: 20px;
-    padding: .8rem;
-    font-weight: 700;
-    cursor: pointer;
-    width: fit-content;
-    margin: auto;
+}
 
-    &:hover {
-      background-color: var(--ChampagnePink);
-
-    }
-
-  }
+.main-staff .melon-button{
+  align-self: center;
+  width: max-content;
 }
 
 .container-staff {
@@ -815,22 +794,6 @@ select {
   width: 100%;
   padding: 4rem;
 
-  button {
-    text-align: center;
-    background-color: var(--Melon);
-    font-family: "Lexend", sans-serif;
-    border: none;
-    border-radius: 20px;
-    padding: .8rem;
-    font-weight: 700;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--ChampagnePink);
-
-    }
-  }
-
   h1 {
     display: flex;
     align-items: center;
@@ -839,6 +802,7 @@ select {
 
   input {
     background-color: #f1f1f1;
+    font-family: "Lexend", sans-serif;
   }
 
 }
@@ -896,22 +860,6 @@ select {
   color: #5e5e5e;
 }
 
-.pet-info button {
-  text-align: center;
-  background-color: var(--Melon);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 20px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--ChampagnePink);
-
-  }
-}
-
 .pet-photo {
   display: flex;
 
@@ -924,41 +872,46 @@ select {
 
 /************************* VOLUNTARY *************************/
 
-.header-voluntary{
+.header-voluntary {
   height: 80dvh;
   background-color: var(--PaleDogwood);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.voluntary-img{
+
+.voluntary-img {
   display: flex;
   height: 100%;
 }
 
-.voluntary-title h1{
+.voluntary-title h1 {
   width: 15ch;
-  font-size: 4rem;
+  font-size: clamp(2rem, 7vw, 4rem);
 }
-.voluntary-title p{
+
+.voluntary-title p {
   font-size: 1.5rem;
 }
-.main-voluntary{
-display: grid;
+
+.main-voluntary {
+  display: grid;
   gap: 1rem;
- text-align: center;
- margin-top: 4rem;
+  text-align: center;
+  margin-top: 4rem;
 }
-.main-voluntary > h2{
+
+.main-voluntary>h2 {
   font-size: 2.5rem;
 }
 
-.voluntary-cards{
+.voluntary-cards {
   display: flex;
   gap: 2rem;
   justify-content: center;
 }
-.voluntary-form-section{
+
+.voluntary-form-section {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
@@ -969,48 +922,54 @@ display: grid;
   text-align: left;
   background-color: var(--Melon);
 }
-.voluntary-form-text h2{
+
+.voluntary-form-text h2 {
   font-size: 2.5rem;
   width: 15ch;
   margin: 0;
 }
-.voluntary-form-section form{
+
+.voluntary-form-section form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
-  input{
-    background-color: #f1f1f1;;
+  input {
+    background-color: #f1f1f1;
+    font-family: "Lexend", sans-serif;
+    ;
 
   }
 
-  button{
-      text-align: center;
-  background-color: var(--Seashell);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 20px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
+  button {
+    text-align: center;
+    background-color: var(--Seashell);
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: .8rem;
+    font-weight: 700;
+    cursor: pointer;
 
-  &:hover {
-    background-color: var(--ChampagnePink);
+    &:hover {
+      background-color: var(--ChampagnePink);
 
-  }
+    }
   }
 
 
 }
 
-.voluntary-form-section textarea{
+.voluntary-form-section textarea {
   resize: none;
   height: 150px;
   width: 300px;
-  background-color: #f1f1f1;;
+  background-color: #f1f1f1;
+  font-family: "Lexend", sans-serif;
 
 }
-.voluntary-form-text{
+
+.voluntary-form-text {
   display: flex;
   flex-direction: column;
 }

@@ -79,7 +79,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <button> <Link to={'/AdoptionForm'}> Guía paso a paso para adoptar</Link></button> 
+          <button className='melon-button'> <Link to={'/AdoptionForm'}> Guía paso a paso para adoptar</Link></button> 
         </section>
 
         <section>
@@ -114,7 +114,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <button> <Link to={'/AdoptList'}> Explora la lista de adopción</Link></button>
+          <button className='melon-button'> <Link to={'/AdoptList'}> Explora la lista de adopción</Link></button>
         </section>
 
 

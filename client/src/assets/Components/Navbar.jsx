@@ -33,10 +33,11 @@ const Navbar = () => {
         <Link to="/Staff">Nuestro equipo</Link>
         <Link to="/Voluntary">Colabora con nosotros</Link>
 
-        <button> <Link to="/AdoptList"><PawIcon /> Ver mascotas </Link> </button>
+        <button className='melon-button'> <Link to="/AdoptList"><PawIcon /> Ver mascotas </Link> </button>
 
-        <button className="login-button" onClick={openModal}> <PersonLogo /> </button>
+        <button className='melon-button' onClick={openModal}> <PersonLogo /> </button>
         <dialog ref={dialogRef}>
+          <div className="dialog-container">
           <button onClick={closeModal}><FontAwesomeIcon icon={faSquareXmark} size="2x" /></button>
           {token ? (
             <>
@@ -50,11 +51,13 @@ const Navbar = () => {
               <h1> Inicia sesión</h1>
               <LoginForm />
 
-              <p>¿No tienes una cuenta? <Link onClick={closeModal} to={'/register'}>Regístrate </Link></p>
+              <Link onClick={closeModal} to={'/register'}> Crear una cuenta  </Link>
             </>
           )}
 
 
+
+          </div>
         </dialog>
 
       </nav>

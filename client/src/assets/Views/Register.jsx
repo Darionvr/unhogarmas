@@ -117,7 +117,7 @@ const Register = () => {
             {form.file ? <span className="file-name">{form.file.name}</span> : <span> Selecciona tu foto de perfil</span>}
           </div>
 
-          <button type='submit' form='register'> <FontAwesomeIcon icon={faUserPlus} /> Unirme ahora</button>
+          <button type='submit' form='register' className='melon-button'> <FontAwesomeIcon icon={faUserPlus} /> Unirme ahora</button>
 
         </form>
 

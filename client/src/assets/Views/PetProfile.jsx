@@ -16,7 +16,7 @@ const PetProfile = () => {
         <p>Sexo: <span>MF</span></p>
         <p>Chip: <span>SI/NO</span></p>
         <p>(Descripción) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam quasi nobis quae corporis, cum temporibus eligendi sunt corrupti fugiat quo similique dolorum aliquid saepe odio facilis modi incidunt porro!</p>
-        <button> <Link to={'/adoptionform'}>  Comenzar adopción</Link></button>
+        <button className='melon-button'> <Link to={'/adoptionform'}>  Comenzar adopción</Link></button>
       </div>
     </main>
   )
