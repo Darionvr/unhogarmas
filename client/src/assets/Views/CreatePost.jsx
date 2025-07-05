@@ -83,7 +83,8 @@ const CreatePost = () => {
 
           <div className="description">
             <label>Descripción</label>
-            <textarea className="textareaCp" value={form.descripcion} name="descripcion" onChange={handleChange}></textarea>
+            <textarea className="textareaCp" value={form.descripcion} name="descripcion" 
+            onChange={handleChange}></textarea>
           </div>
           <div className='btn1'>
             <button type="submit" className="btn-submit">
