@@ -51,7 +51,6 @@ const LoginForm = () => {
             {errors.password && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.password} </p>}
             {errors.general && <p className='form-error'><img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.general}</p>}
 
-            <p>¿Olvidaste tu contraseña?</p>
             <button type="submit"> Ingresar </button>
         </form>
     )

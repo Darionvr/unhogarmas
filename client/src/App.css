@@ -8,7 +8,7 @@
 
 }
 
-main {
+.main-home {
   padding-inline: 10rem;
 
 }
@@ -36,6 +36,12 @@ nav>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
 
   a {
     display: flex;
@@ -78,6 +84,11 @@ dialog>button {
   justify-self: flex-end;
   margin-left: auto;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 
@@ -101,6 +112,11 @@ dialog>button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 .form-error {
@@ -112,17 +128,23 @@ dialog>button {
 
 }
 
+.modal-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
 
 /************************* HEADER *************************/
 
-header {
+.header-home {
   background-color: var(--Melon);
   height: 80vh;
   padding-inline: 2rem;
   position: relative;
   overflow: hidden;
   display: flex;
-  transition: transform 0.6s ease;
 
 }
 
@@ -199,6 +221,10 @@ header {
   gap: 3rem;
 }
 
+.main-home h2 {
+  font-size: 2.5rem;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -235,6 +261,11 @@ section button {
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--ChampagnePink);
+
+  }
 }
 
 /************************* CARDS *************************/
@@ -286,6 +317,17 @@ article {
   align-items: center;
   height: 70vh;
   background-color: var(--PaleDogwood);
+}
+
+.info h4 {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+}
+
+.info p {
+  display: flex;
+  gap: 1rem;
 }
 
 .map {
@@ -371,11 +413,11 @@ select {
   padding-bottom: 30px;
   align-items: center;
   margin-bottom: 15px;
-
 }
 
 .photo input {
   flex: .7;
+  border-radius: 10px 0 0 10px;
 }
 
 .file-upload {
@@ -388,11 +430,11 @@ select {
 }
 
 .photo button {
-  padding: 10px 15px;
+  padding: 12px;
   background-color: var(--Melon);
   color: black;
   border: none;
-  border-radius: 999px;
+  border-radius: 0 10px 10px 0;
   font-size: 18px;
   cursor: pointer;
 }
@@ -431,7 +473,7 @@ select {
 
 
 @media (max-width: 960px) {
-  main {
+  .main-home {
     padding: 2rem;
   }
 
@@ -670,6 +712,7 @@ select {
 }
 
 
+
 .submit-button {
   padding: 10px 20px;
   background-color: var(--Melon);
@@ -678,4 +721,114 @@ select {
   border-radius: 6px;
   cursor: pointer;
   font-size: 20px;
+}
+
+/************************* STAFF *************************/
+.main-staff {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--Seashell);
+  gap: 1rem;
+  padding: 2rem 0 0 0;
+  padding-bottom: 2rem;
+
+  &>p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 2rem;
+
+  }
+
+  button {
+    text-align: center;
+    background-color: var(--Melon);
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content;
+    margin: auto;
+
+    &:hover {
+      background-color: var(--ChampagnePink);
+
+    }
+
+  }
+}
+
+.container-staff {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.staff-pictures {
+  width: min-content;
+}
+
+/************************* REGISTER *************************/
+
+.main-register {
+  display: flex;
+  height: 80vh;
+  border-bottom: solid 1px var(--Melon);
+
+}
+
+.register-image {
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.register-image img {
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.form-container {
+  text-align: left;
+  width: 100%;
+  padding: 4rem;
+
+  button {
+    text-align: center;
+    background-color: var(--Melon);
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ChampagnePink);
+
+    }
+  }
+
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
 }

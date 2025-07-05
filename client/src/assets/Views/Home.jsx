@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import { BoneIcon } from '../Icons/BoneIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,10 +9,18 @@ const Home = () => {
 
   const [current, setCurrent] = useState(0);
 
+    useEffect(() => {
+    const interval = setInterval(() => {setCurrent(prev => (prev + 1) % 2); 
+      }, 5000);
+
+    return () => clearInterval(interval); 
+  }, []);
+
+
   return (
 
     <>
-      <header>
+      <header className='header-home'>
         <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }}>
           <div>
             <img src="imgs\header-2.png" alt="" />
@@ -50,17 +58,17 @@ const Home = () => {
             <div className='section-cards'>
               <div className="cards">
 
-                <FontAwesomeIcon icon={faDog} />
+                <FontAwesomeIcon icon={faDog} size="lg"/>
                 <h3>Ayudas a una vida en espera</h3>
                 <p>Le das una segunda oportunidad a un ser que ha pasado por abandono o maltrato. </p>
               </div>
               <div className="cards">
-                <FontAwesomeIcon icon={faArrowRotateLeft} />
+                <FontAwesomeIcon icon={faArrowRotateLeft}size="lg" />
                 <h3>Libera espacio para otro rescate</h3>
                 <p>Cada adopción permite que podamos acoger a otro animal necesitado. Es un acto que se multiplica. </p>
               </div>
               <div className="cards">
-                <FontAwesomeIcon icon={faBrain} />
+                <FontAwesomeIcon icon={faBrain} size="lg"/>
                 <h3>Cuidas tu salud emocional</h3>
                 <p>Está comprobado que compartir tu vida con una mascota reduce el estrés y mejora el bienestar emocional. </p>
               </div>
@@ -85,7 +93,7 @@ const Home = () => {
             <div className='section-cards'>
               <div className="cards">
 
-                <FontAwesomeIcon icon={faCouch} />
+                <FontAwesomeIcon icon={faCouch} size="lg"/>
                 <h3>De la calle al sofá</h3>
                 <p>Simón pasó de dormir solo en el frío a compartir cada siesta con su nueva familia. Hoy, es el rey del sillón. </p>
               </div>
@@ -95,12 +103,12 @@ const Home = () => {
                 <p>Max llegó tímido, pero con paciencia y cariño, encontró en Camila a su compañera de aventuras. </p>
               </div>
               <div className="cards">
-                <FontAwesomeIcon icon={faHouse} />
+                <FontAwesomeIcon icon={faHouse} size="lg"/>
                 <h3>Más que una adopción</h3>
                 <p>Cuando Tomás adoptó a Luna, no solo le dio un hogar… también encontró una amiga para toda la vida. </p>
               </div>
               <div className="cards">
-                <FontAwesomeIcon icon={faPaw} />
+                <FontAwesomeIcon icon={faPaw} size="lg"/>
                 <h3>Nuevos comienzos</h3>
                 <p> Sus historias nos recuerdan que siempre es posible volver a confiar. </p>
               </div>
@@ -116,10 +124,10 @@ const Home = () => {
 
           <h4> ¿Dónde estamos?</h4>
 
-          <p> <FontAwesomeIcon icon={faMapLocationDot} />Ubicación pendiente #123, comuna, Ciudad</p>
-          <p> <FontAwesomeIcon icon={faMobileScreenButton} />Contáctanos al 630-323-5630</p>
-          <p> <FontAwesomeIcon icon={faCalendarWeek} />Horario Lun - Vie 10:00 a 18:00</p>
-          <p> <FontAwesomeIcon icon={faInbox} /> correo@correo.cl</p>
+          <p> <FontAwesomeIcon icon={faMapLocationDot} size="lg"/>Ubicación pendiente #123, comuna, Ciudad</p>
+          <p> <FontAwesomeIcon icon={faMobileScreenButton} size="lg"/>Contáctanos al 630-323-5630</p>
+          <p> <FontAwesomeIcon icon={faCalendarWeek}size="lg" />Horario Lun - Vie 10:00 a 18:00</p>
+          <p> <FontAwesomeIcon icon={faInbox} size="lg"/> correo@correo.cl</p>
 
         </div>
         <div className="map">
