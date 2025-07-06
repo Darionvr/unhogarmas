@@ -347,11 +347,12 @@ article {
   height: 400px;
   width: 400px;
 
- 
+
 }
-.map img{
+
+.map img {
   width: 100%;
-   border-radius: 5px;
+  border-radius: 5px;
 
 }
 
@@ -361,7 +362,8 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  h1{
+
+  h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -374,10 +376,12 @@ footer {
   gap: 1rem;
   border-top: solid 1px var(--Melon);
   justify-content: flex-end;
+
   svg {
     cursor: pointer;
   }
-  p{
+
+  p {
     justify-self: flex-start;
     margin-right: auto;
   }
@@ -924,41 +928,46 @@ select {
 
 /************************* VOLUNTARY *************************/
 
-.header-voluntary{
+.header-voluntary {
   height: 80dvh;
   background-color: var(--PaleDogwood);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.voluntary-img{
+
+.voluntary-img {
   display: flex;
   height: 100%;
 }
 
-.voluntary-title h1{
+.voluntary-title h1 {
   width: 15ch;
   font-size: 4rem;
 }
-.voluntary-title p{
+
+.voluntary-title p {
   font-size: 1.5rem;
 }
-.main-voluntary{
-display: grid;
+
+.main-voluntary {
+  display: grid;
   gap: 1rem;
- text-align: center;
- margin-top: 4rem;
+  text-align: center;
+  margin-top: 4rem;
 }
-.main-voluntary > h2{
+
+.main-voluntary>h2 {
   font-size: 2.5rem;
 }
 
-.voluntary-cards{
+.voluntary-cards {
   display: flex;
   gap: 2rem;
   justify-content: center;
 }
-.voluntary-form-section{
+
+.voluntary-form-section {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
@@ -969,48 +978,53 @@ display: grid;
   text-align: left;
   background-color: var(--Melon);
 }
-.voluntary-form-text h2{
+
+.voluntary-form-text h2 {
   font-size: 2.5rem;
   width: 15ch;
   margin: 0;
 }
-.voluntary-form-section form{
+
+.voluntary-form-section form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
-  input{
-    background-color: #f1f1f1;;
+  input {
+    background-color: #f1f1f1;
+    ;
 
   }
 
-  button{
-      text-align: center;
-  background-color: var(--Seashell);
-  font-family: "Lexend", sans-serif;
-  border: none;
-  border-radius: 20px;
-  padding: .8rem;
-  font-weight: 700;
-  cursor: pointer;
+  button {
+    text-align: center;
+    background-color: var(--Seashell);
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: .8rem;
+    font-weight: 700;
+    cursor: pointer;
 
-  &:hover {
-    background-color: var(--ChampagnePink);
+    &:hover {
+      background-color: var(--ChampagnePink);
 
-  }
+    }
   }
 
 
 }
 
-.voluntary-form-section textarea{
+.voluntary-form-section textarea {
   resize: none;
   height: 150px;
   width: 300px;
-  background-color: #f1f1f1;;
+  background-color: #f1f1f1;
+  ;
 
 }
-.voluntary-form-text{
+
+.voluntary-form-text {
   display: flex;
   flex-direction: column;
 }
@@ -1045,4 +1059,117 @@ display: grid;
     object-fit: cover;
     object-position: center;
   }
+}
+
+
+
+/*******************MYPROFILE****************************/
+.MyProfile {
+  max-width: 900px;
+  margin: auto;
+  gap: 25px;
+  
+}
+.ProfileSection {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ProfilePicture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--ChampagnePink); 
+}
+
+.ProfileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.ProfileInfo .Info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ProfileInfo button {
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+hr {
+  margin: 25px 0;
+}
+
+.PetContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.PetImage {
+width: 180px; 
+  height: auto; 
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PetImage img {
+ width: 100%;
+  height: auto;
+  max-height: 200px; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+.pet-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pet-info h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.edit-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--Melon);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.AddPetButton {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.AddPetButton button {
+  background-color: var(--Melon);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding:15px 20px;
+  border-radius: 30px;
+  font-size:18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto; 
+  display: block;
 }

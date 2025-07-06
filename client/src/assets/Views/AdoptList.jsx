@@ -74,7 +74,7 @@ const AdoptList = () => {
         {filtrados.map((animal) => (
           <div className='card' key={animal.id}>
             <div className='img'>
-              <Link to={`/PetProfile/${animal.id}`}>
+              <Link to={`/PetProfile`}>
                 <img src={animal.imagen} alt={animal.nombre} />
               </Link>
             </div>
