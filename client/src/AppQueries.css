@@ -1,41 +1,146 @@
-/************************* MEDIAQUERIES *************************/
+/************************* MEDIUM *************************/
 
 @media (max-width: 960px) {
-  .main-home {
-    padding: 2rem;
-  }
 
-  .cards-container {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 1fr;
-  }
+    /************************* HEADER *************************/
 
-  .cards {
-    min-width: fit-content;
-    h3{
-      min-height: 0;
+    .slide-image-container img {
+        width: 100%;
+        max-height: fit-content;
     }
-  }
 
-  .cards:last-child {
-    display: none;
-  }
+    /************************* MAIN HOME*************************/
+    .main-home {
+        padding: 2rem;
+    }
 
-  .main-pictures {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    max-width: 30vw;
-    overflow: hidden;
-    border-radius: 10px;
- 
-  }
+    .cards-container {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+    }
 
-  .main-pictures img {
- 
-    height: 580px;
-    max-height: none;
+    .cards {
+        min-width: fit-content;
 
-  }
+        h3 {
+            min-height: 0;
+        }
+    }
+
+    .cards:last-child {
+        display: none;
+    }
+
+    .main-pictures {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        max-width: 30vw;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    .main-pictures img {
+
+        height: 580px;
+        max-height: none;
+
+    }
+
+
+
+    /************************* MAP *************************/
+
+    .map-container {
+        grid-auto-flow: row;
+    }
+
+    .map {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    /************************* REGISTER *************************/
+      .main-register{
+        height: auto;
+     }
+    .register-image{
+        display: none;
+    }
+        /************************* VOLUNTARY*************************/
+        .voluntary-cards{
+            flex-direction: column;
+        }
+        .voluntary-cards .cards{
+            max-width:none;
+        }
+        .voluntary-cards .cards:last-child{
+            display: flex;
+        }
+        .voluntary-form-section{
+            flex-direction: column;
+            text-align: center;
+            padding-inline: 2rem;
+            box-sizing: border-box;
+          
+        }
+        .voluntary-form-section h2 {
+            width:auto;
+            margin: auto;
+        }
+        .voluntary-form-section textarea {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    
+}
+
+/************************* SMALL *************************/
+
+@media (max-width: 660px) {
+
+    /************************* HEADER *************************/
+
+    .header-home {
+        text-align: center;
+    }
+
+    .slides {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slide-image-container img {
+
+        max-height: 40vh;
+
+    }
+
+     /************************* MAIN *************************/
+
+     .main-pictures{
+        display: none;
+     }
+     /************************* REGISTER *************************/
+    
+     .main-register{
+        height: auto;
+     }
+     .form-container{
+        padding: 2rem;
+        text-align: center;
+     }
+     .form-container h1{
+        flex-direction:column-reverse;
+     }
+     .register-form{
+        grid-template-columns: 1fr;
+     }
+
+      .header-voluntary {
+        text-align: center;
+    }
 }

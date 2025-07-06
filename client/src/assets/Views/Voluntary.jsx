@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faInbox} from '@fortawesome/free-solid-svg-icons'
+import { faInbox } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 FontAwesomeIcon
 
@@ -7,13 +7,16 @@ const Voluntary = () => {
   return (
     <>
       <header className='header-voluntary'>
-        <div className="voluntary-title">
+        <div className="slides">
+
+          <div className="voluntary-title">
             <h1>Alza la voz por los que no pueden</h1>
-        <p>Súmate al equipo</p>
-        </div>
-      
-        <div className="voluntary-img">
-        <img src="imgs\voluntary-frame.png" alt="" />
+            <p>Súmate al equipo</p>
+          </div>
+
+          <div className="slide-image-container">
+            <img src="imgs\voluntary-frame.png" alt="" />
+          </div>
         </div>
       </header>
 
@@ -40,14 +43,14 @@ const Voluntary = () => {
         </div>
 
         <section className='voluntary-form-section'>
-          <div className="voluntary-form-text">
+          
             <h2>
               ¿Quieres ayudar? Escríbenos y súmate.
             </h2>
-            
-          </div>
+
+         
           <form action="mailto:contacto@unhogarmas.cl">
-            <input type="email" name="email" placeholder='Ingresa tu correo' required/>
+            <input type="email" name="email" placeholder='Ingresa tu correo' required />
             <textarea name="mensaje" placeholder="Escribe tu mensaje"></textarea>
             <button> <FontAwesomeIcon icon={faInbox} /> Enviar</button>
 

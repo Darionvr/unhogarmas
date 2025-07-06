@@ -10,7 +10,7 @@ const Home = () => {
 
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
+/*   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % 2);
     }, 5000);
@@ -18,26 +18,25 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-
+ */
   return (
 
     <>
       <header className='header-home'>
         <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }}>
-          <div>
+          <div className='slide-image-container'>
             <img src="imgs\header-2.png" alt="" />
           </div>
           <h1>Desde Santiago, rescatamos vidas y creamos hogares.</h1>
         </div>
         <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }}>
-          <div>
+          <div className='slide-image-container'>
             <img src="imgs\header-1.png" alt="" />
           </div>
           <h1>Nuestro equipo es el corazón del rescate.
-
             <span>Tú también puedes ser parte de esta misión. </span>
           </h1>
-          <p> </p>
+        
         </div>
         <div className="indicators">
           <button onClick={() => setCurrent(0)} className={`dot ${0 === current ? 'active' : ''}`} />
@@ -116,7 +115,7 @@ const Home = () => {
 
 
       </main>
-      <article>
+      <article className='map-container'>
         <div className="info">
 
           <h4> ¿Dónde estamos?</h4>
