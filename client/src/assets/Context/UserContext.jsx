@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import { useNavigate } from 'react-router'
 
 
 export const UserContext = createContext()
@@ -11,35 +12,47 @@ const UserProvider = ({ children }) => {
     const [email, setEmail] = useState('')
     const [token, setToken] = useState(false)
 
+    const navigate = useNavigate();
+
     const logout = () => {
         setToken(false);
-     
+
     }
 
     const login = async () => {
-    try {
-        const response = await fetch('/TestUsuarios.json');
-        const users = await response.json();
-        const found = users.find(
-            user => user.email === email && user.password === password
-        );
-        if (found) {
-            setToken(true);
-            setUsername(found.email); 
-            return true;
-        } else {
+        try {
+            const response = await fetch('/TestUsuarios.json');
+            const users = await response.json();
+            const found = users.find(
+                user => user.email === email && user.password === password
+            );
+            if (found) {
+                setToken(true);
+                setUsername(found.email);
+                navigate('/Myprofile');
+                return true;
+            } else {
+                setToken(false);
+                return false;
+            }
+        } catch (error) {
             setToken(false);
             return false;
         }
-    } catch (error) {
-        setToken(false);
-        return false;
-    }
-};
+    };
+    const register = (form) => {
+       
+        setEmail(form.email);
+        setPassword(form.password);
+        setUsername(form.email); 
+        setToken(true);
+        navigate('/Myprofile');
+    };
+
 
     return (
         <UserContext.Provider value={{
-            userName, setUsername, password, setPassword, email, setEmail, token, setToken, login, logout
+            userName, setUsername, password, setPassword, email, setEmail, token, setToken, login, logout, register,
         }}>
 
             {children}

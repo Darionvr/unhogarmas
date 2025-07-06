@@ -5,17 +5,12 @@ import './index.css'
 import App from './App.jsx'
 import UserProvider from './assets/Context/UserContext.jsx'
 
-
 createRoot(document.getElementById('root')).render(
-
   <StrictMode>
-
-    <UserProvider>
-      <BrowserRouter>
+    <BrowserRouter> 
+      <UserProvider>
         <App />
-      </BrowserRouter>
-    </UserProvider>
-
-  </StrictMode>,
-
+      </UserProvider>
+    </BrowserRouter>
+  </StrictMode>
 )
