@@ -47,10 +47,9 @@ const Myprofile = () => {
             <div className="PetImage">
           
                 <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134" alt="Mascota" />
-                <Link to={`/PetProfile`}>
-              <button className="edit-btn"><FontAwesomeIcon icon={faPenToSquare} />Editar información</button>
-              </Link>
-              
+                
+              <button className="melon-button"> <Link to={`/PetProfile`}> <FontAwesomeIcon icon={faPenToSquare} />Editar información</Link></button>
+           
             </div>
 
             <div className="pet-info">
@@ -60,12 +59,10 @@ const Myprofile = () => {
             </div>
           </div>
         </div>
-
-
       </div>
 
       <div className="AddPetButton">
-        <button>
+        <button className='melon-button'>
           <Link to="/CreatePost">
             <FontAwesomeIcon icon={faFileCirclePlus} /> Agregar nueva mascota
           </Link>

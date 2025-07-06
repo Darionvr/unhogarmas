@@ -75,7 +75,9 @@ dialog {
 .dialog-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+  gap: 1.5rem;
 
   h1 {
     padding: 0;
@@ -85,9 +87,15 @@ dialog {
   a {
     display: block;
   }
+  p{
+    margin-bottom: 0
+  };
 }
-
-.dialog-container>button {
+.user-name{
+  font-size: 1.2rem;
+  margin: 0;
+}
+.close-button{
 
   background-color: transparent;
   border: none;
@@ -536,11 +544,21 @@ select {
   flex-direction: column;
   gap: 2rem;
 }
+.adoption-main{
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.adoption-form-section{
+  padding: 3rem;
+  border-bottom: solid 1px var(--Melon);
+
+}
 
 .informationAdoption {
   background-color: var(--Seashell);
-  padding: 3rem;
   box-sizing: border-box;
+  padding: 2rem;
 }
 
 .informationAdoption h1 {
@@ -578,6 +596,8 @@ select {
 }
 
 .sub {
+  margin: 0;
+  margin-bottom: 2rem;
   place-self: center;
   font-size: 40px;
 }
@@ -601,6 +621,7 @@ select {
   border-radius: 8px;
   outline: none;
   transition: border 0.2s ease-in-out;
+  background-color: var(--PaleDogwood);
 }
 
 .form-grid input {
@@ -633,9 +654,8 @@ select {
   max-width: 900px;
   margin: auto;
   background-color: var(--Seashell);
-  border: solid 1px var(--ChampagnePink);
   padding-bottom: 10px;
-
+ border-radius: 10px;
 }
 
 .slides-wrapper {
@@ -679,13 +699,6 @@ select {
 }
 
 
-
-
-
-
-
-
-
 /***************AdoptionList************/
 .AdopListBody {
 
@@ -699,9 +712,9 @@ select {
 
 .filtrer {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   margin: 20px auto;
-  flex-wrap: wrap;
   padding-left: 65px;
 }
 
@@ -711,6 +724,8 @@ select {
   border: 2px solid var(--ChampagnePink);
   border-radius: 8px;
   background-color: var(--PaleDogwood);
+  width: 100px;
+  cursor: pointer;
 }
 
 
@@ -1130,6 +1145,7 @@ hr {
   height: auto;
   flex-shrink: 0;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   align-items: center;
 }
@@ -1153,32 +1169,11 @@ hr {
   font-size: 30px;
 }
 
-.edit-btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: var(--Melon);
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .AddPetButton {
   margin-top: 30px;
   text-align: center;
 }
-
-.AddPetButton button {
-  background-color: var(--Melon);
-  color: rgb(0, 0, 0);
-  border: none;
-  padding: 15px 20px;
-  border-radius: 30px;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 auto;
-  display: block;
+.AddPetButton .melon-button{
+  padding: 1.2rem;
 }
+

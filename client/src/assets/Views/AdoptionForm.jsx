@@ -47,193 +47,200 @@ const AdoptionForm = () => {
 
     return (
         <>
-            <div className="informationAdoption">
-                <h1>Cómo funciona nuestro proceso de adopción</h1>
-                <div className="knowledge">
-                    <div className="Infor">
-                        <div className="circle">1</div>
-                        <h2>Encuentra a tu futuro compañero</h2>
-                        <h5>
-                            Explora nuestra página de Animales en Adopción. La actualizamos todos
-                            los días para que puedas encontrar una mascota que se adapte a tu
-                            estilo de vida. Si ves uno que te enamora, ¡vamos al siguiente paso!
-                        </h5>
-                    </div>
-                    <div className="Infor">
-                        <div className="circle">2</div>
-                        <h2>Completa tu solicitud (¡solo una!)</h2>
-                        <h5>
-                            Puedes llenar la Solicitud de Adopción en línea o directamente en el
-                            refugio. No es una reserva, pero sí el primer paso para conocerte mejor.
-                        </h5>
-                    </div>
-                    <div className="Infor">
-                        <div className="circle">3</div>
-                        <h2>Visítanos y conoce a tu nuevo amigo</h2>
-                        <h5>
-                            Nuestros asesores te recibirán por orden de llegada, te contarán todo
-                            sobre la mascota y verán contigo si es una buena combinación. Ven en
-                            nuestro horario de atención para que podamos ayudarte con calma.
-                        </h5>
-                    </div>
-                    <div className="Infor">
-                        <div className="circle">4</div>
-                        <h2>Adopta con confianza</h2>
-                        <h5>
-                            Si vives en departamento o condominio, recuerda traer tu contrato o
-                            reglamento. Eso nos permite asegurarnos de que tu nuevo amigo esté
-                            permitido en tu hogar. ¿Todo listo? ¡Ya casi es parte de tu familia!
-                        </h5>
+            <main className='adoption-main'>
+
+
+                <div className="informationAdoption">
+                    <h1>Cómo funciona nuestro proceso de adopción</h1>
+                    <div className="knowledge">
+                        <div className="Infor">
+                            <div className="circle">1</div>
+                            <h2>Encuentra a tu futuro compañero</h2>
+                            <h5>
+                                Explora nuestra página de Animales en Adopción. La actualizamos todos
+                                los días para que puedas encontrar una mascota que se adapte a tu
+                                estilo de vida. Si ves uno que te enamora, ¡vamos al siguiente paso!
+                            </h5>
+                        </div>
+                        <div className="Infor">
+                            <div className="circle">2</div>
+                            <h2>Completa tu solicitud (¡solo una!)</h2>
+                            <h5>
+                                Puedes llenar la Solicitud de Adopción en línea o directamente en el
+                                refugio. No es una reserva, pero sí el primer paso para conocerte mejor.
+                            </h5>
+                        </div>
+                        <div className="Infor">
+                            <div className="circle">3</div>
+                            <h2>Visítanos y conoce a tu nuevo amigo</h2>
+                            <h5>
+                                Nuestros asesores te recibirán por orden de llegada, te contarán todo
+                                sobre la mascota y verán contigo si es una buena combinación. Ven en
+                                nuestro horario de atención para que podamos ayudarte con calma.
+                            </h5>
+                        </div>
+                        <div className="Infor">
+                            <div className="circle">4</div>
+                            <h2>Adopta con confianza</h2>
+                            <h5>
+                                Si vives en departamento o condominio, recuerda traer tu contrato o
+                                reglamento. Eso nos permite asegurarnos de que tu nuevo amigo esté
+                                permitido en tu hogar. ¿Todo listo? ¡Ya casi es parte de tu familia!
+                            </h5>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h2 className='sub'>
-                <FontAwesomeIcon icon={faPaw} />Formulario de adopción</h2>
-            <div className="carousel-container">
-                <div
-                    className="slides-wrapper"
-                    style={{ transform: `translateX(-${current * 100}%)` }}
-                >
+                <section className="adoption-form-section">
+                    <h2 className='sub'>
+                        <FontAwesomeIcon icon={faPaw} />Formulario de adopción</h2>
+                    <div className="carousel-container">
+                        <div
+                            className="slides-wrapper"
+                            style={{ transform: `translateX(-${current * 100}%)` }}
+                        >
 
-                    <div className="slideAdoption FormAdopt">
-                        <h3>Datos personales</h3>
-                        <form className="form-grid" onSubmit={SubmitAdoption}>
-                            <input
-                                name="Edad"
-                                placeholder="Edad"
-                                type="number"
-                                value={formData.Edad}
-                                onChange={handleChange}
-                            />
-                            <input
-                                name="Correo"
-                                placeholder="Correo"
-                                type="email"
-                                value={formData.Correo}
-                                onChange={handleChange}
-                            />
-                            <input
-                                name="Celular"
-                                placeholder="Celular"
-                                value={formData.Celular}
-                                onChange={handleChange}
-                            />
-                            <input
-                                name="Domicilio"
-                                placeholder="Dirección"
-                                value={formData.Domicilio}
-                                onChange={handleChange}
-                            />
-                            <select
-                                name="TipoVivienda"
-                                value={formData.TipoVivienda}
-                                onChange={handleChange}
-                            >
-                                <option value="">Tipo de vivienda</option>
-                                <option value="Casa">Casa</option>
-                                <option value="Departamento">Departamento</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                            <select
-                                name="PermiteMascotas"
-                                value={formData.PermiteMascotas}
-                                onChange={handleChange}
-                            >
-                                <option value="">¿Permite mascotas?</option>
-                                <option value="Sí">Sí</option>
-                                <option value="No">No</option>
-                                <option value="Propia">Tengo casa propia</option>
-                            </select>
-                        </form>
-                    </div>
-
-
-                    <div className="slideAdoption FormAdopt">
-                        <h3>Datos de la mascota</h3>
-                        <form className="form-grid">
-                            <input
-                                name="NombreDeLaMascota"
-                                placeholder="Nombre de la mascota"
-                                value={formData.NombreDeLaMascota}
-                                onChange={handleChange}
-                            />
-                            <select
-                                name="TiempoDisponible"
-                                value={formData.TiempoDisponible}
-                                onChange={handleChange}
-                            >
-                                <option value="">¿Por qué desea adoptar?</option>
-                                <option value="Deseo">Terapia</option>
-                                <option value="Terapia">Motivos emocionales</option>
-                                <option value="Tiempo">Tengo tiempo y espacio</option>
-                            </select>
-                            <select
-                                name="Convivencia"
-                                value={formData.Convivencia}
-                                onChange={handleChange}
-                            >
-                                <option value="">¿Con quién vives?</option>
-                                <option value="Solo">Solo</option>
-                                <option value="Padres">Padres</option>
-                                <option value="Familia">Familia</option>
-                                <option value="Rommie">Rommie</option>
-                            </select>
-                        </form>
-                    </div>
-
-
-                    <div className="slideAdoption FormAdopt">
-                        <h3>Compromisos y seguimiento</h3>
-                        <form onSubmit={SubmitAdoption} className="submit-form">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="aceptoLey"
-                                    checked={formData.aceptoLey}
-                                    onChange={handleChange}
-                                />
-                                Acepto acciones legales si maltrato a la mascota.
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="compromiso"
-                                    checked={formData.compromiso}
-                                    onChange={handleChange}
-                                />
-                                Me comprometo a cuidar responsablemente.
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="informacionVeridica"
-                                    checked={formData.informacionVeridica}
-                                    onChange={handleChange}
-                                />
-                                Declaro que la información es verídica.
-                            </label>
-
-                           
-                            <div className="btnA">
-                                <button type="submit" className="submit-button">
-                                    Enviar solicitud
-                                </button>
+                            <div className="slideAdoption FormAdopt">
+                                <h3>Datos personales</h3>
+                                <form className="form-grid" onSubmit={SubmitAdoption}>
+                                    <input
+                                        name="Edad"
+                                        placeholder="Edad"
+                                        type="number"
+                                        value={formData.Edad}
+                                        onChange={handleChange}
+                                    />
+                                    <input
+                                        name="Correo"
+                                        placeholder="Correo"
+                                        type="email"
+                                        value={formData.Correo}
+                                        onChange={handleChange}
+                                    />
+                                    <input
+                                        name="Celular"
+                                        placeholder="Celular"
+                                        value={formData.Celular}
+                                        onChange={handleChange}
+                                    />
+                                    <input
+                                        name="Domicilio"
+                                        placeholder="Dirección"
+                                        value={formData.Domicilio}
+                                        onChange={handleChange}
+                                    />
+                                    <select
+                                        name="TipoVivienda"
+                                        value={formData.TipoVivienda}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="">Tipo de vivienda</option>
+                                        <option value="Casa">Casa</option>
+                                        <option value="Departamento">Departamento</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                    <select
+                                        name="PermiteMascotas"
+                                        value={formData.PermiteMascotas}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="">¿Permite mascotas?</option>
+                                        <option value="Sí">Sí</option>
+                                        <option value="No">No</option>
+                                        <option value="Propia">Tengo casa propia</option>
+                                    </select>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                </div>
 
-                <div className="carousel-dots">
-                    {[0, 1, 2].map((index) => (
-                        <button
-                            key={index}
-                            className={`dot ${current === index ? 'active' : ''}`}
-                            onClick={() => setCurrent(index)}
-                        />
-                    ))}
-                </div>
-            </div>
+
+                            <div className="slideAdoption FormAdopt">
+                                <h3>Datos de la mascota</h3>
+                                <form className="form-grid">
+                                    <input
+                                        name="NombreDeLaMascota"
+                                        placeholder="Nombre de la mascota"
+                                        value={formData.NombreDeLaMascota}
+                                        onChange={handleChange}
+                                    />
+                                    <select
+                                        name="TiempoDisponible"
+                                        value={formData.TiempoDisponible}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="">¿Por qué desea adoptar?</option>
+                                        <option value="Deseo">Terapia</option>
+                                        <option value="Terapia">Motivos emocionales</option>
+                                        <option value="Tiempo">Tengo tiempo y espacio</option>
+                                    </select>
+                                    <select
+                                        name="Convivencia"
+                                        value={formData.Convivencia}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="">¿Con quién vives?</option>
+                                        <option value="Solo">Solo</option>
+                                        <option value="Padres">Padres</option>
+                                        <option value="Familia">Familia</option>
+                                        <option value="Rommie">Rommie</option>
+                                    </select>
+                                </form>
+                            </div>
+
+
+                            <div className="slideAdoption FormAdopt">
+                                <h3>Compromisos y seguimiento</h3>
+                                <form onSubmit={SubmitAdoption} className="submit-form">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="aceptoLey"
+                                            checked={formData.aceptoLey}
+                                            onChange={handleChange}
+                                        />
+                                        Acepto acciones legales si maltrato a la mascota.
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="compromiso"
+                                            checked={formData.compromiso}
+                                            onChange={handleChange}
+                                        />
+                                        Me comprometo a cuidar responsablemente.
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="informacionVeridica"
+                                            checked={formData.informacionVeridica}
+                                            onChange={handleChange}
+                                        />
+                                        Declaro que la información es verídica.
+                                    </label>
+
+
+                                    <div className="btnA">
+                                        <button type="submit" className="submit-button">
+                                            Enviar solicitud
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div className="carousel-dots">
+                            {[0, 1, 2].map((index) => (
+                                <button
+                                    key={index}
+                                    className={`dot ${current === index ? 'active' : ''}`}
+                                    onClick={() => setCurrent(index)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+            </main>
         </>
     );
 };
