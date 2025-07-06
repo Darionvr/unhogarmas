@@ -1,24 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus, faUpload } from '@fortawesome/free-solid-svg-icons'
 import HomeLogo from '../Icons/HomeIcon'
 import Home from './Home'
 import data from '../../../public/TestUsuarios.json'
+import { UserContext } from '../Context/UserContext'
+import { useNavigate } from 'react-router'
 
 
 const Register = () => {
 
+const navigate = useNavigate();
 
+  const {form, setForm} = useContext(UserContext)
   const [errors, setErrors] = useState({})
-  const [form, setForm] = useState({
-    nombre: "",
-    apellido: "",
-    rut: "",
-    email: "",
-    password: "",
-    password2: "",
-    file: null
-  })
+
 
   const fileInputRef = useRef(null);
 
@@ -31,8 +27,11 @@ const Register = () => {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
+    }else{
+       navigate('/Myprofile');
     }
     
+
 
     /**** Acá debería ir la función para enviar los datos con POST próximo hito ****/
 

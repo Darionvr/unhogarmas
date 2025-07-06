@@ -735,7 +735,7 @@ select {
   text-align: center;
   background-color: var(--Seashell);
   gap: 1rem;
-  padding: 2rem 0 0 0;
+  padding: 2rem;
   padding-bottom: 2rem;
   border-top: solid 1px var(--PaleDogwood);
   border-bottom: solid 1px var(--PaleDogwood);
@@ -770,7 +770,11 @@ select {
 }
 
 .staff-pictures {
-  width: min-content;
+  width: 100%;
+}
+.staff-pictures img{
+  width: 100%;
+  border-radius: 10px;
 }
 
 /************************* REGISTER *************************/
@@ -887,7 +891,8 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .voluntary-img {
@@ -1000,35 +1005,6 @@ select {
 
 
 
-
-  /************************* MEDIAQUERIES *************************/
-
-  @media (max-width: 960px) {
-    .main-home {
-      padding: 2rem;
-    }
-
-    .section-cards {
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: 1fr;
-    }
-
-    .cards {
-      min-width: fit-content;
-      padding-top: 2rem;
-    }
-
-    .cards:last-child {
-      display: none;
-    }
-
-    section img {
-      height: auto;
-      max-width: 30vw;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
 
 
 
