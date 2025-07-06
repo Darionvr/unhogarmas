@@ -12,8 +12,6 @@ const UserProvider = ({ children }) => {
     const [email, setEmail] = useState('')
     const [token, setToken] = useState(false)
 
-    const navigate = useNavigate();
-
     const logout = () => {
         setToken(false);
 
@@ -29,7 +27,6 @@ const UserProvider = ({ children }) => {
             if (found) {
                 setToken(true);
                 setUsername(found.email);
-                navigate('/Myprofile');
                 return true;
             } else {
                 setToken(false);
@@ -46,7 +43,6 @@ const UserProvider = ({ children }) => {
         setPassword(form.password);
         setUsername(form.email); 
         setToken(true);
-        navigate('/Myprofile');
     };
 
 

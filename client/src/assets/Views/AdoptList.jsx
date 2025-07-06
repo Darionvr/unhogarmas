@@ -45,7 +45,8 @@ const AdoptList = () => {
 
   return (
     <>
-      <h1>Encuentra a tu nuevo mejor amigo</h1>
+    <div className='AdopListBody'>
+       <h1>Encuentra a tu nuevo mejor amigo</h1>
 
       <div className='filtrer'>
         <select name='Especies' onChange={(e) => setEspecie(e.target.value)}>
@@ -87,6 +88,8 @@ const AdoptList = () => {
           </div>
         ))}
       </div>
+    </div>
+     
     </>
   );
 };

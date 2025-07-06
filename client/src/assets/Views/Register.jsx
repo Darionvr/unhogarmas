@@ -32,6 +32,7 @@ const Register = () => {
       setErrors(formErrors);
       return;
     }
+    
 
     /**** Acá debería ir la función para enviar los datos con POST próximo hito ****/
 

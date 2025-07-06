@@ -42,7 +42,10 @@ const Navbar = () => {
           {token ? (
             <>
               <p> Sesión iniciada </p>
-              <img src="imgs\home-frame 2.png" alt="" className="modal-pic"/>
+              <Link to={`/Myprofile`}>
+                <img src="https://media.istockphoto.com/id/1171169099/es/foto/hombre-con-brazos-cruzados-aislados-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=8qDLKdLMm2i8DHXY6crX6a5omVh2IxqrOxJV2QGzgFg="className="modal-pic"/>
+              </Link>
+
               <button onClick={() => { logout(); closeModal() }}> Cerrar Sesión</button>
             </>
           ) : (

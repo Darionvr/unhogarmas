@@ -1,7 +1,8 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faFileCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+
 
 
 
@@ -44,10 +45,11 @@ const Myprofile = () => {
         <div className="pet-card">
           <div className="PetContent">
             <div className="PetImage">
-              <Link to={`/PetProfile`}>
+          
                 <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134" alt="Mascota" />
+                <Link to={`/PetProfile`}>
+              <button className="edit-btn"><FontAwesomeIcon icon={faPenToSquare} />Editar información</button>
               </Link>
-              <button className="edit-btn">Editar información</button>
               
             </div>
 
