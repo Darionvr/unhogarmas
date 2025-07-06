@@ -137,7 +137,12 @@
     .main-pictures {
         display: none;
     }
-
+    .cards{
+        padding-top: 3rem;
+    }
+.main-section .melon-button{
+    width: 100%;
+}
     /************************* REGISTER *************************/
 
     .main-register {
@@ -159,6 +164,9 @@
 
     .header-voluntary {
         text-align: center;
+    }
+    .input-group:last-of-type {
+    padding: 1rem;
     }
 
     /************************* STAFF *************************/

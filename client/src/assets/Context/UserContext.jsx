@@ -29,7 +29,7 @@ const UserProvider = ({ children }) => {
             if (found) {
                 setToken(true);
                 setUsername(found.email);
-                navigate('/Myprofile');
+
                 return true;
             } else {
                 setToken(false);
