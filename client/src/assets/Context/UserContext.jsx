@@ -11,6 +11,16 @@ const UserProvider = ({ children }) => {
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const [token, setToken] = useState(false)
+    const [form, setForm] = useState({
+        nombre: "",
+        apellido: "",
+        rut: "",
+        email: "",
+        password: "",
+        password2: "",
+        file: null
+    })
+
 
     const navigate = useNavigate();
 
@@ -41,10 +51,10 @@ const UserProvider = ({ children }) => {
         }
     };
     const register = (form) => {
-       
+
         setEmail(form.email);
         setPassword(form.password);
-        setUsername(form.email); 
+        setUsername(form.email);
         setToken(true);
         navigate('/Myprofile');
     };
@@ -52,7 +62,7 @@ const UserProvider = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            userName, setUsername, password, setPassword, email, setEmail, token, setToken, login, logout, register,
+            userName, setUsername, password, setPassword, email, setEmail, token, setToken, login, logout, register, form, setForm
         }}>
 
             {children}

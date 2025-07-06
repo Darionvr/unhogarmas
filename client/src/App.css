@@ -1004,35 +1004,6 @@ select {
 
 
 
-/************************* MEDIAQUERIES *************************/
-
-@media (max-width: 960px) {
-  .main-home {
-    padding: 2rem;
-  }
-
-  .section-cards {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 1fr;
-  }
-
-  .cards {
-    min-width: fit-content;
-    padding-top: 2rem;
-  }
-
-  .cards:last-child {
-    display: none;
-  }
-
-  section img {
-    height: auto;
-    max-width: 30vw;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
 
 
 /*******************MYPROFILE****************************/
