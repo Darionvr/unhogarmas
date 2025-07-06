@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.css'
+import '../../AppQueries.css'
 import { BoneIcon } from '../Icons/BoneIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInbox, faCalendarWeek, faMobileScreenButton, faMapLocationDot, faArrowRotateLeft, faBrain, faDog, faCouch, faHouse, faPaw } from '@fortawesome/free-solid-svg-icons'
@@ -84,7 +85,7 @@ const Home = () => {
         <section className='main-section'>
 
           <div className='main-pictures' >
-            <img src="imgs\home-frame 2.png" alt="" className='main-pictures' />
+            <img src="imgs\home-frame 2.png" alt=""  />
           </div>
           <div className='cards-container'>
             <div className="cards">

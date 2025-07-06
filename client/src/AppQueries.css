@@ -1,0 +1,41 @@
+/************************* MEDIAQUERIES *************************/
+
+@media (max-width: 960px) {
+  .main-home {
+    padding: 2rem;
+  }
+
+  .cards-container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    min-width: fit-content;
+    h3{
+      min-height: 0;
+    }
+  }
+
+  .cards:last-child {
+    display: none;
+  }
+
+  .main-pictures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 30vw;
+    overflow: hidden;
+    border-radius: 10px;
+ 
+  }
+
+  .main-pictures img {
+ 
+    height: 580px;
+    max-height: none;
+
+  }
+}

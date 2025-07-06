@@ -226,6 +226,7 @@ dialog {
 
 .main-home h2 {
   font-size: 2.5rem;
+  margin-bottom: 0;
 }
 
 .main-section {
@@ -235,7 +236,8 @@ dialog {
   align-items: stretch;
   gap: 2rem;
   position: relative;
- 
+    margin-bottom: 5rem;
+
 }
 
 .main-pictures {
@@ -252,7 +254,7 @@ dialog {
 .main-section .melon-button {
   width: max-content;
   position: absolute;
-  bottom: -50px;
+  bottom: -60px;
   left: 0;
 }
 
@@ -267,6 +269,7 @@ dialog {
   gap: 1rem;
   text-align: left;
   height: min-content;
+
 
 
 }
@@ -310,6 +313,7 @@ article {
   align-items: center;
   height: 70vh;
   background-color: var(--PaleDogwood);
+  margin-top: 4rem;
 }
 
 .info h4 {
@@ -969,31 +973,3 @@ select {
 
 
 
-/************************* MEDIAQUERIES *************************/
-
-@media (max-width: 960px) {
-  .main-home {
-    padding: 2rem;
-  }
-
-  .section-cards {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 1fr;
-  }
-
-  .cards {
-    min-width: fit-content;
-    padding-top: 2rem;
-  }
-
-  .cards:last-child {
-    display: none;
-  }
-
-  section img {
-    height: auto;
-    max-width: 30vw;
-    object-fit: cover;
-    object-position: center;
-  }
-}
