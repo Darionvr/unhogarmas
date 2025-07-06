@@ -874,7 +874,7 @@ select {
 
 /************************* VOLUNTARY *************************/
 
-.header-voluntary {
+
 .header-voluntary {
   height: 80dvh;
   background-color: var(--PaleDogwood);
@@ -1139,4 +1139,4 @@ width: 180px;
   gap: 8px;
   margin: 0 auto; 
   display: block;
-}
+ }
