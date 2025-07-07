@@ -30,9 +30,15 @@
 }
 
 /************************* NAVBAR *************************/
+.hamburguer{
+  display: none;
+}
+.mobile-menu{
+  display: none;
+}
+
 nav {
 
-  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -73,14 +79,26 @@ dialog::backdrop {
 dialog {
   border-color: var(--PaleDogwood);
   border-radius: 15px;
-  padding: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 0;
+  width: 30vw;
+  height: 100dvh;
+  transform: translateX(100%);
+  animation: slideIn 0.8s ease forwards;
+}
 
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .dialog-container {
   display: flex;
+  height: 100%;
   flex-direction: column;
-  align-items: center;
+  padding-inline: 2rem;
   text-align: center;
   gap: 1.5rem;
 
@@ -106,18 +124,14 @@ dialog {
 }
 
 .close-button {
-
   background-color: transparent;
   border: none;
   justify-self: right;
   margin-left: auto;
-  margin-top: -15px;
+  margin-top: 15px;
   margin-right: -15px;
   cursor: pointer;
-
-
 }
-
 
 .login-form {
   display: flex;
@@ -125,11 +139,9 @@ dialog {
   gap: 1rem;
   margin-bottom: .5rem;
 
-
   p {
     font-size: .8rem;
     margin: 0;
-
   }
 
   input {
@@ -142,9 +154,6 @@ dialog {
 
   }
 }
-
-
-
 
 .form-error {
   display: flex;
@@ -160,6 +169,7 @@ dialog {
   height: 100px;
   object-fit: cover;
   display: block;
+  margin: auto;
   border-radius: 50%;
 }
 

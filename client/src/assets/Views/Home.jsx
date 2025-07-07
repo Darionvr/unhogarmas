@@ -10,7 +10,7 @@ const Home = () => {
 
   const [current, setCurrent] = useState(0);
 
-/*   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % 2);
     }, 5000);
@@ -18,7 +18,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
- */
+
   return (
 
     <>

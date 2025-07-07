@@ -2,6 +2,47 @@
 
 @media (max-width: 960px) {
 
+
+
+
+    /************************* NAVBAR *************************/
+
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        a{
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    nav > a:nth-of-type(2),
+    a:nth-of-type(3), .person{
+        display: none;
+    }
+    
+    .hamburguer {
+        display: block;
+        margin-left: .5rem;
+        cursor: pointer;
+    }
+
+    dialog{
+        width: 40dvw;
+    }
+    .dialog-container{
+        text-align: left;
+        
+    }
+    .dialog-container p{
+        font-size: .9rem;
+        color: rgb(108, 108, 108);
+    }
+
+
+
     /************************* HEADER *************************/
 
     .slide-image-container img {
@@ -35,7 +76,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         max-width: 30vw;
         overflow: hidden;
         border-radius: 10px;
@@ -43,7 +84,7 @@
     }
 
     .main-pictures img {
-        
+
         height: 580px;
         max-height: none;
 
@@ -103,13 +144,23 @@
         width: 100%;
     }
 
-   
+
 
 }
 
 /************************* SMALL *************************/
 
 @media (max-width: 660px) {
+
+    /************************* NAVBAR *************************/
+        dialog{
+            
+        width: 50dvw;
+    }
+    .dialog-container{
+        padding-inline: .5rem;
+    }
+
 
     /************************* HEADER *************************/
 
@@ -133,12 +184,15 @@
     .main-pictures {
         display: none;
     }
-    .cards{
+
+    .cards {
         padding-top: 3rem;
     }
-.main-section .melon-button{
-    width: 100%;
-}
+
+    .main-section .melon-button {
+        width: 100%;
+    }
+
     /************************* REGISTER *************************/
 
     .main-register {
@@ -161,8 +215,9 @@
     .header-voluntary {
         text-align: center;
     }
+
     .input-group:last-of-type {
-    padding: 1rem;
+        padding: 1rem;
     }
 
     /************************* STAFF *************************/
@@ -181,10 +236,12 @@
         object-fit: cover;
         object-position: top;
     }
-     .staff-pictures h2 {
+
+    .staff-pictures h2 {
         height: unset;
     }
-    .main-staff .melon-button{
+
+    .main-staff .melon-button {
         width: 100%;
     }
 
