@@ -1085,10 +1085,12 @@ select {
 
 
 /*******************MYPROFILE****************************/
+
+.profile-main{
+  padding: 2rem;
+}
 .MyProfile {
-  max-width: 900px;
-  margin: auto;
-  gap: 25px;
+
 
 }
 

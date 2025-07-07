@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom'
 const Myprofile = () => {
   return (
     <>
+    <main className='profile-main'>
+
+ 
       <div className="MyProfile">
         <h1> Mi perfil</h1>
 
@@ -68,6 +71,7 @@ const Myprofile = () => {
           </Link>
         </button>
       </div>
+         </main>
 
     </>
 
