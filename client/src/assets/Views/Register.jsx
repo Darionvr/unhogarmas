@@ -88,7 +88,7 @@ const navigate = useNavigate();
             {errors.nombre && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.nombre}  </p>}
           </div>
           <div className="input-group">
-            <input name='apellido' type="text" value={form.apelido} placeholder='Ingresa tu apellido' onChange={handleChange} />
+            <input name='apellido' type="text" value={form.apellido} placeholder='Ingresa tu apellido' onChange={handleChange} />
             {errors.apellido && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.apellido}  </p>}
           </div>
 
