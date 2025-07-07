@@ -166,7 +166,7 @@ dialog {
 /************************* HEADER HOME *************************/
 
 .header-home {
-  background-color: var(--Melon);
+  background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
   height: 80dvh;
   position: relative;
   overflow: hidden;
@@ -326,7 +326,7 @@ dialog {
   justify-content: center;
   padding: 5rem 2rem 5rem 2rem;
   align-items: center;
-  background-color: var(--PaleDogwood);
+  background: linear-gradient(135deg, var(--Seashell), var(--PaleDogwood));
   margin-top: 4rem;
 }
 
@@ -749,27 +749,29 @@ select {
   border-radius: 15px;
   background-color: white;
   cursor: pointer;
-  background-color: hsl( from var(--ChampagnePink) 400 s 90);
+  background-color: hsl(from var(--ChampagnePink) 400 s 90);
   overflow: hidden;
   padding: .5rem;
 
-  span{
+  span {
     color: #555;
   }
 
 
-  &:hover::before{
-    opacity: 1 ;
+  &:hover::before {
+    opacity: 1;
 
   }
 }
+
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.314); 
+  background-color: rgba(255, 255, 255, 0.314);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 
@@ -825,7 +827,7 @@ select {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: var(--Seashell);
+ background: linear-gradient(135deg, var(--Seashell), var(--PaleDogwood));
   gap: 1rem;
   padding: 2rem;
   padding-bottom: 2rem;
@@ -978,11 +980,18 @@ select {
 
 .pet-photo {
   display: flex;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: fit-content;
 
 }
 
 .pet-photo img {
+  height: auto;
   width: 100%;
+  object-fit: contain;
+
 }
 
 
@@ -991,7 +1000,7 @@ select {
 
 .header-voluntary {
   height: 80dvh;
-  background-color: var(--PaleDogwood);
+  background: linear-gradient(135deg, var(--Seashell), var(--PaleDogwood));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1048,7 +1057,7 @@ select {
   width: 100%;
   gap: 5rem;
   text-align: left;
-  background-color: var(--Melon);
+  background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
 }
 
 
