@@ -27,6 +27,16 @@ const AdoptList = () => {
       sexo: "Macho",
       peso: "50kg",
       imagen: "https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134"
+    },
+      {
+      id: 3,
+      nombre: "Don Perro",
+      especie: "Perro",
+      tamaño: "grande",
+      edad: 4,
+      sexo: "Macho",
+      peso: "50kg",
+      imagen: "https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134"
     }
   ];
 
@@ -81,9 +91,9 @@ const AdoptList = () => {
             </div>
             <div className='cardInfo'>
               <h3>{animal.nombre}</h3>
-              <p>Sexo: {animal.sexo}</p>
-              <p>Edad: {animal.edad} años</p>
-              <p>Peso: {animal.peso}</p>
+              <p>Sexo: <span> {animal.sexo}</span> </p>
+              <p>Edad: <span>{animal.edad} años</span> </p>
+              <p>Peso: <span>{animal.peso}</span> </p>
             </div>
           </div>
         ))}
