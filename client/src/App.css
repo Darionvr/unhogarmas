@@ -20,6 +20,7 @@
   padding: .8rem;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: var(--ChampagnePink);
@@ -743,6 +744,7 @@ select {
 
 
 .card {
+  position: relative;
   width: 230px;
   border-radius: 15px;
   background-color: white;
@@ -754,6 +756,20 @@ select {
   span{
     color: #555;
   }
+
+
+  &:hover::before{
+    opacity: 1 ;
+
+  }
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.314); 
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 
