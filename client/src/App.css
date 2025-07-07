@@ -29,11 +29,16 @@
 
 /************************* NAVBAR *************************/
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 1rem 3rem 1rem 3rem;
   gap: 1rem;
+  background-color: white;
+  border-bottom: 1px solid var(--Melon);
 
 
 }
@@ -87,15 +92,20 @@ dialog {
   a {
     display: block;
   }
-  p{
+
+  p {
     margin-bottom: 0
-  };
+  }
+
+  ;
 }
-.user-name{
+
+.user-name {
   font-size: 1.2rem;
   margin: 0;
 }
-.close-button{
+
+.close-button {
 
   background-color: transparent;
   border: none;
@@ -277,46 +287,35 @@ dialog {
 
 
 .cards-container {
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
   gap: 1rem;
   text-align: left;
-  height: min-content;
-
-
 
 }
 
-
 .cards {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  row-gap: 0;
   border: 2px solid var(--ChampagnePink);
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 1rem;
   border-radius: 10px;
   min-width: 170px;
   max-width: 250px;
 
-
   h3 {
     margin: 0;
-    min-height: 2.8rem;
   }
 
   p {
     color: #5f5f5f;
-
   }
 }
 
 
-.cards svg {
-  position: absolute;
-  top: 15px;
-}
 
 /************************* MAP *************************/
 
@@ -394,7 +393,7 @@ footer {
 
 
 
-/*Css de CreatePost.jsx*/
+/************************* CreatePost *****************************/
 .create-post-container {
   display: flex;
   justify-content: space-between;
@@ -437,18 +436,19 @@ footer {
 }
 
 
-.create-post-form-container form{
+.create-post-form-container form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 100%;
 }
+
 .information1 {
   display: flex;
   align-items: center;
-  gap: 30px;  
+  gap: 30px;
 
-  input{
+  input {
     width: 100%;
   }
 }
@@ -495,7 +495,7 @@ select {
 }
 
 .photo input {
-  
+
   border-radius: 10px 0 0 10px;
 }
 
@@ -534,7 +534,7 @@ select {
 
 
 
-/****************ADOPTIONFORM*********************/
+/************************** ADOPTIONFORM **************************/
 
 .FormAdopt {
   max-width: 900px;
@@ -544,12 +544,14 @@ select {
   flex-direction: column;
   gap: 2rem;
 }
-.adoption-main{
+
+.adoption-main {
   padding: 3rem;
   display: flex;
   flex-direction: column;
 }
-.adoption-form-section{
+
+.adoption-form-section {
   padding: 3rem;
   border-bottom: solid 1px var(--Melon);
 
@@ -655,7 +657,7 @@ select {
   margin: auto;
   background-color: var(--Seashell);
   padding-bottom: 10px;
- border-radius: 10px;
+  border-radius: 10px;
 }
 
 .slides-wrapper {
@@ -699,14 +701,18 @@ select {
 }
 
 
-/***************AdoptionList************/
+/***************************AdoptionList***************************/
 .AdopListBody {
-
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background-color: var(--Seashell);
+  padding: 5rem;
+  box-sizing: border-box;
 
   h1 {
-    padding-left: 65px;
-    padding-top: 50px;
+    margin: 0;
+
   }
 }
 
@@ -714,8 +720,7 @@ select {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  margin: 20px auto;
-  padding-left: 65px;
+
 }
 
 .filtrer select {
@@ -726,6 +731,7 @@ select {
   background-color: var(--PaleDogwood);
   width: 100px;
   cursor: pointer;
+  font-family: "Lexend", sans-serif;
 }
 
 
@@ -733,8 +739,8 @@ select {
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20xp;
-  padding: 60px;
+  gap: 20px;
+
 }
 
 
@@ -744,7 +750,7 @@ select {
   border-radius: 15px;
   background-color: white;
   cursor: pointer;
-  margin: 15px;
+
 }
 
 
@@ -836,7 +842,9 @@ select {
 }
 
 .staff-pictures {
-  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  max-width: 300px;
 }
 
 .staff-pictures img {
@@ -1086,13 +1094,11 @@ select {
 
 /*******************MYPROFILE****************************/
 
-.profile-main{
+.profile-main {
   padding: 2rem;
 }
-.MyProfile {
 
-
-}
+.MyProfile {}
 
 .ProfileSection {
   display: flex;
@@ -1175,7 +1181,7 @@ hr {
   margin-top: 30px;
   text-align: center;
 }
-.AddPetButton .melon-button{
+
+.AddPetButton .melon-button {
   padding: 1.2rem;
 }
-
