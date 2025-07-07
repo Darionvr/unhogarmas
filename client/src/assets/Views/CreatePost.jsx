@@ -46,7 +46,7 @@ const CreatePost = () => {
 
   return (
     <>
-      <div className="create-post-container">
+      <main className="create-post-main">
         <div className="create-post-form-container">
           <h1>Crea una nueva publicación</h1>
           <form onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ const CreatePost = () => {
         <div className="create-post-photo">
           <img src="imgs\create-post-frame.png" alt="" />
         </div>
-      </div>
+      </main>
 
     </>
 

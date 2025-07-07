@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Navigate, Route, Routes } from 'react-router';
 import './App.css'
 import Home from './assets/Views/Home';
 import Staff from './assets/Views/Staff';
@@ -11,8 +11,12 @@ import CreatePost from './assets/Views/CreatePost';
 import Navbar from './assets/Components/Navbar';
 import Footer from './assets/Components/Footer';
 import PetProfile from './assets/Views/PetProfile';
+import { useContext } from 'react';
+import { UserContext } from './assets/Context/UserContext';
 
 function App() {
+
+const {token} = useContext(UserContext)
 
 
   return (
@@ -34,7 +38,7 @@ function App() {
         />
         <Route
           path="/Myprofile"
-          element={<Myprofile/>}
+          element={ token ? <Myprofile/> : <Navigate to="/" />}
         />
         <Route
           path="/AdoptList"
@@ -50,7 +54,7 @@ function App() {
         />
         <Route
           path="/CreatePost"
-          element={<CreatePost/>}
+          element={token ? <CreatePost/> : <Navigate to="/" /> }
         />
         <Route
           path="/PetProfile"

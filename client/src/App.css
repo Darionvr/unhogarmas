@@ -404,7 +404,7 @@ footer {
 
 
 /************************* CreatePost *****************************/
-.create-post-container {
+.create-post-main {
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -475,6 +475,7 @@ footer {
 .create-post-form-container input,
 select,
 textarea {
+    font-family: "Lexend", sans-serif;
   gap: 30px;
   padding: 12px;
   border: none var(--ChampagnePink);
