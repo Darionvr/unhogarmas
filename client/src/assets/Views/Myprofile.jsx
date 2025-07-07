@@ -2,11 +2,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { UserContext } from '../Context/UserContext';
+
 
 
 
 
 const Myprofile = () => {
+  const { form } = useContext(UserContext);
+  
   return (
     <>
     <main className='profile-main'>
@@ -17,7 +22,7 @@ const Myprofile = () => {
 
         <div className="ProfileSection">
           <div className="ProfilePicture">
-            <img src="https://media.istockphoto.com/id/1171169099/es/foto/hombre-con-brazos-cruzados-aislados-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=8qDLKdLMm2i8DHXY6crX6a5omVh2IxqrOxJV2QGzgFg="
+            <img src={form.file ? URL.createObjectURL(form.file) : "imgs/default-profile.jpg"}
               className="ProfileImage" />
 
 
@@ -25,19 +30,19 @@ const Myprofile = () => {
 
           <div className="ProfileInfo">
             <div className="Info">
-              <span>Nombre:</span>
+              <span>Nombre: {form.nombre}</span>
               <button> editar</button>
             </div>
             <div className="Info">
-              <span>Apellidos:</span>
+              <span>Apellidos: {form.apellido}</span>
               <button> editar</button>
             </div>
             <div className="Info">
-              <span>Celular:</span>
+              <span>Correo: {form.email}</span>
               <button> editar</button>
             </div>
             <div className="Info">
-              <span>Rut:</span>
+              <span>Rut: {form.rut}</span>
             </div>
           </div>
         </div>
