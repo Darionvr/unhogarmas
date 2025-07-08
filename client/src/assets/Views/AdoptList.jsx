@@ -37,6 +37,16 @@ const AdoptList = () => {
       sexo: "Macho",
       peso: "50kg",
       imagen: "https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134"
+    },{
+      id: 4,
+      nombre: "Michito",
+      especie: "Gato",
+      tamaño: "enano",
+      edad: 1,
+      sexo: "Macho",
+      peso: "3kg",
+      imagen: "https://www.anicura.es/cdn-cgi/image/f=auto,fit=cover,w=640,h=640,g=auto,sharpen=1/AdaptiveImages/powerinit/52437/_SNI2031.jpg?stamp=a2efc90c9d13cd9fdc0f5f7a2e3b2231238dc8cf"
+    
     }
   ];
 

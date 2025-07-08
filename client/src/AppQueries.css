@@ -73,15 +73,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         max-width: 30vw;
         overflow: hidden;
         border-radius: 10px;
-
     }
 
     .main-pictures img {
-
         height: 580px;
         max-height: none;
 
@@ -299,16 +296,6 @@
             max-width: 100%;
         }
     }
-    .card-list{
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: space-between;
-        gap: unset;
-        row-gap: 1rem;
-
-    }
-    .card{
-        max-width: 140px;
-    }
+   
     
 }

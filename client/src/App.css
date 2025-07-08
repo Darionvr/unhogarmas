@@ -765,22 +765,25 @@ textarea {
 
 
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  row-gap: 1rem;
 
 }
 
 
 .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 230px;
   border-radius: 15px;
   background-color: white;
   cursor: pointer;
   background-color: hsl(from var(--ChampagnePink) 400 s 90);
   overflow: hidden;
   padding: .5rem;
+  max-width: 240px;
 
   span {
     color: #555;
@@ -1151,14 +1154,15 @@ textarea {
 
 
 
-.MyProfile, .my-posts {
+.MyProfile,
+.my-posts {
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.my-posts h2{
+.my-posts h2 {
   font-size: 1.8rem;
 }
 
