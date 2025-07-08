@@ -63,9 +63,6 @@
     .cards {
         max-width: none;
 
-        h3 {
-            min-height: 0;
-        }
     }
 
     .cards:last-child {
@@ -115,7 +112,8 @@
 
     /************************* VOLUNTARY*************************/
     .voluntary-cards {
-        flex-direction: column;
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, auto);
     }
 
     .voluntary-cards .cards {
@@ -123,7 +121,7 @@
     }
 
     .voluntary-cards .cards:last-child {
-        display: flex;
+        display: grid;
     }
 
     .voluntary-form-section {
@@ -143,8 +141,11 @@
         box-sizing: border-box;
         width: 100%;
     }
-
-
+/************************* ADOPTION FORM *************************/
+    .knowledge{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
 
 }
 
@@ -185,12 +186,11 @@
         display: none;
     }
 
-    .cards {
-        padding-top: 3rem;
-    }
-
     .main-section .melon-button {
         width: 100%;
+    }
+    .cards h3{
+        margin-top: .5rem;
     }
 
     /************************* REGISTER *************************/

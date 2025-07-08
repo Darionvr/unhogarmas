@@ -93,14 +93,14 @@ const AdoptionForm = () => {
 
                 <section className="adoption-form-section">
                     <h2 className='sub'>
-                        <FontAwesomeIcon icon={faPaw} />Formulario de adopción</h2>
+                        <FontAwesomeIcon icon={faPaw} size='sm'/>Formulario de adopción</h2>
                     <div className="carousel-container">
                         <div
                             className="slides-wrapper"
                             style={{ transform: `translateX(-${current * 100}%)` }}
                         >
 
-                            <div className="slideAdoption FormAdopt">
+                            <div className="slideAdoption">
                                 <h3>Datos personales</h3>
                                 <form className="form-grid" onSubmit={SubmitAdoption}>
                                     <input
@@ -153,7 +153,7 @@ const AdoptionForm = () => {
                             </div>
 
 
-                            <div className="slideAdoption FormAdopt">
+                            <div className="slideAdoption">
                                 <h3>Datos de la mascota</h3>
                                 <form className="form-grid">
                                     <input
@@ -187,7 +187,7 @@ const AdoptionForm = () => {
                             </div>
 
 
-                            <div className="slideAdoption FormAdopt">
+                            <div className="slideAdoption ">
                                 <h3>Compromisos y seguimiento</h3>
                                 <form onSubmit={SubmitAdoption} className="submit-form">
                                     <label>
@@ -219,11 +219,11 @@ const AdoptionForm = () => {
                                     </label>
 
 
-                                    <div className="btnA">
-                                        <button type="submit" className="submit-button">
+                                    
+                                        <button type="submit" className="melon-button">
                                             Enviar solicitud
                                         </button>
-                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
