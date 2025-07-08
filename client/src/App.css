@@ -430,7 +430,7 @@ footer {
 .create-post-form-container {
   display: flex;
   flex-direction: column;
-  padding-left: 3rem;
+  padding-inline: 3rem;
   margin: auto;
 
 }
@@ -461,8 +461,7 @@ footer {
 
 .information1 {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 1rem;
 
   input {
     width: 100%;
@@ -472,10 +471,7 @@ footer {
 .information2 {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-bottom: 15px;
-
-
+  gap: 1rem;
 }
 
 .create-post-form-container input,
@@ -491,9 +487,6 @@ textarea {
   width: 100%;
 }
 
-select {
-  min-width: 195px;
-}
 
 .photo {
   display: flex;
