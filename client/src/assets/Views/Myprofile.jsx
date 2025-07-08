@@ -11,72 +11,68 @@ import { UserContext } from '../Context/UserContext';
 
 const Myprofile = () => {
   const { form } = useContext(UserContext);
-  
+
   return (
     <>
-    <main className='profile-main'>
-
- 
-      <div className="MyProfile">
-        <h1> Mi perfil</h1>
-
-        <div className="ProfileSection">
-          <div className="ProfilePicture">
-            <img src={form.file ? URL.createObjectURL(form.file) : "imgs/default-profile.jpg"}
-              className="ProfileImage" />
+      <main className='profile-main'>
 
 
-          </div>
+        <div className="MyProfile">
+          <h1> Mi perfil</h1>
 
-          <div className="ProfileInfo">
-            <div className="Info">
-              <span>Nombre: {form.nombre}</span>
-              <button> editar</button>
+          <div className="ProfileSection">
+            <div className="ProfilePicture">
+              <img src={form.file ? URL.createObjectURL(form.file) : "imgs/default-profile.jpg"}
+                className="ProfileImage" />
+
+
             </div>
-            <div className="Info">
-              <span>Apellidos: {form.apellido}</span>
-              <button> editar</button>
-            </div>
-            <div className="Info">
-              <span>Correo: {form.email}</span>
-              <button> editar</button>
-            </div>
-            <div className="Info">
-              <span>Rut: {form.rut}</span>
+
+            <div className="ProfileInfo">
+              <div className="Info">
+                <span>Nombre: {form.nombre}</span>
+                <button> editar</button>
+              </div>
+              <div className="Info">
+                <span>Apellidos: {form.apellido}</span>
+                <button> editar</button>
+              </div>
+              <div className="Info">
+                <span>Correo: {form.email}</span>
+                <button> editar</button>
+              </div>
+              <div className="Info">
+                <span>Rut: {form.rut}</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <hr />
-
-        <h2>Mascotas publicadas</h2>
-        <div className="pet-card">
-          <div className="PetContent">
-            <div className="PetImage">
-          
+        <div className="my-posts">
+          <h2>Mis publicaciones</h2>
+          <div className="card-list">
+            <div className="card">
+              <div className="img">
                 <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134" alt="Mascota" />
-                
-              <button className="melon-button"> <Link to={`/PetProfile`}> <FontAwesomeIcon icon={faPenToSquare} />Editar información</Link></button>
-           
-            </div>
+              </div>
 
-            <div className="pet-info">
-              <h3>Nombre</h3>
-              <p>Raza, edad</p>
-              
+              <div className="cardInfo">
+                <h3>Nombre</h3>
+                <p>Raza, edad</p>
+              </div>
+
+              <button className="melon-button"> <Link to={`/PetProfile`}> <FontAwesomeIcon icon={faPenToSquare} />Editar información</Link></button>
             </div>
           </div>
+          <div className="AddPetButton">
+            <button className='melon-button'>
+              <Link to="/CreatePost">
+                <FontAwesomeIcon icon={faFileCirclePlus} /> Agregar nueva mascota
+              </Link>
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className="AddPetButton">
-        <button className='melon-button'>
-          <Link to="/CreatePost">
-            <FontAwesomeIcon icon={faFileCirclePlus} /> Agregar nueva mascota
-          </Link>
-        </button>
-      </div>
-         </main>
+      </main>
 
     </>
 

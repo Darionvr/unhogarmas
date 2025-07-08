@@ -557,9 +557,9 @@ textarea {
 
 .adoption-form-section {
 
-padding: 2rem;
-width: 100%;
-box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 
 }
 
@@ -589,9 +589,9 @@ box-sizing: border-box;
   grid-template-rows: subgrid;
   grid-row: span 3;
   row-gap: 0;
-  text-align:center;
+  text-align: center;
 
-  h5{
+  h5 {
     margin: 0;
     font-weight: 400;
   }
@@ -1134,10 +1134,33 @@ box-sizing: border-box;
 /*******************MYPROFILE****************************/
 
 .profile-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 2rem;
+  background: linear-gradient(135deg, var(--ChampagnePink), var(--PaleDogwood));
+  border-top: 1px solid var(--Melon);
+  border-bottom: 1px solid var(--Melon);
+
 }
 
-.MyProfile {}
+.MyProfile .card::before {
+  content: none;
+
+}
+
+
+
+.MyProfile, .my-posts {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.my-posts h2{
+  font-size: 1.8rem;
+}
 
 .ProfileSection {
   display: flex;
@@ -1175,52 +1198,15 @@ box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 5px;
+  font-family: Lexend;
 }
 
-hr {
-  margin: 25px 0;
-}
 
-.PetContent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.PetImage {
-  width: 180px;
-  height: auto;
-  flex-shrink: 0;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  align-items: center;
-}
-
-.PetImage img {
+.card>.melon-button {
   width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.pet-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.pet-info h3 {
-  margin: 0;
-  font-size: 30px;
 }
 
 .AddPetButton {
   margin-top: 30px;
   text-align: center;
-}
-
-.AddPetButton .melon-button {
-  padding: 1.2rem;
 }
