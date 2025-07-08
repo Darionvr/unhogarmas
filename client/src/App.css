@@ -735,7 +735,7 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 5rem;
+  padding: 4rem 5rem;
   box-sizing: border-box;
   background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
 
