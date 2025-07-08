@@ -25,7 +25,7 @@ const Staff = () => {
         </div>
       </div>
       
-          <h3>¿Te gustaría ser parte de nuestro equipo?</h3>
+          <h3>¿Te gustaría ser parte del equipo?</h3>
       
       <button className='melon-button'><Link to='/voluntary'> Súmate como voluntario</Link> </button>
 
