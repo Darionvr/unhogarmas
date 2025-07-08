@@ -151,6 +151,28 @@
     .create-post-photo{
         display: none;
     }
+    /************************* PET PROFILE *************************/
+    .pet-main{
+        flex-direction: column;
+        padding-inline: 2rem;
+    }
+    .pet-photo{
+        aspect-ratio: 1/1;
+        overflow: hidden;
+    }
+    .pet-photo img{
+        object-fit: contain;
+        object-position: center;
+    }
+    .pet-info{
+        justify-content: center;
+        .melon-button{
+            width: 100%;
+        }
+    }
+    .pet-info p:last-of-type{
+        width: 100%;
+    }
 
 }
 
@@ -253,7 +275,7 @@
     /************************* CREATE POST  *************************/
     .create-post-form-container{
         padding: 2rem;
-        padding-inline: unset;
+        
     }
     .create-post-main{
         height: unset;
@@ -269,6 +291,24 @@
     /************************* ADOPT LIST  *************************/
     .AdopListBody{
         padding: 2rem;
+    }
+    .filtrer{
+        display: flex;
+        flex-direction: column;
+        select{
+            max-width: 100%;
+        }
+    }
+    .card-list{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        gap: unset;
+        row-gap: 1rem;
+
+    }
+    .card{
+        max-width: 145px;
     }
     
 }
