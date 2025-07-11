@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext';
-import TableCandidates from '../Components/TableCandidates';
+import TableSuperUser from '../Components/TableSuperUser';
 
 
 
@@ -46,7 +46,7 @@ const Myprofile = () => {
             </div>
           </div>
         </div>
-        <TableCandidates/>
+        <TableSuperUser/>
 
         {/* <Mypost/> */}
         

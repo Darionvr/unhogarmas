@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TableCandidates = () => {
+const TableSuperUser = () => {
     return (
         <>
             <div className="tableContainer">
@@ -93,4 +93,4 @@ const TableCandidates = () => {
     )
 }
 
-export default TableCandidates;
+export default TableSuperUser;
