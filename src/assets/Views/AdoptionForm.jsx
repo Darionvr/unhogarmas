@@ -140,7 +140,6 @@ const AdoptionForm = () => {
                                         <option value="">¿Permite mascotas?</option>
                                         <option value="Sí">Sí</option>
                                         <option value="No">No</option>
-                                        <option value="Propia">Tengo casa propia</option>
                                     </select>
                                 </form>
                             </div>
