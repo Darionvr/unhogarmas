@@ -6,13 +6,12 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons'
 const AdoptionForm = () => {
     const InitialAdoptionF = {
         Edad: "",
-        Correo: "",
         Celular: "",
         Domicilio: "",
         TipoVivienda: "",
         PermiteMascotas: "",
         NombreDeLaMascota: "",
-        TiempoDisponible: "",
+        Deseo:"",
         Convivencia: "",
         aceptoLey: false,
         compromiso: false,
@@ -32,10 +31,10 @@ const AdoptionForm = () => {
 
     const SubmitAdoption = (e) => {
         e.preventDefault();
-        if (!formData.Edad || !formData.Correo || !formData.Celular || !formData.Domicilio ||
+        if (!formData.Edad || !formData.Celular || !formData.Domicilio ||
             !formData.TipoVivienda || !formData.PermiteMascotas || !formData.NombreDeLaMascota
-            || !formData.TiempoDisponible || !formData.Convivencia || !formData.TiempoDisponible
-            || !formData.aceptoLey || !formData.compromiso || !formData.informacionVeridica) {
+             || !formData.Convivencia ||!formData.Deseo|| !formData.aceptoLey || 
+             !formData.compromiso || !formData.informacionVeridica) {
             alert("Todos los campos son obligatorios");
             return;
         }
@@ -110,13 +109,7 @@ const AdoptionForm = () => {
                                         value={formData.Edad}
                                         onChange={handleChange}
                                     />
-                                    <input
-                                        name="Correo"
-                                        placeholder="Correo"
-                                        type="email"
-                                        value={formData.Correo}
-                                        onChange={handleChange}
-                                    />
+
                                     <input
                                         name="Celular"
                                         placeholder="Celular"
@@ -163,8 +156,8 @@ const AdoptionForm = () => {
                                         onChange={handleChange}
                                     />
                                     <select
-                                        name="TiempoDisponible"
-                                        value={formData.TiempoDisponible}
+                                        name="Deseo"
+                                        value={formData.Deseo}
                                         onChange={handleChange}
                                     >
                                         <option value="">¿Por qué desea adoptar?</option>
