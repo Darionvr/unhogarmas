@@ -38,10 +38,15 @@ const AdoptionForm = () => {
             alert("Todos los campos son obligatorios");
             return;
         }
-        console.log(formData)
-
         setFormData(InitialAdoptionF);
+
+
     };
+
+
+    
+
+
 
 
     return (

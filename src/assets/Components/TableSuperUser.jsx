@@ -78,7 +78,7 @@ const TableSuperUser = () => {
                                 <td>Max</td>
                                 <td>Terapia</td>
                                 <td>Solo</td>
-                                <button className='callBtn'>📞</button>
+                               
                                 
                             </tr>
 
