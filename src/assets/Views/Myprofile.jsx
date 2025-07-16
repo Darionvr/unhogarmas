@@ -62,6 +62,7 @@ const Myprofile = () => {
               </div>
 
               <button className="melon-button"> <Link to={`/PetProfile`}> <FontAwesomeIcon icon={faPenToSquare} />Editar información</Link></button>
+              <button className='melon-button'>Eliminar</button>
             </div>
           </div>
           <div className="AddPetButton">

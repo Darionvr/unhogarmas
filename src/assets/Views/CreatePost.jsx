@@ -10,7 +10,7 @@ const CreatePost = () => {
 
   const initial = {
     nombre: "",
-    raza: "",
+    especie: "",
     edadAprox: "",
     peso: "",
     sexo: "",
@@ -32,7 +32,7 @@ const CreatePost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!form.nombre || !form.raza || !form.foto || !form.peso ||
+    if (!form.nombre || !form.especie || !form.foto || !form.peso ||
       !form.edadAprox || !form.chip || !form.sexo || !form.descripcion) {
       alert("Todos los campos son obligatorios");
       return;
@@ -52,7 +52,12 @@ const CreatePost = () => {
           <form onSubmit={handleSubmit}>
             <div className="information1">
               <input name="nombre" placeholder="Ingresa el nombre" value={form.nombre} onChange={handleChange} />
-              <input name="raza" placeholder="Ingresa la raza" value={form.raza} onChange={handleChange} />
+              <select value={form.raza} onChange={handleChange}>
+                <option value="">Especie</option>
+                <option value="">Perro</option>
+                <option value="">Gato</option>
+                <option value="">Conejo</option>
+              </select>
               <input name="edadAprox" placeholder="Ingresa edad aprox" value={form.edadAprox} onChange={handleChange} />
             </div>
             <div className="information2">
@@ -82,11 +87,11 @@ const CreatePost = () => {
               <textarea className="textareaCp" value={form.descripcion} name="descripcion"
                 onChange={handleChange}></textarea>
             </div>
-          
-              <button type="submit"  className='melon-button'>
-                <FontAwesomeIcon icon={faUpload} /> Publicar mascota
-              </button>
-           
+
+            <button type="submit" className='melon-button'>
+              <FontAwesomeIcon icon={faUpload} /> Publicar mascota
+            </button>
+
 
           </form>
         </div>

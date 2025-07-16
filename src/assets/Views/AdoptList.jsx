@@ -78,9 +78,9 @@ const AdoptList = () => {
 
         <select name="Tamaño" onChange={(e) => setTamaño(e.target.value)}>
           <option value="">Tamaño</option>
-          <option value="grande">Grande</option>
-          <option value="medianos">Mediano</option>
-          <option value="enano">Pequeño</option>
+          <option value="grande">+10kg</option>
+          <option value="medianos">5kg-10kg</option>
+          <option value="enano">1kg-5kg</option>
         </select>
 
         <select name="Edad" onChange={(e) => setEdad(e.target.value)}>

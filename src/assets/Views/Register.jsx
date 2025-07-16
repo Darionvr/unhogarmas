@@ -3,23 +3,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus, faUpload } from '@fortawesome/free-solid-svg-icons'
 import HomeLogo from '../Icons/HomeIcon'
 import Home from './Home'
-import data from '../../../public/TestUsuarios.json'
 import { UserContext } from '../Context/UserContext'
 import { useNavigate } from 'react-router'
 
 
 const Register = () => {
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const {form, setForm} = useContext(UserContext)
+  const { register } = useContext(UserContext)
   const [errors, setErrors] = useState({})
 
+  const [registerForm, setRegisterForm] = useState({
+    first_name: "",
+    last_name: "",
+    rut: "",
+    email: "",
+    password: "",
+    password2: "",
+    photo: null
+  })
 
   const fileInputRef = useRef(null);
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     const formErrors = validate();
@@ -27,26 +35,28 @@ const navigate = useNavigate();
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
-    }else{
-       navigate('/Myprofile');
     }
-    
 
+    const result = await register(registerForm);
 
-    /**** Acá debería ir la función para enviar los datos con POST próximo hito ****/
+    if (result) {
+      navigate('/Myprofile');
+    } else {
+      console.error("Registro fallido");
+    }
 
   }
 
   const validate = () => {
     const newErrors = {};
 
-    if (!form.nombre.trim()) {
+    if (!registerForm.first_name.trim()) {
       newErrors.nombre = 'Debes ingresar tu nombre';
     }
-    if (!form.apellido.trim()) {
+    if (!registerForm.last_name.trim()) {
       newErrors.apellido = 'Debes ingresar tu apellido';
     }
-    if (!form.rut.trim()) {
+    if (!registerForm.rut.trim()) {
       newErrors.rut = 'Debes ingresar tu RUT';
     }
 
@@ -55,10 +65,10 @@ const navigate = useNavigate();
       newErrors.email = 'Por favor ingresa un correo válido';
     }
 
-    if (!form.password.trim()) {
+    if (!registerForm.password.trim()) {
       newErrors.password = 'Debes ingresar una contraseña';
     }
-    if (form.password !== form.password2) {
+    if (registerForm.password !== form.password2) {
       newErrors.password2 = 'Las contraseñas no coinciden';
     }
 
@@ -67,7 +77,7 @@ const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-    setForm({
+    setRegisterForm({
       ...form,
       [name]: type === "file" ? files[0] : value
     });
@@ -84,37 +94,37 @@ const navigate = useNavigate();
 
         <form id='register' action="" className='register-form' onSubmit={handleSubmit}>
           <div className="input-group">
-            <input name='nombre' type="text" value={form.nombre} placeholder='Ingresa tu nombre' onChange={handleChange} />
+            <input name='first_name' type="text" value={registerForm.first_name} placeholder='Ingresa tu nombre' onChange={handleChange} />
             {errors.nombre && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.nombre}  </p>}
           </div>
           <div className="input-group">
-            <input name='apellido' type="text" value={form.apellido} placeholder='Ingresa tu apellido' onChange={handleChange} />
+            <input name='last_name' type="text" value={registerForm.last_name} placeholder='Ingresa tu apellido' onChange={handleChange} />
             {errors.apellido && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.apellido}  </p>}
           </div>
 
           <div className="input-group">
-            <input name='rut' type="text" value={form.rut} placeholder='Ingresa tu RUT' onChange={handleChange} />
+            <input name='rut' type="text" value={registerForm.rut} placeholder='Ingresa tu RUT' onChange={handleChange} />
             {errors.rut && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.rut}  </p>}
 
           </div>
           <div className="input-group">
-            <input name='email' type="text" value={form.email} placeholder='Ingresa tu email' onChange={handleChange} />
+            <input name='email' type="text" value={registerForm.email} placeholder='Ingresa tu email' onChange={handleChange} />
             {errors.email && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.email}  </p>}
           </div>
           <div className="input-group">
-            <input name='password' type="password" value={form.password} placeholder='Contraseña' onChange={handleChange} />
+            <input name='password' type="password" value={registerForm.password} placeholder='Contraseña' onChange={handleChange} />
             {errors.password && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.password}  </p>}
 
           </div>
           <div className="input-group">
-            <input name='password2' type="password" value={form.password2} placeholder='Re ingresa tu contraseña' onChange={handleChange} />
+            <input name='password2' type="password" value={registerForm.password2} placeholder='Re ingresa tu contraseña' onChange={handleChange} />
             {errors.password2 && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.password2}  </p>}
 
           </div>
           <div className="input-group" onClick={() => fileInputRef.current && fileInputRef.current.click()}>
             <FontAwesomeIcon icon={faUpload} />
-            <input name='file' type="file" onChange={handleChange} style={{ display: "none" }} ref={fileInputRef} />
-            {form.file ? <span className="file-name">{form.file.name}</span> : <span> Selecciona tu foto de perfil</span>}
+            <input name='photo' type="file" onChange={handleChange} style={{ display: "none" }} ref={fileInputRef} />
+            {registerForm.photo ? <span className="file-name">{registerForm.photo.name}</span> : <span> Selecciona tu foto de perfil</span>}
           </div>
 
           <button type='submit' form='register' className='melon-button'> <FontAwesomeIcon icon={faUserPlus} /> Unirme ahora</button>
