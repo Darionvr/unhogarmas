@@ -1214,3 +1214,107 @@ textarea {
   margin-top: 30px;
   text-align: center;
 }
+
+/*******************TABLESUPERUSER*************************/
+
+
+/**PRIMERATABLA**/
+.tableContainer {
+  margin: 20px;
+  background-color: white;
+
+  h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #000000;
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #000000;
+  }
+
+  th {
+
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  
+};
+
+.tableAdoption {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.confirmedForm, .deleteForm {
+    border: none; 
+    padding: 8px 12px;
+    margin: 0 5px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    height: 40px; 
+}
+
+/********************SEGUNDATABLA***************************/
+
+.tableContainer1 {
+  margin: 20px;
+  background-color: white;
+
+  h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #000000;
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #000000;
+  }
+
+  th {
+
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  
+};
+
+.tableAdoption {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.callBtn{
+    border: none; 
+    padding: 8px 12px;
+    margin: 0 5px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    height: 40px; 
+}

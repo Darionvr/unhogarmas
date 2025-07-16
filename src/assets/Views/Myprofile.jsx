@@ -1,9 +1,8 @@
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext';
+import TableSuperUser from '../Components/TableSuperUser';
+
+
 
 
 
@@ -73,6 +72,11 @@ const Myprofile = () => {
             </button>
           </div>
         </div>
+        <TableSuperUser/>
+
+        {/* <Mypost/> */}
+        
+
       </main>
 
     </>
