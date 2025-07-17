@@ -1,31 +1,35 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../Context/UserContext';
+import { UserContext } from '../Context/UserContext.jsx'
 import { useNavigate } from 'react-router';
-
-
 
 
 const LoginForm = () => {
 
+    const { login } = useContext(UserContext);
     const [errors, setErrors] = useState({})
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const navigate = useNavigate();
-    const { password, setPassword, email, setEmail, token, logout, login } = useContext(UserContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formErrors = validate();
 
-        if (Object.keys(formErrors).length === 0) {
-
-            const success = await login();
-            if (success) {
-                navigate('/Myprofile');
-            } else {
-                setErrors({ general: "Usuario o contraseña incorrectos" });
-            }
-        } else {
+        if (Object.keys(formErrors).length > 0) {
             setErrors(formErrors);
+            return
         }
+        setErrors({});
+
+        const result = await login(email, password);
+
+        if (result?.token) {
+            navigate('/Myprofile');
+        } else {
+            setErrors({ general: "Usuario o contraseña incorrectos" });
+        }
+
     }
 
     const validate = () => {

@@ -7,7 +7,7 @@ export const UserContext = createContext()
 const UserProvider = ({ children }) => {
 
     const [token, setToken] = useState(null)
-
+    const [currentUser, setCurrentUser] = useState(null)
 
     const logout = () => {
         setToken(null);
@@ -20,11 +20,21 @@ const UserProvider = ({ children }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
             });
-            const users = await response.json();
+
+            if (!response.ok) {
+                const errorData = await response.json(); 
+                console.error("Login error:", errorData);
+                return false;
+            }
+            
+            const data = await response.json();
+
             setToken(data.token);
+            setCurrentUser(data.user)
             return data
 
         } catch (error) {
+            console.error("Network or unexpected error:", error);
             setToken(null);
             return false;
         }
@@ -50,6 +60,7 @@ const UserProvider = ({ children }) => {
 
             const data = await response.json();
             setToken(data.token);
+            setCurrentUser(data.user);
             return data;
 
         } catch (error) {
@@ -62,7 +73,7 @@ const UserProvider = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            token, setToken, login, logout, register
+            token, setToken, login, logout, register, currentUser
         }}>
 
             {children}

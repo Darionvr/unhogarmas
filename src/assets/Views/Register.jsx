@@ -36,11 +36,12 @@ const Register = () => {
       setErrors(formErrors);
       return;
     }
+     setErrors({});
 
     const result = await register(registerForm);
 
-    if (result) {
-      navigate('/Myprofile');
+    if (result?.token) {
+       navigate('/myprofile');
     } else {
       console.error("Registro fallido");
     }
@@ -61,14 +62,14 @@ const Register = () => {
     }
 
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    if (!emailPattern.test(form.email)) {
+    if (!emailPattern.test(registerForm.email)) {
       newErrors.email = 'Por favor ingresa un correo válido';
     }
 
     if (!registerForm.password.trim()) {
       newErrors.password = 'Debes ingresar una contraseña';
     }
-    if (registerForm.password !== form.password2) {
+    if (registerForm.password !== registerForm.password2) {
       newErrors.password2 = 'Las contraseñas no coinciden';
     }
 
@@ -78,7 +79,7 @@ const Register = () => {
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     setRegisterForm({
-      ...form,
+      ...registerForm,
       [name]: type === "file" ? files[0] : value
     });
   }

@@ -16,52 +16,52 @@ import { UserContext } from './assets/Context/UserContext';
 
 function App() {
 
-const {token} = useContext(UserContext)
+  const { token } = useContext(UserContext)
 
 
   return (
     <>
 
-     <Navbar/>
+      <Navbar />
       <Routes>
         <Route
           path="/"
-          element={<Home/>}
+          element={<Home />}
         />
         <Route
           path="/Staff"
-          element={<Staff/>}
+          element={<Staff />}
         />
         <Route
           path="/Register"
-          element={<Register/>}
+          element={<Register />}
         />
         <Route
           path="/Myprofile"
-          element={ token ? <Myprofile/> : <Navigate to="/" />}
+          element={token ? <Myprofile /> : <Navigate to="/" />}
         />
         <Route
           path="/AdoptList"
-          element={<AdoptList/>}
+          element={<AdoptList />}
         />
         <Route
           path="/AdoptionForm"
-          element={<AdoptionForm/>}
+          element={<AdoptionForm />}
         />
         <Route
           path="/Voluntary"
-          element={<Voluntary/>}
+          element={<Voluntary />}
         />
         <Route
           path="/CreatePost"
-          element={token ? <CreatePost/> : <Navigate to="/" /> }
+          element={token ? <CreatePost /> : <Navigate to="/" />}
         />
         <Route
           path="/PetProfile"
-          element={<PetProfile/>}
+          element={<PetProfile />}
         />
       </Routes>
-      <Footer/>
+      <Footer />
 
     </>
   )
