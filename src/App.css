@@ -6,6 +6,9 @@
   --Peach: #FEC89A;
   font-family: "Lexend", sans-serif;
   color: rgb(31, 31, 31);
+  a{
+    color:  rgb(31, 31, 31);;
+  }
 
 }
 
@@ -21,6 +24,9 @@
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+   a{
+    color:  rgb(31, 31, 31);;
+  }
 
   &:hover {
     background-color: var(--ChampagnePink);
@@ -762,6 +768,10 @@ textarea {
   font-family: "Lexend", sans-serif;
 }
 
+.filter option{
+  color: rgb(31, 31, 31);
+}
+
 
 
 .card-list {
@@ -1153,7 +1163,6 @@ textarea {
 }
 
 
-
 .MyProfile,
 .my-posts {
   background-color: white;
@@ -1169,7 +1178,7 @@ textarea {
 .ProfileSection {
   display: flex;
   gap: 25px;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
 }
 
@@ -1186,16 +1195,38 @@ textarea {
   height: 100%;
   object-fit: cover;
 }
-
+.ProfileInfo{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
 
 .ProfileInfo .Info {
   display: flex;
   justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 10px;
 }
 
-.ProfileInfo button {
-  background: none;
+.ProfileInfo .melon-button{
+  margin-top: 1rem;
+}
+
+.Info > input {
+    background-color: #f1f1f1;
+    gap: 30px;
+    padding: 12px;
+    border: none var(--ChampagnePink);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Lexend;
+
+  }
+
+
+
+.edit-button{
+  background-color: transparent;
   border: none;
   color: gray;
   cursor: pointer;

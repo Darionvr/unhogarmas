@@ -26,7 +26,7 @@ const UserProvider = ({ children }) => {
                 console.error("Login error:", errorData);
                 return false;
             }
-            
+
             const data = await response.json();
 
             setToken(data.token);
@@ -73,7 +73,7 @@ const UserProvider = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            token, setToken, login, logout, register, currentUser
+            token, setToken, login, logout, register, currentUser, setCurrentUser
         }}>
 
             {children}
