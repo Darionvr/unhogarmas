@@ -11,10 +11,13 @@ const Myprofile = () => {
   const [editMode, setEditMode] = useState({
     first_name: false,
     last_name: false,
-    email: false
+    email: false,
+    button: false
   });
   const [tempValues, setTempValues] = useState({});
   const camposEditables = ["first_name", "last_name", "email"];
+  const hayEdicionActiva = Object.values(editMode).some((estado) => estado === true);
+  const hayCambiosPendientes = Object.keys(datosModificados).length > 0;
 
 
   const handleEditClick = (field) => {
@@ -62,9 +65,9 @@ const Myprofile = () => {
         console.error("Error al actualizar:", result.message);
         return;
       }
-      setCurrentUser(result.user); 
-      setEditMode({});             
-      setTempValues({});          
+      setCurrentUser(result.user);
+      setEditMode({ first_name: false, last_name: false, email: false });
+      setTempValues({});
       setDatosModificados({});
     } catch (error) {
       console.error("Error al actualizar datos:", error);
@@ -110,7 +113,8 @@ const Myprofile = () => {
               <div className="Info">
                 <span>{currentUser.rut}</span>
               </div>
-              <button className='melon-button' onClick={handleSubmit}>Guardar cambios</button>
+              {hayCambiosPendientes && (
+                <button className='melon-button' onClick={handleSubmit}>Guardar cambios</button>)}
             </div>
           </div>
 

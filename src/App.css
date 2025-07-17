@@ -24,6 +24,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  color:  rgb(31, 31, 31);;
    a{
     color:  rgb(31, 31, 31);;
   }
@@ -775,25 +776,25 @@ textarea {
 
 
 .card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  row-gap: 1rem;
-
 }
 
 
 .card {
   display: flex;
+  flex: 1 1 140px;
   flex-direction: column;
   position: relative;
   border-radius: 15px;
-  background-color: white;
   cursor: pointer;
   background-color: hsl(from var(--ChampagnePink) 400 s 90);
   overflow: hidden;
   padding: .5rem;
-  max-width: 240px;
+  max-width: 200px;
+  min-width: 140px;
+  box-sizing: border-box;
 
   span {
     color: #555;
@@ -815,6 +816,7 @@ textarea {
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
+
 
 
 .img img {
@@ -1220,7 +1222,7 @@ textarea {
     border-radius: 10px;
     font-size: 14px;
     font-family: Lexend;
-
+  
   }
 
 
@@ -1234,6 +1236,9 @@ textarea {
   align-items: center;
   gap: 5px;
   font-family: Lexend;
+  &:hover{
+    color: rgb(176, 175, 175);
+  }
 }
 
 

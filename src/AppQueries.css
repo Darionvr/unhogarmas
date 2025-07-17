@@ -47,7 +47,6 @@
 
     .slide-image-container img {
         width: 100%;
-        max-height: fit-content;
     }
 
     /************************* MAIN HOME*************************/
@@ -185,22 +184,39 @@
     .dialog-container{
         padding-inline: .5rem;
     }
+    nav>a:first-of-type{
+        font-size: unset;
+    }
+    nav{
+        padding: 1rem;
+    }
 
-
+    /************************* MY PROFILE *************************/
+    .Info{
+        flex-direction: column;
+    }
+    
+    .ProfilePicture{
+        margin: auto;
+    }
     /************************* HEADER *************************/
 
     .header-home {
         text-align: center;
+        padding-top: 0;
     }
 
     .slides {
         display: flex;
         flex-direction: column;
     }
+    .slides h1 > span{
+        display: none;
+    }
 
     .slide-image-container img {
-
-        max-height: 40vh;
+        width: unset;
+        max-height: 40dvh;
 
     }
 
