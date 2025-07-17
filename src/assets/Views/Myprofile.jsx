@@ -1,9 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext';
 import TableSuperUser from '../Components/TableSuperUser';
-import { Link, useNavigate } from 'react-router'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import Mypost from '../Components/MyPost';
 
 
@@ -27,19 +24,19 @@ const Myprofile = () => {
 
             <div className="ProfileInfo">
               <div className="Info">
-                <span>Nombre: {currentUser.first_name}</span>
+                <span>{currentUser.first_name}</span>
                 <button> editar</button>
               </div>
               <div className="Info">
-                <span>Apellidos: {currentUser.last_name}</span>
+                <span>{currentUser.last_name}</span>
                 <button> editar</button>
               </div>
               <div className="Info">
-                <span>Correo: {currentUser.email}</span>
+                <span>{currentUser.email}</span>
                 <button> editar</button>
               </div>
               <div className="Info">
-                <span>Rut: {currentUser.rut}</span>
+                <span>{currentUser.rut}</span>
               </div>
             </div>
           </div>
