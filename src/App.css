@@ -245,7 +245,7 @@ dialog {
 .slides h1 {
   font-size: clamp(2rem, 7vw, 4rem);
   color: black;
-  margin: 0;
+  margin: auto;
 
   span {
     display: inline-block;

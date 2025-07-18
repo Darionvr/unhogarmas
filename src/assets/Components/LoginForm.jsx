@@ -29,7 +29,6 @@ const LoginForm = () => {
         } else {
             setErrors({ general: "Usuario o contraseña incorrectos" });
         }
-
     }
 
     const validate = () => {

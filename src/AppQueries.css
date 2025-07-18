@@ -45,9 +45,10 @@
 
     /************************* HEADER *************************/
 
-    .slide-image-container img {
-        width: 100%;
-    }
+.slides h1 {
+     font-size: clamp(2rem, 5vw, 4rem);
+}
+
 
     /************************* MAIN HOME*************************/
     .main-home {
