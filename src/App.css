@@ -240,6 +240,8 @@ dialog {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .slides h1 {
@@ -257,7 +259,8 @@ dialog {
 
 .slide-image-container img {
 
-  max-height: 80vh;
+  max-height: 80dvh;
+  max-width: 100%;
 
 }
 
