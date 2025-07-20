@@ -32,7 +32,6 @@ const UserProvider = ({ children }) => {
 
             setToken(data.token);
             setCurrentUser(data.user)
-            navigate('/Myprofile');
             return data
 
         } catch (error) {
