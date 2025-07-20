@@ -83,9 +83,9 @@ const Myprofile = () => {
 
           <div className="ProfileSection">
             <div className="ProfilePicture">
-              {/*   <img src={currentUser.photo ? URL.createObjectURL(currentUser.photo) : "imgs/default-profile.jpg"}
+              <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${currentUser.photo}`}
                 className="ProfileImage" />
- */}
+ 
             </div>
 
             <div className="ProfileInfo">

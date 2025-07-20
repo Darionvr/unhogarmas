@@ -61,29 +61,29 @@ const UserProvider = ({ children }) => {
             });
 
             const data = await response.json();
-        console.log("Respuesta del registro:", data);
+            console.log("Respuesta del registro:", data);
 
-        if (!response.ok) {
-            console.error("Registro fallido:", data.message);
+            if (!response.ok) {
+                console.error("Registro fallido:", data.message);
+                return false;
+            }
+
+            if (data.token && data.user) {
+                setToken(data.token);
+                setCurrentUser(data.user);
+                navigate('/Myprofile');
+                return data;
+            } else {
+                console.error("Faltan datos en la respuesta del backend");
+                return false;
+            }
+
+        } catch (error) {
+            console.error("Error en el registro:", error);
+            setToken(null);
             return false;
         }
-
-        if (data.token && data.user) {
-            setToken(data.token);
-            setCurrentUser(data.user);
-            navigate('/Myprofile');
-            return data;
-        } else {
-            console.error("Faltan datos en la respuesta del backend");
-            return false;
-        }
-
-    } catch (error) {
-        console.error("Error en el registro:", error);
-        setToken(null);
-        return false;
-    }
-};
+    };
 
     return (
         <UserContext.Provider value={{
