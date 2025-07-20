@@ -32,7 +32,6 @@ const UserProvider = ({ children }) => {
 
             setToken(data.token);
             setCurrentUser(data.user)
-            navigate('/Myprofile');
             return data
 
         } catch (error) {
@@ -68,15 +67,14 @@ const UserProvider = ({ children }) => {
                 return false;
             }
 
-            if (data.token && data.user) {
-                setToken(data.token);
-                setCurrentUser(data.user);
-                navigate('/Myprofile');
-                return data;
-            } else {
-                console.error("Faltan datos en la respuesta del backend");
-                return false;
-            }
+        if (data.token && data.user) {
+            setToken(data.token);
+            setCurrentUser(data.user);
+            return data;
+        } else {
+            console.error("Faltan datos en la respuesta del backend");
+            return false;
+        }
 
         } catch (error) {
             console.error("Error en el registro:", error);
