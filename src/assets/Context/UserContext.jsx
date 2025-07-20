@@ -8,6 +8,7 @@ const UserProvider = ({ children }) => {
 
     const [token, setToken] = useState(null)
     const [currentUser, setCurrentUser] = useState(null)
+    const navigate = useNavigate();
 
     const logout = () => {
         setToken(null);
@@ -22,7 +23,7 @@ const UserProvider = ({ children }) => {
             });
 
             if (!response.ok) {
-                const errorData = await response.json(); 
+                const errorData = await response.json();
                 console.error("Login error:", errorData);
                 return false;
             }
@@ -31,6 +32,7 @@ const UserProvider = ({ children }) => {
 
             setToken(data.token);
             setCurrentUser(data.user)
+            navigate('/Myprofile');
             return data
 
         } catch (error) {
@@ -59,17 +61,29 @@ const UserProvider = ({ children }) => {
             });
 
             const data = await response.json();
-            setToken(data.token);
-            setCurrentUser(data.user);
-            return data;
+        console.log("Respuesta del registro:", data);
 
-        } catch (error) {
-            console.error("Error en el registro:", error);
-            setToken(null);
+        if (!response.ok) {
+            console.error("Registro fallido:", data.message);
             return false;
         }
-    };
 
+        if (data.token && data.user) {
+            setToken(data.token);
+            setCurrentUser(data.user);
+            navigate('/Myprofile');
+            return data;
+        } else {
+            console.error("Faltan datos en la respuesta del backend");
+            return false;
+        }
+
+    } catch (error) {
+        console.error("Error en el registro:", error);
+        setToken(null);
+        return false;
+    }
+};
 
     return (
         <UserContext.Provider value={{
