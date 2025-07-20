@@ -70,7 +70,6 @@ const UserProvider = ({ children }) => {
         if (data.token && data.user) {
             setToken(data.token);
             setCurrentUser(data.user);
-            navigate('/Myprofile');
             return data;
         } else {
             console.error("Faltan datos en la respuesta del backend");
