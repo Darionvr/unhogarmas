@@ -173,7 +173,7 @@ dialog {
   align-items: center;
   gap: .3rem;
   font-size: .8rem;
-  color: var(--Melon);
+  color: hsl(from var(--Melon) h 80 60);
 
 }
 
