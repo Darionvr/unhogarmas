@@ -120,7 +120,7 @@ const Myprofile = () => {
 
         </div>
 
-
+        
         {token.role === 'administrador' && <TableSuperUser />}
 
         <Mypost />

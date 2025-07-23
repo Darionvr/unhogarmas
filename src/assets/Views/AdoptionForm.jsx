@@ -11,7 +11,7 @@ const AdoptionForm = () => {
         TipoVivienda: "",
         PermiteMascotas: "",
         NombreDeLaMascota: "",
-        Deseo:"",
+        Deseo: "",
         Convivencia: "",
         aceptoLey: false,
         compromiso: false,
@@ -29,22 +29,62 @@ const AdoptionForm = () => {
         });
     };
 
-    const SubmitAdoption = (e) => {
+    const SubmitAdoption = async (e) => {
         e.preventDefault();
-        if (!formData.Edad || !formData.Celular || !formData.Domicilio ||
-            !formData.TipoVivienda || !formData.PermiteMascotas || !formData.NombreDeLaMascota
-             || !formData.Convivencia ||!formData.Deseo|| !formData.aceptoLey || 
-             !formData.compromiso || !formData.informacionVeridica) {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Debes iniciar sesión antes de enviar el formulario");
+            return;
+        }
+
+        const {
+            Edad, Celular, Domicilio, TipoVivienda, PermiteMascotas,
+            NombreDeLaMascota, Deseo, Convivencia, aceptoLey,
+            compromiso, informacionVeridica
+        } = formData;
+
+        if (!Edad || !Celular || !Domicilio || !TipoVivienda || !PermiteMascotas ||
+            !NombreDeLaMascota || !Deseo || !Convivencia || !aceptoLey ||
+            !compromiso || !informacionVeridica) {
             alert("Todos los campos son obligatorios");
             return;
         }
-        setFormData(InitialAdoptionF);
 
+        try {
+            const response = await fetch("http://localhost:5000/request", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                },
+                body: JSON.stringify({
+                    age: parseInt(Edad),
+                    phone: Celular,
+                    address: Domicilio,
+                    housing_type: TipoVivienda,
+                    allows_pets: PermiteMascotas === "Sí",
+                    pet_name: NombreDeLaMascota,
+                    reason: Deseo,
+                    household: Convivencia
+                })
+            });
 
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Formulario enviado con éxito");
+                setFormData(InitialAdoptionF);
+            } else {
+                alert(data.message || "Error al enviar el formulario");
+            }
+
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+            alert("Error al enviar el formulario");
+        }
     };
 
 
-    
 
 
 
@@ -97,7 +137,7 @@ const AdoptionForm = () => {
 
                 <section className="adoption-form-section">
                     <h2 className='sub'>
-                        <FontAwesomeIcon icon={faPaw} size='sm'/>Formulario de adopción</h2>
+                        <FontAwesomeIcon icon={faPaw} size='sm' />Formulario de adopción</h2>
                     <div className="carousel-container">
                         <div
                             className="slides-wrapper"
@@ -216,11 +256,11 @@ const AdoptionForm = () => {
                                     </label>
 
 
-                                    
-                                        <button type="submit" className="melon-button">
-                                            Enviar solicitud
-                                        </button>
-                                    
+
+                                    <button type="submit" className="melon-button">
+                                        Enviar solicitud
+                                    </button>
+
                                 </form>
                             </div>
                         </div>

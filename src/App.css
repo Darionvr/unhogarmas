@@ -6,8 +6,10 @@
   --Peach: #FEC89A;
   font-family: "Lexend", sans-serif;
   color: rgb(31, 31, 31);
-  a{
-    color:  rgb(31, 31, 31);;
+
+  a {
+    color: rgb(31, 31, 31);
+    ;
   }
 
 }
@@ -24,9 +26,12 @@
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  color:  rgb(31, 31, 31);;
-   a{
-    color:  rgb(31, 31, 31);;
+  color: rgb(31, 31, 31);
+  ;
+
+  a {
+    color: rgb(31, 31, 31);
+    ;
   }
 
   &:hover {
@@ -772,7 +777,7 @@ textarea {
   font-family: "Lexend", sans-serif;
 }
 
-.filter option{
+.filter option {
   color: rgb(31, 31, 31);
 }
 
@@ -844,9 +849,6 @@ textarea {
   margin: 2px 0;
   font-size: 15px;
 }
-
-
-
 
 
 /************************* STAFF *************************/
@@ -1200,7 +1202,8 @@ textarea {
   height: 100%;
   object-fit: cover;
 }
-.ProfileInfo{
+
+.ProfileInfo {
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -1213,24 +1216,24 @@ textarea {
   margin-bottom: 10px;
 }
 
-.ProfileInfo .melon-button{
+.ProfileInfo .melon-button {
   margin-top: 1rem;
 }
 
-.Info > input {
-    background-color: #f1f1f1;
-    gap: 30px;
-    padding: 12px;
-    border: none var(--ChampagnePink);
-    border-radius: 10px;
-    font-size: 14px;
-    font-family: Lexend;
-  
-  }
+.Info>input {
+  background-color: #f1f1f1;
+  gap: 30px;
+  padding: 12px;
+  border: none var(--ChampagnePink);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Lexend;
+
+}
 
 
 
-.edit-button{
+.edit-button {
   background-color: transparent;
   border: none;
   color: gray;
@@ -1239,7 +1242,8 @@ textarea {
   align-items: center;
   gap: 5px;
   font-family: Lexend;
-  &:hover{
+
+  &:hover {
     color: rgb(176, 175, 175);
   }
 }
@@ -1270,7 +1274,8 @@ textarea {
     padding: 0 5px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #000000;
@@ -1282,8 +1287,10 @@ textarea {
     font-weight: bold;
   }
 
-  
-};
+
+}
+
+;
 
 .tableAdoption {
   width: 100%;
@@ -1294,17 +1301,18 @@ textarea {
   overflow: hidden;
 }
 
-.confirmedForm, .deleteForm {
-    border: none; 
-    padding: 8px 12px;
-    margin: 0 5px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 20px; 
-    display: inline-flex; 
-    align-items: center;
-    justify-content: center;
-    height: 40px; 
+.confirmedForm,
+.deleteForm {
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
 }
 
 /********************SEGUNDATABLA***************************/
@@ -1321,7 +1329,8 @@ textarea {
     padding: 0 5px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #000000;
@@ -1333,8 +1342,10 @@ textarea {
     font-weight: bold;
   }
 
-  
-};
+
+}
+
+;
 
 .tableAdoption {
   width: 100%;
@@ -1345,15 +1356,15 @@ textarea {
   overflow: hidden;
 }
 
-.callBtn{
-    border: none; 
-    padding: 8px 12px;
-    margin: 0 5px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 20px; 
-    display: inline-flex; 
-    align-items: center;
-    justify-content: center;
-    height: 40px; 
+.callBtn {
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
 }

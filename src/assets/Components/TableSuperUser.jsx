@@ -1,6 +1,30 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 
 const TableSuperUser = () => {
+    const [requests, setRequests] = useState([]);
+    useEffect(() => {
+        const fetchRequests = async () => {
+            try {
+                const res = await fetch('http://localhost:5000/request', {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                });
+                
+                const data = await res.json();
+                if (res.ok) {
+                    setRequests(data.results);
+                } else {
+                    console.error(data.message);
+                }
+            } catch (error) {
+                console.error('Error al obtener solicitudes:', error);
+            }
+        };
+
+        fetchRequests();
+    }, []);
+
     return (
         <>
             <div className="tableContainer">
@@ -24,21 +48,27 @@ const TableSuperUser = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>pepe</td>
-                            <td>rodriguez</td>
-                            <td>pepe@rodriguez.com</td>
-                            <td>30</td>
-                            <td>+56912345678</td>
-                            <td>P. Sherman, Calle Wallaby 42</td>
-                            <td>Casa</td>
-                            <td>Sí</td>
-                            <td>Max</td>
-                            <td>Terapia</td>
-                            <td>Solo</td>
-                            <button className='confirmedForm'>✅</button>
-                            <button className='deleteForm'>❌</button>
-                        </tr>
+                        {requests
+                            .filter((r) => r.status === "pendiente")
+                            .map((r) => (
+                                <tr key={r.id}>
+                                    <td>{r.nombre}</td>
+                                    <td>{r.apellido}</td>
+                                    <td>{r.correo}</td>
+                                    <td>{r.age}</td>
+                                    <td>{r.phone}</td>
+                                    <td>{r.address}</td>
+                                    <td>{r.housing_type}</td>
+                                    <td>{r.allows_pets ? "Sí" : "No"}</td>
+                                    <td>{r.pet_name}</td>
+                                    <td>{r.reason}</td>
+                                    <td>{r.household}</td>
+                                    <td>
+                                        <button className='confirmedForm'>✅</button>
+                                        <button className='deleteForm'>❌</button>
+                                    </td>
+                                </tr>
+                            ))}
 
                     </tbody>
                 </table>
@@ -66,21 +96,23 @@ const TableSuperUser = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>pepe</td>
-                                <td>rodriguez</td>
-                                <td>pepe@rodriguez.com</td>
-                                <td>30</td>
-                                <td>+56912345678</td>
-                                <td>P. Sherman, Calle Wallaby 42, Sidney</td>
-                                <td>Casa</td>
-                                <td>Sí</td>
-                                <td>Max</td>
-                                <td>Terapia</td>
-                                <td>Solo</td>
-                               
-                                
-                            </tr>
+                            {requests
+                                .filter((r) => r.status === "aceptada")
+                                .map((r) => (
+                                    <tr key={r.id}>
+                                        <td>{r.nombre}</td>
+                                        <td>{r.apellido}</td>
+                                        <td>{r.correo}</td>
+                                        <td>{r.age}</td>
+                                        <td>{r.phone}</td>
+                                        <td>{r.address}</td>
+                                        <td>{r.housing_type}</td>
+                                        <td>{r.allows_pets ? "Sí" : "No"}</td>
+                                        <td>{r.pet_name}</td>
+                                        <td>{r.reason}</td>
+                                        <td>{r.household}</td>
+                                    </tr>
+                                ))}
 
                         </tbody>
                     </table>
