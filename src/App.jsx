@@ -57,7 +57,7 @@ function App() {
           element={token ? <CreatePost /> : <Navigate to="/" />}
         />
         <Route
-          path="/PetProfile"
+          path="/PetProfile/:id"
           element={<PetProfile />}
         />
       </Routes>
