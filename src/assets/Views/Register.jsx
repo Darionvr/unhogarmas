@@ -36,12 +36,12 @@ const Register = () => {
       setErrors(formErrors);
       return;
     }
-     setErrors({});
+    setErrors({});
 
     const result = await register(registerForm);
 
     if (result?.token) {
-       navigate('/myprofile');
+      navigate('/myprofile');
     } else {
       console.error("Registro fallido");
     }
@@ -72,7 +72,9 @@ const Register = () => {
     if (registerForm.password !== registerForm.password2) {
       newErrors.password2 = 'Las contraseñas no coinciden';
     }
-
+    if (registerForm.photo && registerForm.photo.size > 5 * 1024 * 1024) {
+      newErrors.photo = 'La imagen no puede superar los 5MB'
+    }
     return newErrors;
   };
 
@@ -126,6 +128,8 @@ const Register = () => {
             <FontAwesomeIcon icon={faUpload} />
             <input name='photo' type="file" onChange={handleChange} style={{ display: "none" }} ref={fileInputRef} />
             {registerForm.photo ? <span className="file-name">{registerForm.photo.name}</span> : <span> Selecciona tu foto de perfil</span>}
+            {errors.photo && <p className='form-error'> <img src="imgs\alert-icon.svg" alt="ícono alerta" />{errors.photo}  </p>}
+
           </div>
 
           <button type='submit' form='register' className='melon-button'> <FontAwesomeIcon icon={faUserPlus} /> Unirme ahora</button>
