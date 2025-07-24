@@ -14,7 +14,7 @@ const AdoptList = () => {
     const fetchAnimals = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/pets`);
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets`);
         const data = await res.json();
         const adaptados = data.results.map(animal => ({
           ...animal,
@@ -25,6 +25,7 @@ const AdoptList = () => {
           sexo: animal.gender,
           peso: animal.weight,
           imagen: animal.photo
+          
         }));
         setAnimals(adaptados);
       } catch (err) {

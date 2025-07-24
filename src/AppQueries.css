@@ -8,35 +8,39 @@
     /************************* NAVBAR *************************/
 
 
-    .mobile-menu{
+    .mobile-menu {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        a{
+
+        a {
             display: flex;
             gap: 1rem;
         }
     }
 
-    nav > a:nth-of-type(2),
-    a:nth-of-type(3), .person{
+    nav>a:nth-of-type(2),
+    a:nth-of-type(3),
+    .person {
         display: none;
     }
-    
+
     .hamburguer {
         display: block;
         margin-left: .5rem;
         cursor: pointer;
     }
 
-    dialog{
+    dialog {
         width: 40dvw;
     }
-    .dialog-container{
+
+    .dialog-container {
         text-align: left;
-        
+
     }
-    .dialog-container p{
+
+    .dialog-container p {
         font-size: .9rem;
         color: rgb(108, 108, 108);
     }
@@ -45,9 +49,9 @@
 
     /************************* HEADER *************************/
 
-.slides h1 {
-     font-size: clamp(2rem, 5vw, 4rem);
-}
+    .slides h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+    }
 
 
     /************************* MAIN HOME*************************/
@@ -138,36 +142,43 @@
         box-sizing: border-box;
         width: 100%;
     }
-/************************* ADOPTION FORM *************************/
-    .knowledge{
+
+    /************************* ADOPTION FORM *************************/
+    .knowledge {
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
     }
 
-/************************* CREATE POST *************************/
-    .create-post-photo{
+    /************************* CREATE POST *************************/
+    .create-post-photo {
         display: none;
     }
+
     /************************* PET PROFILE *************************/
-    .pet-main{
+    .pet-main {
         flex-direction: column;
         padding-inline: 2rem;
     }
-    .pet-photo{
+
+    .pet-photo {
         aspect-ratio: 1/1;
         overflow: hidden;
     }
-    .pet-photo img{
+
+    .pet-photo img {
         object-fit: contain;
         object-position: center;
     }
-    .pet-info{
+
+    .pet-info {
         justify-content: center;
-        .melon-button{
+
+        .melon-button {
             width: 100%;
         }
     }
-    .pet-info p:last-of-type{
+
+    .pet-info p:last-of-type {
         width: 100%;
     }
 
@@ -178,28 +189,32 @@
 @media (max-width: 660px) {
 
     /************************* NAVBAR *************************/
-        dialog{
-            
+    dialog {
+
         width: 50dvw;
     }
-    .dialog-container{
+
+    .dialog-container {
         padding-inline: .5rem;
     }
-    nav>a:first-of-type{
+
+    nav>a:first-of-type {
         font-size: unset;
     }
-    nav{
+
+    nav {
         padding: 1rem;
     }
 
     /************************* MY PROFILE *************************/
-    .Info{
+    .Info {
         flex-direction: column;
     }
-    
-    .ProfilePicture{
+
+    .ProfilePicture {
         margin: auto;
     }
+
     /************************* HEADER *************************/
 
     .header-home {
@@ -211,7 +226,8 @@
         display: flex;
         flex-direction: column;
     }
-    .slides h1 > span{
+
+    .slides h1>span {
         display: none;
     }
 
@@ -230,7 +246,8 @@
     .main-section .melon-button {
         width: 100%;
     }
-    .cards h3{
+
+    .cards h3 {
         margin-top: .5rem;
     }
 
@@ -287,32 +304,45 @@
     }
 
     /************************* CREATE POST  *************************/
-    .create-post-form-container{
+    .create-post-form-container {
         padding: 2rem;
-        
+
     }
-    .create-post-main{
+
+    .create-post-main {
         height: unset;
     }
-    .information1, .information2{
+
+    .information1,
+    .information2 {
         flex-direction: column;
         align-items: center;
-        input{
+
+        input {
             box-sizing: border-box;
         }
-    
+
     }
+
     /************************* ADOPT LIST  *************************/
-    .AdopListBody{
+    .AdopListBody {
         padding: 2rem;
     }
-    .filtrer{
+
+    .filtrer {
         display: flex;
         flex-direction: column;
-        select{
+
+        select {
             max-width: 100%;
         }
     }
-   
-    
+
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+
 }

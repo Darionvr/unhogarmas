@@ -1,17 +1,21 @@
 import { Link } from 'react-router'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
+
+
 
 const PetProfile = () => {
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
+    const { currentUser, setCurrentUser, token } = useContext(UserContext);
 
   useEffect(() => {
     const fetchAnimal = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/pets/${id}`);
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets/${id}`);
         const data = await res.json();
-        setAnimal({
+        setAnimal( {
           nombre: data.name,
           especie: data.specie,
           tamaño: data.weight > 10 ? 'grande' : data.weight > 5 ? 'medianos' : 'enano',
@@ -21,16 +25,19 @@ const PetProfile = () => {
           imagen: data.photo,
           chip: data.chip,
           descripcion: data.description
-        });
+        } );
+       
       } catch (err) {
         console.error('Error al obtener datos del animal:', err);
       }
     };
 
+
     fetchAnimal();
   }, [id]);
 
   if (!animal) return <p>Cargando información de la mascota...</p>;
+
 
   return (
     <main className='pet-main'>

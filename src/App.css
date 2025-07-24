@@ -749,11 +749,12 @@ textarea {
 .AdopListBody {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
-  padding: 4rem 5rem;
+  padding: 4rem 10vw;
   box-sizing: border-box;
   background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
-
+ 
   h1 {
     margin: 0;
 
@@ -784,9 +785,15 @@ textarea {
 
 
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+   grid-template-columns: repeat(auto-fill, 200px);
+ gap: 2rem;
+  margin: auto;
+  width: 100%;
+
+  
+  
+
 }
 
 
@@ -800,6 +807,7 @@ textarea {
   background-color: hsl(from var(--ChampagnePink) 400 s 90);
   overflow: hidden;
   padding: .5rem;
+  width: 100%;
   max-width: 200px;
   min-width: 140px;
   box-sizing: border-box;

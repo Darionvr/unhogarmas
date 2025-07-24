@@ -4,6 +4,9 @@ import TableSuperUser from '../Components/TableSuperUser';
 import Mypost from '../Components/MyPost';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faXmark, faPencil } from '@fortawesome/free-solid-svg-icons';
+import { jwtDecode } from 'jwt-decode';
+
+
 
 const Myprofile = () => {
   const { currentUser, setCurrentUser, token } = useContext(UserContext);
@@ -18,7 +21,7 @@ const Myprofile = () => {
   const camposEditables = ["first_name", "last_name", "email"];
   const hayEdicionActiva = Object.values(editMode).some((estado) => estado === true);
   const hayCambiosPendientes = Object.keys(datosModificados).length > 0;
-
+  const decoded = jwtDecode(token);
 
   const handleEditClick = (field) => {
     setEditMode(prev => ({ ...prev, [field]: true }));
@@ -73,6 +76,8 @@ const Myprofile = () => {
       console.error("Error al actualizar datos:", error);
     }
   };
+
+
   return (
     <>
 
@@ -108,7 +113,7 @@ const Myprofile = () => {
                     </>
                   )}
                 </div>
-              ))}
+              ))}   
 
               <div className="Info">
                 <span>{currentUser.rut}</span>
@@ -121,7 +126,8 @@ const Myprofile = () => {
         </div>
 
         
-        {token.role === 'administrador' && <TableSuperUser />}
+        {decoded.role === "administrador" && <TableSuperUser /> }
+     
 
         <Mypost />
 
