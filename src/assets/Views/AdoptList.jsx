@@ -10,23 +10,16 @@ const AdoptList = () => {
 
 
 
+
   useEffect(() => {
     const fetchAnimals = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/pets`);
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets`);
         const data = await res.json();
-        const adaptados = data.results.map(animal => ({
-          ...animal,
-          nombre: animal.name,
-          especie: animal.specie,
-          tamaño: animal.weight > 10 ? 'grande' : animal.weight > 5 ? 'medianos' : 'enano',
-          edad: animal.age,
-          sexo: animal.gender,
-          peso: animal.weight,
-          imagen: animal.photo
-        }));
-        setAnimals(adaptados);
+        console.log('Datos recibidos:', data);
+        setAnimals(Array.isArray(data.results) ? data.results : []);
+        console.log('Animales:', Array.isArray(data) ? data : data.pets || []);
       } catch (err) {
         console.error('Error cargando mascotas:', err);
       } finally {
@@ -38,13 +31,13 @@ const AdoptList = () => {
   }, []);
 
   const filtrerSelect = (animal) => {
-    const cumpleEspecie = !especie || animal.especie.toLowerCase().trim() === especie.toLowerCase().trim();
-    const cumpleTamaño = !tamaño || animal.tamaño === tamaño;
+    const cumpleEspecie = !especie || animal.specie.toLowerCase().trim() === especie.toLowerCase().trim();
+    const cumpleTamaño = !tamaño || animal.size === tamaño;
     const cumpleEdad =
       !edad ||
-      (edad === '<1' && animal.edad < 1) ||
-      (edad === '1=3' && animal.edad >= 1 && animal.edad <= 3) ||
-      (edad === '>4' && animal.edad >= 4);
+      (edad === '<1' && animal.age < 1) ||
+      (edad === '1=3' && animal.age >= 1 && animal.age <= 3) ||
+      (edad === '>4' && animal.age >= 4);
 
     return cumpleEspecie && cumpleTamaño && cumpleEdad;
   };
@@ -56,21 +49,21 @@ const AdoptList = () => {
         <h1>Encuentra a tú nuevo mejor amigo</h1>
 
         <div className='filtrer'>
-          <select name='Especies' onChange={(e) => { setEspecie(e.target.value); setCurrentPage(1); }}>
+          <select name='Especies' onChange={(e) => { setEspecie(e.target.value) }}>
             <option value="">Especie</option>
             <option value="Gato">Gato</option>
             <option value="Perro">Perro</option>
             <option value="Conejo">Conejo</option>
           </select>
 
-          <select name="Tamaño" onChange={(e) => { setTamaño(e.target.value); setCurrentPage(1); }}>
+          <select name="Tamaño" onChange={(e) => { setTamaño(e.target.value) }}>
             <option value="">Tamaño</option>
             <option value="grande">+10kg</option>
             <option value="medianos">5kg-10kg</option>
             <option value="enano">1kg-5kg</option>
           </select>
 
-          <select name="Edad" onChange={(e) => { setEdad(e.target.value); setCurrentPage(1); }}>
+          <select name="Edad" onChange={(e) => { setEdad(e.target.value) }}>
             <option value="">Edad</option>
             <option value="<1">Menor de un año</option>
             <option value="1=3">Entre 1 año a 3 años</option>
@@ -90,10 +83,10 @@ const AdoptList = () => {
                   </Link>
                 </div>
                 <div className='cardInfo'>
-                  <h3>{animal.nombre}</h3>
-                  <p>Sexo: <span>{animal.sexo}</span></p>
-                  <p>Edad: <span>{animal.edad} años</span></p>
-                  <p>Peso: <span>{animal.peso}kg</span></p>
+                  <h3>{animal.name}</h3>
+                  <p>Sexo: <span>{animal.gender}</span></p>
+                  <p>Edad: <span>{animal.age} años</span></p>
+                  <p>Peso: <span>{animal.weight}kg</span></p>
                 </div>
               </div>
             ))
