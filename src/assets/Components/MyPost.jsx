@@ -8,7 +8,7 @@ import { UserContext } from '../Context/UserContext'
 const Mypost = () => {
 
     const { token } = useContext(UserContext);
-    const [myPets, setMyPets] = useState([])
+    const [myPets, setMyPets] = useState({})
 
 
     const findMyPets = async (token) => {

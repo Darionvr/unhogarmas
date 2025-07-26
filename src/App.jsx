@@ -12,7 +12,7 @@ import Navbar from './assets/Components/Navbar';
 import Footer from './assets/Components/Footer';
 import PetProfile from './assets/Views/PetProfile';
 import { useContext } from 'react';
-import { UserContext } from './assets/Context/UserContext';
+import { UserContext } from '../src/assets/Context/UserContext'
 
 function App() {
 

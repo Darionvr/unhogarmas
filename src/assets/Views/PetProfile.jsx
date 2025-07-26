@@ -24,17 +24,16 @@ const PetProfile = () => {
 
   return (
     <main className='pet-main'>
-
       <div className="pet-photo">
-        <img src="imgs\Pet-photo1.png" alt="" />
+        <img src={`${import.meta.env.VITE_BACKEND_URL}${animal.photo}`} alt={`Foto de ${animal.name}`} />
       </div>
       <div className="pet-info">
         <h1> {animal.name}</h1>
         <p>Especie: <span>{animal.specie}</span> </p>
-        <p>Edad: <span>{animal.age}</span></p>
-        <p>Peso: <span>{animal.weight} </span></p>
-        <p>Sexo: <span>{animal.gender === 'male' ? 'Macho' : animal.gender === 'female' ? 'Hembra' : 'Desconocido'}</span></p>
-
+        <p>Edad: <span>{animal.age} años</span></p>
+        <p>Peso: <span>{animal.weight}kg</span></p>
+        <p>Sexo: <span>{{macho: 'Macho',hembra: 'Hembra'
+        }[animal.gender?.trim().toLowerCase()] || 'Desconocido'} </span></p>
         <p>Chip: <span>{animal.chip === true ? 'Sí tiene chip' : animal.chip === false ? 'No tiene chip' : 'Desconocido'}</span></p>
         <p>Descripcion: {animal.description}</p>
         <button className='melon-button'> <Link to={'/adoptionform'}>  Comenzar adopción</Link></button>
