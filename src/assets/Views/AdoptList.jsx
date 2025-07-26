@@ -80,40 +80,42 @@ const AdoptList = () => {
 
       <div className='card-list'>
         {loading ? (
-          <p>Cargando mascotas...</p>
+          <>
+            <p>Cargando mascotas...</p>
+          </>
         ) : (
           filtrados.map((animal) => (
-            <div className='card' key={animal.id}>
-              <div className='img'>
-                <Link to={`/PetProfile/${animal.id}`}>
+            <Link to={`/PetProfile/${animal.id}`} key={animal.id}>
+              <div className='card' >
+                <div className='img'>
                   <img src={`${import.meta.env.VITE_BACKEND_URL}${animal.photo}`} alt={animal.name} />
-                </Link>
+                </div>
+                <div className='cardInfo'>
+                  <h3>{animal.name}</h3>
+                  <p>Sexo: <span>{animal.gender}</span></p>
+                  <p>Edad: <span>{animal.age} años</span></p>
+                  <p>Peso: <span>{animal.weight}kg</span></p>
+                </div>
               </div>
-              <div className='cardInfo'>
-                <h3>{animal.name}</h3>
-                <p>Sexo: <span>{animal.gender}</span></p>
-                <p>Edad: <span>{animal.age} años</span></p>
-                <p>Peso: <span>{animal.weight}kg</span></p>
-              </div>
-            </div>
+            </Link>
           ))
         )}
       </div>
 
       <div className='pagination'>
-          <Pagination
-        page={page}
-        setPage={setPage}
-        totalPages={totalPages}
-        next={next}
-        previous={previous}
-        filtros={filtros}
-        order={order}
-        fetchPets={getPets}
-      />
+        <Pagination
+          page={page}
+          setPage={setPage}
+          totalPages={totalPages}
+          next={next}
+          previous={previous}
+          filtros={filtros}
+          order={order}
+          fetchPets={getPets}
+        />
       </div>
 
-    
+
     </div>
   );
 };
