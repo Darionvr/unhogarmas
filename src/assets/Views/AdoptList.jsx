@@ -32,7 +32,10 @@ const AdoptList = () => {
 
   const filtrerSelect = (animal) => {
     const cumpleEspecie = !especie || animal.specie.toLowerCase().trim() === especie.toLowerCase().trim();
-    const cumpleTamaño = !tamaño || animal.size === tamaño;
+     const tamañoAnimal = animal.weight <= 4? 'enano': animal.weight <= 9? 'medianos': 'grande';
+
+  const cumpleTamaño = !tamaño || tamañoAnimal === tamaño;
+
     const cumpleEdad =
       !edad ||
       (edad === '<1' && animal.age < 1) ||
@@ -58,9 +61,9 @@ const AdoptList = () => {
 
           <select name="Tamaño" onChange={(e) => { setTamaño(e.target.value) }}>
             <option value="">Tamaño</option>
-            <option value="grande">+10kg</option>
-            <option value="medianos">5kg-10kg</option>
-            <option value="enano">1kg-5kg</option>
+            <option value="enano">Menor a 4kg</option>
+            <option value="medianos"> Entre 5kg a 9kg</option>
+            <option value="grande">Mayor a 10kg</option>
           </select>
 
           <select name="Edad" onChange={(e) => { setEdad(e.target.value) }}>
@@ -79,7 +82,7 @@ const AdoptList = () => {
               <div className='card' key={animal.id}>
                 <div className='img'>
                   <Link to={`/PetProfile/${animal.id}`}>
-                    <img src={animal.imagen} alt={animal.nombre} />
+                    <img  src={`${import.meta.env.VITE_BACKEND_URL}${animal.photo}`} />
                   </Link>
                 </div>
                 <div className='cardInfo'>
