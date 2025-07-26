@@ -1,10 +1,14 @@
 import { Link } from 'react-router'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
+
+
 
 const PetProfile = () => {
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
+    const { currentUser, setCurrentUser, token } = useContext(UserContext);
 
   useEffect(() => {
     const fetchAnimal = async () => {
@@ -17,10 +21,12 @@ const PetProfile = () => {
       }
     };
 
+
     fetchAnimal();
   }, [id]);
 
   if (!animal) return <p>Cargando información de la mascota...</p>;
+
 
   return (
     <main className='pet-main'>
