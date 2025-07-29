@@ -70,7 +70,7 @@ const Mypost = () => {
                             </div>
                                     </Link>
 
-                        ))}
+                        ))} 
                     </div>
                 )}
                 <div className="AddPetButton">

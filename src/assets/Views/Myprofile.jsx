@@ -21,6 +21,7 @@ const Myprofile = () => {
   const hayCambiosPendientes = Object.keys(datosModificados).length > 0;
   const decoded = jwtDecode(token);
 
+
   const handleEditClick = (field) => {
     setEditMode(prev => ({ ...prev, [field]: true }));
     setTempValues(prev => ({ ...prev, [field]: currentUser[field] }));
@@ -111,7 +112,7 @@ const Myprofile = () => {
                     </>
                   )}
                 </div>
-              ))}   
+              ))}
 
               <div className="Info">
                 <span>{currentUser.rut}</span>
@@ -125,8 +126,8 @@ const Myprofile = () => {
 
 
         {decoded.role === 'administrador' && <TableSuperUser />}
-
-        <Mypost />
+        
+         <Mypost /> 
 
 
 
