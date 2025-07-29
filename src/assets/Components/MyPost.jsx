@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../Context/UserContext'
 
@@ -56,19 +56,19 @@ const Mypost = () => {
                 ) : (
 
                     <div className="card-list">
-                       {myPets.map(pet => (
-                            <div className="card" key={pet.id}>
+                        {myPets.map(pet => (
+                                     <Link className='card-link' key={pet.id} to={`/PetProfile/${pet.id}`}>
+                            <div className="card" >
                                 <div className="img">
-                                    <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/cv1_img8545-edit-copy.webp?w=1600&h=2134" alt="Mascota" />
+                                    <img src={`${import.meta.env.VITE_BACKEND_URL}${pet.photo}`} alt="Mascota" />
                                 </div>
 
                                 <div className="cardInfo">
                                     <h3>{pet.name}</h3>
                                     <p>{pet.specie}, {pet.age}</p>
                                 </div>
-
-                                <button className="melon-button"> <Link to={`/PetProfile`}> <FontAwesomeIcon icon={faPenToSquare} />Editar información</Link></button>
                             </div>
+                                    </Link>
 
                         ))} 
                     </div>
