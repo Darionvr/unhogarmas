@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router"
+import { Link, useLocation } from "react-router-dom"
 import '../../App.css'
 import HomeLogo from "../Icons/HomeIcon"
 import PersonLogo from "../Icons/PersonIcon"
@@ -31,10 +31,10 @@ const Navbar = () => {
       <nav>
 
         <Link to="/"><HomeLogo />Un Hogar Más</Link>
-        <Link to="/Staff">Nuestro equipo</Link>
-        <Link to="/Voluntary">Colabora con nosotros</Link>
+        <Link to="/staff">Nuestro equipo</Link>
+        <Link to="/voluntary">Colabora con nosotros</Link>
 
-        <button className='melon-button'> <Link to="/AdoptList"><PawIcon /> Ver mascotas </Link> </button>
+        <button className='melon-button'> <Link to="/adoptList"><PawIcon /> Ver mascotas </Link> </button>
         <button className='melon-button person' onClick={openModal}> <PersonLogo /> </button>
         <button className="melon-button hamburguer" onClick={openModal}> <FontAwesomeIcon icon={faBars} size="lg" /></button>
 
@@ -43,8 +43,8 @@ const Navbar = () => {
             <button className="close-button" onClick={closeModal}><FontAwesomeIcon icon={faSquareXmark} size="2x" /></button>
             <div className="mobile-menu">
               <p>Menú</p>
-              <Link to="/Staff"> <FontAwesomeIcon icon={faPeopleGroup} />Nuestro equipo</Link>
-              <Link to="/Voluntary"> <FontAwesomeIcon icon={faHandHoldingHeart} />Colabora con nosotros</Link>
+              <Link to="/staff"> <FontAwesomeIcon icon={faPeopleGroup} />Nuestro equipo</Link>
+              <Link to="/voluntary"> <FontAwesomeIcon icon={faHandHoldingHeart} />Colabora con nosotros</Link>
               <hr />
             </div>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
               <>
                 <p> Hola </p>
                 <h1 className="user-name"> {currentUser.first_name}</h1>
-                <Link to={`/Myprofile`}>
+                <Link to={`/myprofile`}>
                   <img src="https://media.istockphoto.com/id/1171169099/es/foto/hombre-con-brazos-cruzados-aislados-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=8qDLKdLMm2i8DHXY6crX6a5omVh2IxqrOxJV2QGzgFg=" className="modal-pic" />
                 </Link>
 

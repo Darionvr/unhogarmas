@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-import { useNavigate } from 'react-router'
 
 
 export const UserContext = createContext()
@@ -8,7 +7,6 @@ const UserProvider = ({ children }) => {
 
     const [token, setToken] = useState(null)
     const [currentUser, setCurrentUser] = useState(null)
-    const navigate = useNavigate();
 
     const logout = () => {
         setToken(null);

@@ -4,7 +4,7 @@ import '../../AppQueries.css'
 import { BoneIcon } from '../Icons/BoneIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInbox, faCalendarWeek, faMobileScreenButton, faMapLocationDot, faArrowRotateLeft, faBrain, faDog, faCouch, faHouse, faPaw } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -76,7 +76,7 @@ const Home = () => {
               <p>Adoptar suma tu vida un amigo que te acompañará en todo momento, con amor y sin condiciones. </p>
             </div>
           </div>
-          <button className='melon-button'> <Link to={'/AdoptionForm'}> Guía paso a paso para adoptar</Link></button>
+          <button className='melon-button'> <Link to={'/adoptionForm'}> Guía paso a paso para adoptar</Link></button>
 
         </section>
 
@@ -110,7 +110,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button className='melon-button'> <Link to={'/AdoptList'}> Explora la lista de adopción</Link></button>
+          <button className='melon-button'> <Link to={'/adoptList'}> Explora la lista de adopción</Link></button>
         </section>
 
 

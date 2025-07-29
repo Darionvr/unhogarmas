@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './assets/Views/Home';
 import Staff from './assets/Views/Staff';
@@ -29,35 +29,35 @@ function App() {
           element={<Home />}
         />
         <Route
-          path="/Staff"
+          path="/staff"
           element={<Staff />}
         />
         <Route
-          path="/Register"
+          path="/register"
           element={<Register />}
         />
         <Route
-          path="/Myprofile"
+          path="/myprofile"
           element={token ? <Myprofile /> : <Navigate to="/" />}
         />
         <Route
-          path="/AdoptList"
+          path="/adoptList"
           element={<AdoptList />}
         />
         <Route
-          path="/AdoptionForm"
+          path="/adoptionForm"
           element={<AdoptionForm />}
         />
         <Route
-          path="/Voluntary"
+          path="/voluntary"
           element={<Voluntary />}
         />
         <Route
-          path="/CreatePost"
+          path="/createPost"
           element={token ? <CreatePost /> : <Navigate to="/" />}
         />
         <Route
-          path="/PetProfile/:id"
+          path="/petProfile/:id"
           element={<PetProfile />}
         />
       </Routes>

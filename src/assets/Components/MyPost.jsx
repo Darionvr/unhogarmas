@@ -57,7 +57,7 @@ const Mypost = () => {
 
                     <div className="card-list">
                         {myPets.map(pet => (
-                                     <Link className='card-link' key={pet.id} to={`/PetProfile/${pet.id}`}>
+                                     <Link className='card-link' key={pet.id} to={`/petProfile/${pet.id}`}>
                             <div className="card" >
                                 <div className="img">
                                     <img src={`${import.meta.env.VITE_BACKEND_URL}${pet.photo}`} alt="Mascota" />
@@ -75,7 +75,7 @@ const Mypost = () => {
                 )}
                 <div className="AddPetButton">
                     <button className='melon-button'>
-                        <Link to="/CreatePost">
+                        <Link to="/createPost">
                             <FontAwesomeIcon icon={faFileCirclePlus} /> Agregar nueva mascota
                         </Link>
                     </button>
