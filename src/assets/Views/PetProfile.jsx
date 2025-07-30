@@ -1,9 +1,7 @@
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
-
-
 
 const PetProfile = () => {
   const { id } = useParams();
@@ -31,7 +29,8 @@ const PetProfile = () => {
   return (
     <main className='pet-main'>
       <div className="pet-photo">
-        <img src={`${import.meta.env.VITE_BACKEND_URL}${animal.photo}`} alt={`Foto de ${animal.name}`} />
+        <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${animal.photo}`} alt={`Foto de ${animal.name}`} />
+        
       </div>
       <div className="pet-info">
         <h1> {animal.name}</h1>

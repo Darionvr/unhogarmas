@@ -88,7 +88,7 @@ const AdoptList = () => {
             <Link to={`/petProfile/${animal.id}`} key={animal.id}>
               <div className='card' >
                 <div className='img'>
-                  <img src={`${import.meta.env.VITE_BACKEND_URL}${animal.photo}`} alt={animal.name} />
+                  <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${animal.photo}`} alt={animal.name} />
                 </div>
                 <div className='cardInfo'>
                   <h3>{animal.name}</h3>
@@ -102,7 +102,7 @@ const AdoptList = () => {
         )}
       </div>
 
-      <div className='pagination'>
+      <div className='pagination-container'>
         <Pagination
           page={page}
           setPage={setPage}

@@ -3,13 +3,16 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { useRef, useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext'
+import { useNavigate } from 'react-router-dom'
+
 
 const CreatePost = () => {
   const inputphoto = useRef(null);
   const fileInputRef = useRef(null);
   const { token } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const initial = {
+  const [form, setForm] = useState({
     nombre: "",
     especie: "",
     edadAprox: "",
@@ -18,22 +21,14 @@ const CreatePost = () => {
     chip: "",
     foto: null,
     description: "",
-  };
-
-  const [form, setForm] = useState(initial);
+  });
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    let newValue;
-   if (e.target.type === 'file') { 
-    newValue = files ? files[0] : null;
-  } else {
-    
-  }
-
+    const { name, value, type, files } = e.target;
+   
   setForm({
     ...form,
-    [name]: newValue,
+    [name]: type === "file" ? files[0] : value
   });
 
   };
@@ -79,8 +74,8 @@ const CreatePost = () => {
 
       if (response.ok) {
         alert("Mascota publicada con éxito");
-        setForm(initial);
-        inputphoto.current.value = "";
+        console.log(data)
+        navigate(`/petProfile/${data.id}`)
       } else {
         alert(`Error: ${data.message}`);
       }
@@ -94,7 +89,7 @@ const CreatePost = () => {
     <main className="create-post-main">
       <div className="create-post-form-container">
         <h1>Crea una nueva publicación</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id='createPost'>
           <div className="information1">
             <input name="nombre" placeholder="Ingresa el nombre" value={form.nombre} onChange={handleChange} />
             <select name="especie" value={form.especie} onChange={handleChange}>

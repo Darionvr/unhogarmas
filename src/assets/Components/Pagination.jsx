@@ -19,7 +19,7 @@ const Pagination = ({ page, setPage, totalPages, next, previous, filtros, order,
         </li>
         {[...Array(totalPages)].map((_, i) => (
           <li key={i} className={`page-item ${page === i + 1 ? "active" : ""}`}>
-            <button className="page-link" onClick={() => handleChangePage(i + 1)}>{i + 1}</button>
+            <button className="page-number" onClick={() => handleChangePage(i + 1)}>{i + 1}</button>
           </li>
         ))}
         <li className={`page-item ${page === totalPages ? "disabled" : ""}`}>

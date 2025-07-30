@@ -53,7 +53,7 @@ const Navbar = () => {
                 <p> Hola </p>
                 <h1 className="user-name"> {currentUser.first_name}</h1>
                 <Link to={`/myprofile`}>
-                  <img src="https://media.istockphoto.com/id/1171169099/es/foto/hombre-con-brazos-cruzados-aislados-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=8qDLKdLMm2i8DHXY6crX6a5omVh2IxqrOxJV2QGzgFg=" className="modal-pic" />
+                  <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${currentUser.photo}`} className="modal-pic" />
                 </Link>
 
                 <button className="melon-button" onClick={() => { logout(); closeModal() }}> <FontAwesomeIcon icon={faRightFromBracket} /> <Link to={'/'}> Cerrar Sesión</Link></button>

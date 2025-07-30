@@ -859,42 +859,62 @@ textarea {
   font-size: 15px;
 }
 
-.pagination {
+.pagination-container {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 0;
-  list-style: none;
-  background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
+  background-color: var(--Seashell);
+  width: min-content;
+  margin: auto;
+  border-radius: 15px;
+  padding: 0 .5rem;
+
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+
 .page-item {
-  display: inline;
+
+  button {
+    font-family: Lexend;
+  }
 }
 
 .page-link {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
+  padding: 0.5rem 1rem;
+  border: none;
   color: #333;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.page-number {
+  background-color: var(--Melon);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  padding: .5rem 1rem;
+
 }
 
 .page-link:hover {
-  background-color: var(--ChampagnePink);
+  color: var(--ChampagnePink);
 }
 
-.page-item.active .page-link {
-  background: linear-gradient(135deg, var(--ChampagnePink), var(--Melon));
-  color: white;
+.page-item.active,
+.page-number.active {
+  color: black;
   font-weight: bold;
-  border-color: #c20808;
+
 }
 
 .page-item.disabled .page-link {
-  background-color: #e9ecef;
   color: #6c757d;
   cursor: not-allowed;
 }
@@ -1231,8 +1251,8 @@ textarea {
   font-size: 1.8rem;
 }
 
-.card-link{
-display: block;
+.card-link {
+  display: block;
 }
 
 .ProfileSection {
