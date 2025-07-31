@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faXmark, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { jwtDecode } from 'jwt-decode';
 
+
 const Myprofile = () => {
   const { currentUser, setCurrentUser, token } = useContext(UserContext);
+  const decoded = jwtDecode(token);
+
   const [datosModificados, setDatosModificados] = useState({})
   const [editMode, setEditMode] = useState({
     first_name: false,
@@ -15,11 +18,12 @@ const Myprofile = () => {
     email: false,
     button: false
   });
+
   const [tempValues, setTempValues] = useState({});
   const camposEditables = ["first_name", "last_name", "email"];
   const hayEdicionActiva = Object.values(editMode).some((estado) => estado === true);
   const hayCambiosPendientes = Object.keys(datosModificados).length > 0;
-  const decoded = jwtDecode(token);
+
 
 
   const handleEditClick = (field) => {
@@ -76,7 +80,6 @@ const Myprofile = () => {
     }
   };
 
-
   return (
     <>
 
@@ -120,14 +123,17 @@ const Myprofile = () => {
               {hayCambiosPendientes && (
                 <button className='melon-button' onClick={handleSubmit}>Guardar cambios</button>)}
             </div>
+
+
+
           </div>
 
         </div>
 
 
         {decoded.role === 'administrador' && <TableSuperUser />}
-        
-         <Mypost /> 
+
+        <Mypost />
 
 
 
