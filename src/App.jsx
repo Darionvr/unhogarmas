@@ -13,6 +13,7 @@ import Footer from './assets/Components/Footer';
 import PetProfile from './assets/Views/PetProfile';
 import { useContext } from 'react';
 import { UserContext } from '../src/assets/Context/UserContext'
+import NotFound from './assets/Views/NotFound';
 
 function App() {
 
@@ -59,6 +60,10 @@ function App() {
         <Route
           path="/petProfile/:id"
           element={<PetProfile />}
+        />
+        <Route
+          path="*"
+          element={<NotFound/>}
         />
       </Routes>
       <Footer />

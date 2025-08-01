@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <h1> <HomeLogo />Un Hogar Más</h1>
       <div className="rrss">
-        <p>© 2025 Un Hogar Más. Todos los derechos reservados.</p>
+        <p>© 2025 Un Hogar Más.</p>
         <FontAwesomeIcon icon={faFacebookF} size="lg" />
         <FontAwesomeIcon icon={faInstagram} size="lg" />
         <FontAwesomeIcon icon={faBluesky} size="lg" />
