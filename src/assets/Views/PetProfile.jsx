@@ -6,7 +6,6 @@ import { UserContext } from '../Context/UserContext';
 const PetProfile = () => {
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
-    const { currentUser, setCurrentUser, token } = useContext(UserContext);
 
   useEffect(() => {
     const fetchAnimal = async () => {
@@ -23,7 +22,7 @@ const PetProfile = () => {
     fetchAnimal();
   }, [id]);
 
-  if (!animal) return <p>Cargando información de la mascota...</p>;
+  if (!animal) return <main className='pet-main'> <p>Cargando información de la mascota...</p> </main> 
 
 
   return (
@@ -40,7 +39,7 @@ const PetProfile = () => {
         <p>Sexo: <span>{{macho: 'Macho',hembra: 'Hembra'
         }[animal.gender?.trim().toLowerCase()] || 'Desconocido'} </span></p>
         <p>Chip: <span>{animal.chip === true ? 'Sí tiene chip' : animal.chip === false ? 'No tiene chip' : 'Desconocido'}</span></p>
-        <p>Descripcion: {animal.description}</p>
+        <p>Descripcion: <span>{animal.description} </span> </p>
         <button className='melon-button'> <Link to={'/adoptionform'}>  Comenzar adopción</Link></button>
       </div>
     </main>

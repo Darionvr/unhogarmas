@@ -1,8 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from '../Components/Pagination';
+import { jwtDecode } from 'jwt-decode';
+import { UserContext } from '../Context/UserContext';
+
 
 const AdoptList = () => {
+
+  const { token } = useContext(UserContext);
+
+  let decoded = null;
+
+  if (token) {
+    try {
+      decoded = jwtDecode(token);
+    } catch (error) {
+      console.error('Token inválido o corrupto:', error);
+    }
+  }
+  
   const [animals, setAnimals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -53,7 +69,7 @@ const AdoptList = () => {
 
   return (
     <div className='AdopListBody'>
-      <h1>Encuentra a tú nuevo mejor amigo</h1>
+      <h1>Encuentra a tu nuevo mejor amigo</h1>
 
       <div className='filtrer'>
         <select name='Especies' onChange={(e) => setFiltros({ ...filtros, especie: e.target.value })}>
@@ -85,8 +101,8 @@ const AdoptList = () => {
           </>
         ) : (
           filtrados.map((animal) => (
-            <Link to={`/petProfile/${animal.id}`} key={animal.id}>
-              <div className='card' >
+            <div className='card' key={animal.id} >
+              <Link to={`/petProfile/${animal.id}`} >
                 <div className='img'>
                   <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${animal.photo}`} alt={animal.name} />
                 </div>
@@ -96,8 +112,9 @@ const AdoptList = () => {
                   <p>Edad: <span>{animal.age} años</span></p>
                   <p>Peso: <span>{animal.weight}kg</span></p>
                 </div>
-              </div>
-            </Link>
+              </Link>
+              {decoded?.role === 'administrador' && <button className='melon-button'> Eliminar </button>}
+            </div>
           ))
         )}
       </div>

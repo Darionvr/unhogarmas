@@ -60,7 +60,7 @@ const Mypost = () => {
                                      <Link className='card-link' key={pet.id} to={`/petProfile/${pet.id}`}>
                             <div className="card" >
                                 <div className="img">
-                                    <img src={`${import.meta.env.VITE_BACKEND_URL}${pet.photo}`} alt="Mascota" />
+                                    <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${pet.photo}`} alt="Mascota" />
                                 </div>
 
                                 <div className="cardInfo">

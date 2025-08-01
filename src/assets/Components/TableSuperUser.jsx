@@ -1,14 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../Context/UserContext';
+
 
 const TableSuperUser = () => {
     const [requests, setRequests] = useState([]);
+
+     const { token } = useContext(UserContext);
+     
+    
 
     useEffect(() => {
         const fetchRequests = async () => {
             try {
                 const res = await fetch('http://localhost:5000/request', {
                     headers: {
-                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                        'Authorization': `Bearer ${token}`
                     },
                 });
 
@@ -25,6 +31,7 @@ const TableSuperUser = () => {
 
         fetchRequests();
     }, [])
+
     const handleAccept = async (id) => {
         try {
             const res = await fetch(`http://localhost:5000/request/${id}`, {
@@ -66,29 +73,21 @@ const TableSuperUser = () => {
     };
 
     const renderCard = (r, showButtons = true) => (
-        <div className="card1" key={r.id}>
-            <div className="card-image">
-                <img
-                    src={r.user_imagen ? `http://localhost:5000/uploads/${r.user_imagen}` : "/user-placeholder.png"}
-
-                    alt="Foto de perfil"
-                />
-
+        <div className="card-request" key={r.id}>
+            <div className="card-title">
+                 <p> {r.user_nombre} {r.user_apellido}</p>
+       
             </div>
             <div className="card-info">
-                <div className="info-column">
-                    <p><strong>Nombre:</strong> {r.user_nombre}</p>
-                    <p><strong>Apellido:</strong> {r.user_apellido}</p>
-                    <p><strong>Correo:</strong> {r.user_correo}</p>
-                    <p><strong>Edad:</strong> {r.age} años</p>
-                    <p><strong>Celular:</strong> {r.phone}</p>
-                    <p><strong>Domicilio:</strong> {r.address}</p>
-                    <p><strong>Tipo de Vivienda:</strong> {r.housing_type}</p>
-                    <p><strong>Permite Mascotas:</strong> {r.allows_pets ? 'Sí' : 'No'}</p>
-                    <p><strong>Nombre de la Mascota:</strong> {r.pet_name}</p>
-                    <p><strong>Por qué desea adoptar:</strong> {r.reason}</p>
-                    <p><strong>Convivencia:</strong> {r.household}</p>
-                </div>
+                    <p>Correo: <span>{r.user_correo} </span></p>
+                    <p>Edad: <span> {r.age} años</span></p>
+                    <p>Celular: <span>{r.phone}</span></p>
+                    <p>Domicilio: <span>{r.address} </span></p>
+                    <p>Tipo de Vivienda: <span> {r.housing_type}</span></p>
+                    <p>Permite Mascotas: <span>{r.allows_pets ? 'Sí' : 'No'} </span></p>
+                    <p>Nombre de la Mascota: <span> {r.pet_name}</span> </p>
+                    <p>Por qué desea adoptar: <span> {r.reason}</span></p>
+                    <p>Convivencia: <span> {r.household}</span></p>
             </div>
 
             {showButtons && (
@@ -103,17 +102,12 @@ const TableSuperUser = () => {
 
     return (
         <>
-            <h2>Registro de Solicitudes de Adopción</h2>
-            <div className="cards-container1">
+            <h2>Solicitudes de Adopción</h2>
+           
                 <div className="cards-wrapper">
                     {requests.filter(r => r.status === "pendiente").map(r => renderCard(r))}
                 </div>
-
-                {/* <h2>Candidatos Aceptados</h2> */}
-                <div className="cards-wrapper">
-                    {requests.filter(r => r.status === "aceptada").map(r => renderCard(r, false))}
-                </div>
-            </div>
+            
         </>
     );
 };

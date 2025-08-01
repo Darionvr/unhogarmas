@@ -11,6 +11,8 @@ const Myprofile = () => {
   const { currentUser, setCurrentUser, token } = useContext(UserContext);
   const decoded = jwtDecode(token);
 
+
+  
   const [datosModificados, setDatosModificados] = useState({})
   const [editMode, setEditMode] = useState({
     first_name: false,

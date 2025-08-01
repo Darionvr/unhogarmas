@@ -43,11 +43,7 @@ const CreatePost = () => {
       alert("Todos los campos son obligatorios");
       return;
     }
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Debes iniciar sesión para publicar una mascota.");
-      return;
-    }
+
 
 
     const formData = new FormData();

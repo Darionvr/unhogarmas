@@ -20,6 +20,7 @@ const Navbar = () => {
   const location = useLocation();
   const { token, logout, currentUser} = useContext(UserContext);
 
+
   useEffect(() => {
     if (dialogRef.current && dialogRef.current.open) {
       dialogRef.current.close();

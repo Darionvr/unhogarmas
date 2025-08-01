@@ -32,7 +32,7 @@
     }
 
     dialog {
-        width: 40dvw;
+        width: 50dvw;
     }
 
     .dialog-container {
@@ -160,11 +160,6 @@
         padding-inline: 2rem;
     }
 
-    .pet-photo {
-        aspect-ratio: 1/1;
-        overflow: hidden;
-    }
-
     .pet-photo img {
         object-fit: contain;
         object-position: center;
@@ -174,6 +169,7 @@
         justify-content: center;
 
         .melon-button {
+            margin-block: 1rem;
             width: 100%;
         }
     }
