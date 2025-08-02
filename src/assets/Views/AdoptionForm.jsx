@@ -160,6 +160,7 @@ const AdoptionForm = () => {
                                         placeholder="Celular"
                                         value={formData.Celular}
                                         onChange={handleChange}
+                                        maxLength="12"
                                     />
                                     <input
                                         name="Domicilio"
