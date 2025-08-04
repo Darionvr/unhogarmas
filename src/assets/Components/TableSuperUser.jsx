@@ -12,7 +12,7 @@ const TableSuperUser = () => {
     useEffect(() => {
         const fetchRequests = async () => {
             try {
-                const res = await fetch('http://localhost:5000/request', {
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/request`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },
@@ -34,7 +34,7 @@ const TableSuperUser = () => {
 
     const handleAccept = async (id) => {
         try {
-            const res = await fetch(`http://localhost:5000/request/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/request/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const TableSuperUser = () => {
 
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:5000/request/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/request/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

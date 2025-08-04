@@ -18,7 +18,7 @@ const AdoptList = () => {
       console.error('Token inválido o corrupto:', error);
     }
   }
-  
+
   const [animals, setAnimals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -47,6 +47,24 @@ const AdoptList = () => {
       setLoading(false);
     }
   };
+
+  const deletePets = async (id) => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      if (res.ok) {
+        setAnimals(prev => prev.filter(pet => pet.id !== id));
+      } else {
+        console.log("No se pudo eliminar la mascota");
+      }
+    } catch (error) {
+      console.log('Error al eliminar la mascota', error);
+    }
+  }
 
   useEffect(() => {
     getPets(page, order);
@@ -113,7 +131,7 @@ const AdoptList = () => {
                   <p>Peso: <span>{animal.weight}kg</span></p>
                 </div>
               </Link>
-              {decoded?.role === 'administrador' && <button className='melon-button'> Eliminar </button>}
+              {decoded?.role === 'administrador' && <button className='melon-button' onClick={() => deletePets(animal.id)}> Eliminar </button>}
             </div>
           ))
         )}
