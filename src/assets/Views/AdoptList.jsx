@@ -53,7 +53,7 @@ const AdoptList = () => {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets/${id}`, {
         method: "DELETE",
         headers: {
-          'Authorization': `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`
         },
       })
       if (res.ok) {
