@@ -27,39 +27,26 @@ const AdoptList = () => {
   const [next, setNext] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [order, setOrder] = useState("asc");
-
+  const [allAnimals, setAllAnimals] = useState([]);
   const [filtros, setFiltros] = useState({
     tamaño: '',
-    especie: '',
-    edad: ''
+    edad: '',
+    specie: ''
   });
-
   const getPets = async () => {
     setLoading(true);
     try {
-      const params = new URLSearchParams();
-      params.append('page', page);
-      params.append('limit', 5);
-      params.append('order', order);
-
-      if (filtros.especie) params.append('species', filtros.especie);
-      if (filtros.tamaño) params.append('size', filtros.tamaño);
-      if (filtros.edad) params.append('age', filtros.edad);
-      console.log('Filtro de especie enviado:', filtros.especie);
-
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets?${params.toString()}`);
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets?page=1&limit=1000`);
       const data = await res.json();
-      setAnimals(Array.isArray(data.results) ? data.results : []);
-      setTotalPages(data.total_pages || 1);
-      setNext(data.next);
-      setPrevious(data.previous);
+      const raw = Array.isArray(data.results) ? data.results : [];
+      setAllAnimals(raw); // guarda todos los animales sin filtrar
+      applyFrontendFilters(raw, filtros); // aplica filtros en frontend
     } catch (err) {
       console.error('Error cargando mascotas:', err);
     } finally {
       setLoading(false);
     }
   };
-
   const deletePets = async (id) => {
     try {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets/${id}`, {
@@ -77,16 +64,50 @@ const AdoptList = () => {
       console.log('Error al eliminar la mascota', error);
     }
   }
+  const applyFrontendFilters = (data, filtros) => {
+    let filtered = data;
+
+    if (filtros.specie) {
+      filtered = filtered.filter(pet => pet.specie === filtros.specie);
+    }
+
+    if (filtros.tamaño) {
+      if (filtros.tamaño === '800gr-4kg') {
+        filtered = filtered.filter(pet => pet.weight >= 0.8 && pet.weight <= 4);
+      } else if (filtros.tamaño === '5kg-9kg') {
+        filtered = filtered.filter(pet => pet.weight >= 5 && pet.weight <= 9);
+      } else if (filtros.tamaño === '+10kg') {
+        filtered = filtered.filter(pet => pet.weight >= 10);
+      }
+    }
+
+    if (filtros.edad) {
+      if (filtros.edad === '-1a') {
+        filtered = filtered.filter(pet => pet.age < 1);
+      } else if (filtros.edad === '1-3a') {
+        filtered = filtered.filter(pet => pet.age >= 1 && pet.age <= 3);
+      } else if (filtros.edad === '+4a') {
+        filtered = filtered.filter(pet => pet.age > 4);
+      }
+    }
+
+    setAnimals(filtered.slice((page - 1) * 5, page * 5)); // paginación manual
+    setTotalPages(Math.ceil(filtered.length / 5));
+  };
 
   useEffect(() => {
     getPets();
-  }, [page, order, filtros]);
-
+  }, []);
+  
+  useEffect(() => {
+    applyFrontendFilters(allAnimals, filtros);
+  }, [filtros, page]);
   const handleFilterChange = (e) => {
-    setFiltros({ ...filtros, [e.target.name]: e.target.value.trim() });
+    const newFilters = { ...filtros, [e.target.name]: e.target.value.trim() };
+    setFiltros(newFilters);
     setPage(1);
+    applyFrontendFilters(allAnimals, newFilters);
   };
-
   const ageMap = {
     0.25: '3 meses',
     0.33: '4 meses',
@@ -129,7 +150,7 @@ const AdoptList = () => {
       <h1>Encuentra a tu nuevo mejor amigo</h1>
 
       <div className='filtrer'>
-        <select name='especie' value={filtros.especie} onChange={handleFilterChange}>
+        <select name='specie' value={filtros.specie} onChange={handleFilterChange}>
           <option value="">Especie</option>
           <option value="Gato">Gato</option>
           <option value="Perro">Perro</option>
