@@ -19,6 +19,7 @@ const AdoptList = () => {
     }
   }
 
+
   const [animals, setAnimals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
