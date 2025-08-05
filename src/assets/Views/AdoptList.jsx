@@ -39,8 +39,8 @@ const AdoptList = () => {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets?page=1&limit=1000`);
       const data = await res.json();
       const raw = Array.isArray(data.results) ? data.results : [];
-      setAllAnimals(raw); // guarda todos los animales sin filtrar
-      applyFrontendFilters(raw, filtros); // aplica filtros en frontend
+      setAllAnimals(raw); 
+      applyFrontendFilters(raw, filtros); 
     } catch (err) {
       console.error('Error cargando mascotas:', err);
     } finally {
@@ -91,14 +91,14 @@ const AdoptList = () => {
       }
     }
 
-    setAnimals(filtered.slice((page - 1) * 5, page * 5)); // paginación manual
+    setAnimals(filtered.slice((page - 1) * 5, page * 5)); 
     setTotalPages(Math.ceil(filtered.length / 5));
   };
 
   useEffect(() => {
     getPets();
   }, []);
-  
+
   useEffect(() => {
     applyFrontendFilters(allAnimals, filtros);
   }, [filtros, page]);
