@@ -25,11 +25,11 @@ const CreatePost = () => {
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-   
-  setForm({
-    ...form,
-    [name]: type === "file" ? files[0] : value
-  });
+
+    setForm({
+      ...form,
+      [name]: type === "file" ? files[0] : value
+    });
 
   };
 
@@ -82,6 +82,7 @@ const CreatePost = () => {
   };
 
   return (
+
     <main className="create-post-main">
       <div className="create-post-form-container">
         <h1>Crea una nueva publicación</h1>
@@ -94,11 +95,47 @@ const CreatePost = () => {
               <option value="Gato">Gato</option>
               <option value="Conejo">Conejo</option>
             </select>
-            <input name="edadAprox" placeholder="Ingresa edad aprox" value={form.edadAprox} onChange={handleChange} />
+            <select name="edadAprox" value={form.edadAprox} onChange={handleChange}>
+              <option value="">Ingresa edad aprox</option>
+              <option value="0.25">3 meses</option>
+              <option value="0.33">4 meses</option>
+              <option value="0.41">5 meses</option>
+              <option value="0.5">6 meses</option>
+              <option value="0.58">7 meses</option>
+              <option value="0.67">8 meses</option>
+              <option value="0.75">9 meses</option>
+              <option value="0.83">10 meses</option>
+              <option value="0.91">11 meses</option>
+              <option value="1">1 año</option>
+              <option value="2">2 años</option>
+              <option value="3">3 años</option>
+              <option value="4">4 años</option>
+              <option value="5">5 años</option>
+              <option value="6">6 años</option>
+              <option value="7">7 años</option>
+              <option value="8">8 años</option>
+              <option value="9">9 años</option>
+              <option value="10">Más de 10 años</option>
+            </select>
           </div>
 
           <div className="information2">
-            <input name="peso" placeholder="Ingresa el peso" value={form.peso} onChange={handleChange} />
+
+            <select name="peso" placeholder="Ingresa el peso" value={form.peso} onChange={handleChange}>
+              <option value="">Ingresa peso aprox</option>
+              <option value="0.8">800 gr</option>
+              <option value="0.9">900 gr</option>
+              <option value="1">1 kg</option>
+              <option value="2">2 kg</option>
+              <option value="3">3 kg</option>
+              <option value="4">4 kg</option>
+              <option value="5">5 kg</option>
+              <option value="6">6 kg</option>
+              <option value="7">7 kg</option>
+              <option value="8">8 kg</option>
+              <option value="9">9 kg</option>
+              <option value="10">Más de 10 kg</option>
+            </select>
             <select name="sexo" value={form.sexo} onChange={handleChange}>
               <option value="">Sexo de la mascota</option>
               <option value="Macho">Macho</option>
@@ -131,6 +168,7 @@ const CreatePost = () => {
             <label>Descripción</label>
             <textarea
               className="textareaCp"
+              placeholder="Por favor detalle el comportamiento del animal..."
               value={form.description}
               name="description"
               onChange={handleChange}

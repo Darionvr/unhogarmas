@@ -18,7 +18,7 @@ const AdoptList = () => {
       console.error('Token inválido o corrupto:', error);
     }
   }
-  
+
   const [animals, setAnimals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -26,16 +26,27 @@ const AdoptList = () => {
   const [next, setNext] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [order, setOrder] = useState("asc");
+
   const [filtros, setFiltros] = useState({
     tamaño: '',
     especie: '',
     edad: ''
   });
 
-  const getPets = async (page = 1, order = "asc") => {
+  const getPets = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets?page=${page}&limit=5&order=${order}`);
+      const params = new URLSearchParams();
+      params.append('page', page);
+      params.append('limit', 5);
+      params.append('order', order);
+
+      if (filtros.especie) params.append('species', filtros.especie);
+      if (filtros.tamaño) params.append('size', filtros.tamaño);
+      if (filtros.edad) params.append('age', filtros.edad);
+      console.log('Filtro de especie enviado:', filtros.especie);
+
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets?${params.toString()}`);
       const data = await res.json();
       setAnimals(Array.isArray(data.results) ? data.results : []);
       setTotalPages(data.total_pages || 1);
@@ -48,49 +59,94 @@ const AdoptList = () => {
     }
   };
 
-  useEffect(() => {
-    getPets(page, order);
-  }, [page, order]);
+  const deletePets = async (id) => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pets/${id}`, {
+        method: "DELETE",
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+      })
+      if (res.ok) {
+        setAnimals(prev => prev.filter(pet => pet.id !== id));
+      } else {
+        console.log("No se pudo eliminar la mascota");
+      }
+    } catch (error) {
+      console.log('Error al eliminar la mascota', error);
+    }
+  }
 
-  const filtrerSelect = (animal) => {
-    const { especie, tamaño, edad } = filtros;
-    const cumpleEspecie = !especie || animal.specie?.toLowerCase().trim() === especie.toLowerCase().trim();
-    const tamañoAnimal = animal.weight <= 4 ? 'enano' : animal.weight <= 9 ? 'medianos' : 'grande';
-    const cumpleTamaño = !tamaño || tamañoAnimal === tamaño;
-    const cumpleEdad =
-      !edad ||
-      (edad === '<1' && animal.age < 1) ||
-      (edad === '1=3' && animal.age >= 1 && animal.age <= 3) ||
-      (edad === '>4' && animal.age >= 4);
-    return cumpleEspecie && cumpleTamaño && cumpleEdad;
+  useEffect(() => {
+    getPets();
+  }, [page, order, filtros]);
+
+  const handleFilterChange = (e) => {
+    setFiltros({ ...filtros, [e.target.name]: e.target.value.trim() });
+    setPage(1);
   };
 
-  const filtrados = animals.filter(filtrerSelect);
+  const ageMap = {
+    0.25: '3 meses',
+    0.33: '4 meses',
+    0.41: '5 meses',
+    0.5: '6 meses',
+    0.58: '7 meses',
+    0.67: '8 meses',
+    0.75: '9 meses',
+    0.83: '10 meses',
+    0.91: '11 meses',
+    1: '1 año',
+    2: '2 años',
+    3: '3 años',
+    4: '4 años',
+    5: '5 años',
+    6: '6 años',
+    7: '7 años',
+    8: '8 años',
+    9: '9 años',
+    10: '+10 años'
+  };
+
+  const weightMap = {
+    0.8: '800 gr',
+    0.9: '900 gr',
+    1: '1 kg',
+    2: '2 kg',
+    3: '3 kg',
+    4: '4 kg',
+    5: '5 kg',
+    6: '6 kg',
+    7: '7 kg',
+    8: '8 kg',
+    9: '9 kg',
+    10: '+10 kg',
+  };
 
   return (
     <div className='AdopListBody'>
       <h1>Encuentra a tu nuevo mejor amigo</h1>
 
       <div className='filtrer'>
-        <select name='Especies' onChange={(e) => setFiltros({ ...filtros, especie: e.target.value })}>
+        <select name='especie' value={filtros.especie} onChange={handleFilterChange}>
           <option value="">Especie</option>
           <option value="Gato">Gato</option>
           <option value="Perro">Perro</option>
           <option value="Conejo">Conejo</option>
         </select>
 
-        <select name="Tamaño" onChange={(e) => setFiltros({ ...filtros, tamaño: e.target.value })}>
+        <select name="tamaño" value={filtros.tamaño} onChange={handleFilterChange}>
           <option value="">Tamaño</option>
-          <option value="enano">Menor a 4kg</option>
-          <option value="medianos">5kg a 9kg</option>
-          <option value="grande">Mayor a 10kg</option>
+          <option value="800gr-4kg">Menor a 4kg</option>
+          <option value="5kg-9kg">5kg a 9kg</option>
+          <option value="+10kg">Mayor a 10kg</option>
         </select>
 
-        <select name="Edad" onChange={(e) => setFiltros({ ...filtros, edad: e.target.value })}>
+        <select name="edad" value={filtros.edad} onChange={handleFilterChange}>
           <option value="">Edad</option>
-          <option value="<1">Menor de un año</option>
-          <option value="1=3">Entre 1 y 3 años</option>
-          <option value=">4">Más de 4 años</option>
+          <option value="-1a">Menor de un año</option>
+          <option value="1-3a">Entre 1 y 3 años</option>
+          <option value="+4a">Más de 4 años</option>
         </select>
       </div>
 
@@ -100,7 +156,7 @@ const AdoptList = () => {
             <p>Cargando mascotas...</p>
           </>
         ) : (
-          filtrados.map((animal) => (
+          animals.map((animal) => (
             <div className='card' key={animal.id} >
               <Link to={`/petProfile/${animal.id}`} >
                 <div className='img'>
@@ -109,11 +165,11 @@ const AdoptList = () => {
                 <div className='cardInfo'>
                   <h3>{animal.name}</h3>
                   <p>Sexo: <span>{animal.gender}</span></p>
-                  <p>Edad: <span>{animal.age} años</span></p>
-                  <p>Peso: <span>{animal.weight}kg</span></p>
+                  <p>Edad: <span>{ageMap[animal.age] || animal.age}</span></p>
+                  <p>Peso: <span>{weightMap[animal.weight] || animal.weight}</span></p>
                 </div>
               </Link>
-              {decoded?.role === 'administrador' && <button className='melon-button'> Eliminar </button>}
+              {decoded?.role === 'administrador' && <button className='melon-button' onClick={() => deletePets(animal.id)}> Eliminar </button>}
             </div>
           ))
         )}
