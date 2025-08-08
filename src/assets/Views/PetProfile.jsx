@@ -4,9 +4,12 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
 
 const PetProfile = () => {
+
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
 
+  
+  
   useEffect(() => {
     const fetchAnimal = async () => {
       try {

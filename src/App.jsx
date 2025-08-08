@@ -17,7 +17,9 @@ import NotFound from './assets/Views/NotFound';
 
 function App() {
 
-  const { token } = useContext(UserContext)
+  const { token, loading } = useContext(UserContext)
+
+if (loading) return <p>Cargando...</p>;
 
 
   return (

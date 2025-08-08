@@ -1,16 +1,59 @@
-import React, { createContext, useState } from 'react'
-
+import React, { createContext, useEffect, useState } from 'react'
 
 export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
 
-    const [token, setToken] = useState(null)
+    const [token, setToken] = useState(localStorage.getItem("token") || "")
     const [currentUser, setCurrentUser] = useState(null)
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        if (token) {
+            localStorage.setItem("token", token);
+        } else {
+            localStorage.removeItem("token");
+        }
+    }, [token]);
 
     const logout = () => {
         setToken(null);
     }
+
+    useEffect(() => {
+
+        if (!token || currentUser) {
+            setLoading(false);
+            return;
+        }
+
+
+        const validateToken = async () => {
+
+            try {
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users/me`, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+
+                if (!res.ok) {
+                    logout(); 
+                    setLoading(false);
+                    return;
+                }
+
+                const data = await res.json();
+                setCurrentUser(data.user); 
+            } catch (error) {
+                console.error("Error validando token:", error);
+                logout();
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        validateToken();
+    }, [token]);
 
     const login = async (email, password) => {
         try {
@@ -60,33 +103,33 @@ const UserProvider = ({ children }) => {
             });
 
             const data = await response.json();
-                console.log("Respuesta del registro:", data);
+            console.log("Respuesta del registro:", data);
 
-                if (!response.ok) {
-                    console.error("Registro fallido:", data.message);
-                    return false;
-                }
+            if (!response.ok) {
+                console.error("Registro fallido:", data.message);
+                return false;
+            }
 
             if (data.token && data.user) {
                 setToken(data.token);
                 setCurrentUser(data.user);
-                localStorage.setItem("token", data.token); 
+                localStorage.setItem("token", data.token);
                 return data;
             } else {
                 console.error("Faltan datos en la respuesta del backend");
                 return false;
             }
 
-            } catch (error) {
-                console.error("Error en el registro:", error);
-                setToken(null);
-                return false;
-            }
-        };
+        } catch (error) {
+            console.error("Error en el registro:", error);
+            setToken(null);
+            return false;
+        }
+    };
 
     return (
         <UserContext.Provider value={{
-            token, setToken, login, logout, register, currentUser, setCurrentUser
+            token, setToken, login, logout, register, currentUser, setCurrentUser, loading
         }}>
 
             {children}
